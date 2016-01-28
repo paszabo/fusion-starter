@@ -165,17 +165,14 @@ This starter kit includes an example app so you can see how everything hangs tog
 Don't want to use Redux? See the next question for some steps on removing Redux.
 
 ### Do I have to use Redux?
-Nope. Redux is useful for applications with more complex data flows. If your app is simple, Redux may be overkill. In that case, you can uninstall Redux and delete the following folders (and their contents):
-* actions
-* constants
-* reducers
-* containers
-* store
+Nope. Redux is useful for applications with more complex data flows. If your app is simple, Redux is overkill. Remove Redux like this:
 
-Then, update index.js:
- 1. `npm uninstall redux react-redux redux-thunk`. 
- 2. Remove the following imports: `import configureStore from './store/configureStore';` and `import { Provider } from 'react-redux';`
- 3. Create a new top level component and reference it in the render method. 
+1. Delete the following folders and their contents: actions, constants, reducers, containers, store
+2. Uninstall Redux related packages: `npm uninstall redux react-redux redux-thunk`
+3. Remove Redux related imports from /src/index.js: `import configureStore from './store/configureStore';`, `import App from './containers/App';` and `import { Provider } from 'react-redux';`
+4. Remove this line from /src/index.js: `const store = configureStore();`
+5. Delete components in /components and create a new empty component.
+6. Replace the call to `<Provider><App/></Provider>` in /src/index.js with a call to the new top level component you just created in step 5.
 
 ### Why are test files placed alongside the file under test (instead of centralized)? 
 Streamlined automated testing is a core feature of this starter kit. All tests are placed in files that end in .spec.js. Spec files are placed in the same directory as the file under test. Why?
