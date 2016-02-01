@@ -95,13 +95,24 @@ Be sure to clone this repo to get started. Then, anytime you want to get the lat
 Webpack serves your app in memory when you run `npm start`. No physical files are written. However, the web root is /src, so you can reference files under /src in index.html. When the app is built using `npm run build`, physical files are written to /dist and the app is served from /dist.
  
 ###How is Sass being converted into CSS and landing in the browser?
-Magic! Okay, more specifically: Webpack handles it like this:
+Magic! Okay, more specifically, we're handling it differently in dev (`npm start`) vs prod (`npm run build`)
+
+When you run `npm start`:
  1. The sass-loader compiles Sass into CSS
  2. Webpack bundles the compiled CSS into bundle.js. Sounds odd, but it works! 
- 3. Loads styles into the &lt;head&gt; of index.html via JavaScript. This is why you don't see a stylesheet reference in index.html. In fact, if you disable JavaScript in your browser, you'll see the styles don't load either. This process is performed for both dev (`npm start`) and production (`npm run build`). Oh, and since we're generating source maps, you can even see the original Sass source in [compatible browsers](http://thesassway.com/intermediate/using-source-maps-with-sass).
+ 3. bundle.js contains code that loads styles into the &lt;head&gt; of index.html via JavaScript. This is why you don't see a stylesheet reference in index.html. In fact, if you disable JavaScript in your browser, you'll see the styles don't load either.
+ 
+The approach above supports hot reloading, which is great for development. However, it also create a flash of unstyled content on load because you have to wait for the JavaScript to parse and load styles before they're applied. So for the production build, we use a different approach:
+
+When you run `npm run build`:
+ 1. The sass-loader compiles Sass into CSS
+ 2. The [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin) extracts the compiled Sass into styles.css
+ 3. buildHtml.js adds a reference to the stylesheet to the head of index.html.
+ 
+For both of the above methods, a separate sourcemap is generated for debugging Sass in [compatible browsers](http://thesassway.com/intermediate/using-source-maps-with-sass).
  
 ###I don't like the magic you just described above. I simply want to use a CSS file.
-No problem. Reference your CSS file in index.html, and add a step to the build process to copy your CSS file over to the same relative location /dist as part of the build step. But be forwarned, you lose style hot reloading with this approach.
+No problem. Reference your CSS file in index.html, and add a step to the build process to copy your CSS file over to the same relative location /dist as part of the build step. But be forewarned, you lose style hot reloading with this approach.
 
 ###How do I call our existing Web APIs?
 This starter kit uses a Node based webserver (Webpack's dev server combined with Browsersync). This means you need to enable Cross-origin Resource Sharing (CORS) on any existing IIS hosted APIs so that you can call them from this kit's dev web server. Here's how:  
@@ -152,7 +163,7 @@ Unfortunately, I can't comment the scripts in package.json inline because the JS
 | build:sass | Compiles SASS, minifies, generates sourcemap, and stores in /dist. |
 | prebuild | Runs automatically before build script (due to naming convention). Cleans dist folder, builds html, and builds sass. |
 | build | Bundles all JavaScript using webpack and writes it to /dist. |
-| test" | Runs tests (files ending in .spec.js) using Mocha and outputs results to the command line. Watches all files so tests are re-run upon save. |
+| test | Runs tests (files ending in .spec.js) using Mocha and outputs results to the command line. Watches all files so tests are re-run upon save. |
 | coverage | Displays code coverage data based on the resulting ES5 code that was compiled by Babel. Writes report to /coverage. |
 | open-coverage | Runs the code coverage and then opens it in your default browser. |
 
@@ -221,7 +232,7 @@ To hit the external URL, all devices must be on the same LAN. So this means your
 * Growl support when running tests and linting, plus associated docs  
 * Integrate ideas from React Starter Kit such like [separate tool folder for scripts](https://github.com/kriasoft/react-starter-kit/tree/master/tools)
 * Integrate Karma for in-browser tests
-* Run npm command or Yeoman generator to delete the example app  
+* Use Yeoman for easy updates and config, or run npm command to delete example app or remove Redux  
 * Add coveralls and associated badges  
 * Make list of ideas to implement from: [React-starter](https://github.com/webpack/react-starter/blob/master/make-webpack-config.js), Google's [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/), [React Starter Kit](http://www.reactstarterkit.com),  [Webpack React Starter](https://github.com/webpack/react-starter), and HTML5 Boilerplate        
 * Integrate [React testing tools](https://twitter.com/_ericelliott/status/677636069366603777?s=03)
@@ -229,7 +240,6 @@ To hit the external URL, all devices must be on the same LAN. So this means your
 * Istanbul 1.0 Upgrade (to [eliminate Isparta shim](https://github.com/gotwarlost/istanbul/releases))  
 * Sass Linting
 * Pagespeed
-* Use Yeoman / npm for easy updates and config
 * [Babel 6 upgrade](http://www.2ality.com/2015/11/configuring-babel6.html?utm_source=javascriptweekly&utm_medium=email) when [babel-plugin-react-transform](https://github.com/gaearon/babel-plugin-react-transform) 2.0 comes out of beta
 * Cache busting bundle naming
 * GraphQL and Relay

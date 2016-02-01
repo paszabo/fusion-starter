@@ -1,6 +1,6 @@
 {
   "name": "vin-react-starter-kit",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Starter kit for creating React apps at Vinsolutions",
   "scripts": {
     "prestart": "npm run remove-dist",
@@ -44,6 +44,7 @@
     "eslint": "1.10.3",
     "eslint-loader": "1.2.0",
     "eslint-plugin-react": "3.14.0",
+    "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.8.5",
     "isparta": "4.0.0",
     "istanbul": "0.3.22",
