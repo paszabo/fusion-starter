@@ -19,30 +19,28 @@ React is a lightweight library, so to build real apps, you need more. This start
 The starter kit includes a working example app that puts all of the above to use.
 
 ## Get Started
-1. **Initial Machine Setup**  
+ 1. **Initial Machine Setup**  
 First time running the starter kit? Then complete the [Initial Machine Setup](https://github.com/coryhouse/vin-javascript-starter-kit#initial-machine-setup).
-2. **Clone the project**  
-Open the command line of your choice and change to the directory where you'd like to start your project. Then clone the project: `git clone https://github.com/coryhouse/vin-react-starter-kit.git`.  
-3. **Rename directory**  
-Rename the 'vin-react-starter-kit' directory that was just created to your project's name. 
-4. **Change directory**  
-`cd` into your projects root directory (the folder you just renamed).
-5. **Install Node packages**   
+ 2. **Clone the project**  
+Open the command line of your choice and change to the directory where you'd like to start your project. Then clone the project: `git clone https://github.com/coryhouse/vin-react-starter-kit.git your-project-name`.  
+ 3. **Change directory**  
+`cd your-project-name` into your project's root directory (the project name you chose in step 2).
+ 4. **Install Node packages**   
 `npm install`
-6. **Run the example app**  
+ 5. **Run the example app**  
 `npm start`
 This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development with this kit, you'll want to keep the command line open at all times so that your code is rebuilt and tests run automatically every time you hit save. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
-7. **Review the example app.** This starter kit includes a working example app that calculates fuel savings. Note how all source code is placed under /src. Tests are placed alongside the file under test. The final built app is placed under /dist. These are the files you run in production.
-8. **Delete the example app files.** Once you're comfortable with how the example app works, you can [delete those files and begin creating your own app](https://github.com/coryhouse/vin-javascript-starter-kit#i-just-want-an-empty-starter-kit). You can always refer to this repo for the example app code that you deleted.
-9. **[Enable CORS on the APIs](https://github.com/coryhouse/vin-react-starter-kit#how-do-i-call-our-existing-web-apis) you need to call** 
+ 6. **Review the example app.** This starter kit includes a working example app that calculates fuel savings. Note how all source code is placed under /src. Tests are placed alongside the file under test. The final built app is placed under /dist. These are the files you run in production.
+ 7. **Delete the example app files.** Once you're comfortable with how the example app works, you can [delete those files and begin creating your own app](https://github.com/coryhouse/vin-javascript-starter-kit#i-just-want-an-empty-starter-kit). You can always refer to this repo for the example app code that you deleted.
+ 8. **[Enable CORS on the APIs](https://github.com/coryhouse/vin-react-starter-kit#how-do-i-call-our-existing-web-apis) you need to call** 
 
 ##Initial Machine Setup
-1. **Install [Node 4.0.0 or greater](https://nodejs.org)**
-2. **Install [Git](https://git-scm.com/downloads)**.  
-3. **Install [Python 2.7](https://www.python.org/downloads/)**. Browser-sync (and various other Node modules) rely on node-gyp, which requires Python on Windows.  
-4. **Install C++ Compiler**. Open Visual Studio and go to File -> New -> Project -> Visual C++ -> Install Visual C++ Tools for Windows Desktop. The C++ compiler is used to compile browser-sync (and perhaps other Node modules).
-5. **Configure your Editor for React**. [Install the appropriate plugin](https://github.com/facebook/react/wiki/Complementary-Tools#jsx-integrations) and [configure your editor](https://github.com/kriasoft/react-starter-kit/blob/master/docs/how-to-configure-text-editors.md).
-6. Add two lines to your [Windows hosts file](https://www.rackspace.com/knowledge_center/article/modify-your-hosts-file) for motosnap.com: 
+ 1. **Install [Node 4.0.0 or greater](https://nodejs.org)**
+ 2. **Install [Git](https://git-scm.com/downloads)**.  
+ 3. **Install [Python 2.7](https://www.python.org/downloads/)**. Browser-sync (and various other Node modules) rely on node-gyp, which requires Python on Windows.  
+ 4. **Install C++ Compiler**. Open Visual Studio and go to File -> New -> Project -> Visual C++ -> Install Visual C++ Tools for Windows Desktop. The C++ compiler is used to compile browser-sync (and perhaps other Node modules).
+ 5. **Configure your Editor for React**. [Install the appropriate plugin](https://github.com/facebook/react/wiki/Complementary-Tools#jsx-integrations) and [configure your editor](https://github.com/kriasoft/react-starter-kit/blob/master/docs/how-to-configure-text-editors.md).
+ 6. Add two lines to your [Windows hosts file](https://www.rackspace.com/knowledge_center/article/modify-your-hosts-file) for motosnap.com: 
 ```
 127.0.0.1 motosnap.com
 127.0.0.1 www.motosnap.com
@@ -98,6 +96,7 @@ Webpack serves your app in memory when you run `npm start`. No physical files ar
 Magic! Okay, more specifically, we're handling it differently in dev (`npm start`) vs prod (`npm run build`)
 
 When you run `npm start`:
+
  1. The sass-loader compiles Sass into CSS
  2. Webpack bundles the compiled CSS into bundle.js. Sounds odd, but it works! 
  3. bundle.js contains code that loads styles into the &lt;head&gt; of index.html via JavaScript. This is why you don't see a stylesheet reference in index.html. In fact, if you disable JavaScript in your browser, you'll see the styles don't load either.
@@ -105,6 +104,7 @@ When you run `npm start`:
 The approach above supports hot reloading, which is great for development. However, it also create a flash of unstyled content on load because you have to wait for the JavaScript to parse and load styles before they're applied. So for the production build, we use a different approach:
 
 When you run `npm run build`:
+
  1. The sass-loader compiles Sass into CSS
  2. The [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin) extracts the compiled Sass into styles.css
  3. buildHtml.js adds a reference to the stylesheet to the head of index.html.
@@ -169,21 +169,21 @@ Unfortunately, I can't comment the scripts in package.json inline because the JS
 
 ### I just want an empty starter kit.
 This starter kit includes an example app so you can see how everything hangs together on a real app. To create an empty project, you can delete the following:  
-1. Components in src/components  
-2. Styles in src/styles/styles.scss  
-3. Delete files in src/businessLogic  
+ 1. Components in src/components  
+ 2. Styles in src/styles/styles.scss  
+ 3. Delete files in src/businessLogic  
 
 Don't want to use Redux? See the next question for some steps on removing Redux.
 
 ### Do I have to use Redux?
 Nope. Redux is useful for applications with more complex data flows. If your app is simple, Redux is overkill. Remove Redux like this:
 
-1. Delete the following folders and their contents: actions, constants, reducers, containers, store
-2. Uninstall Redux related packages: `npm uninstall redux react-redux redux-thunk`
-3. Remove Redux related imports from /src/index.js: `import configureStore from './store/configureStore';`, `import App from './containers/App';` and `import { Provider } from 'react-redux';`
-4. Remove this line from /src/index.js: `const store = configureStore();`
-5. Delete components in /components and create a new empty component.
-6. Replace the call to `<Provider><App/></Provider>` in /src/index.js with a call to the new top level component you just created in step 5.
+ 1. Delete the following folders and their contents: actions, constants, reducers, containers, store
+ 2. Uninstall Redux related packages: `npm uninstall redux react-redux redux-thunk`
+ 3. Remove Redux related imports from /src/index.js: `import configureStore from './store/configureStore';`, `import App from './containers/App';` and `import { Provider } from 'react-redux';`
+ 4. Remove this line from /src/index.js: `const store = configureStore();`
+ 5. Delete components in /components and create a new empty component.
+ 6. Replace the call to `<Provider><App/></Provider>` in /src/index.js with a call to the new top level component you just created in step 5.
 
 ### Why are test files placed alongside the file under test (instead of centralized)? 
 Streamlined automated testing is a core feature of this starter kit. All tests are placed in files that end in .spec.js. Spec files are placed in the same directory as the file under test. Why?
@@ -203,9 +203,9 @@ Since browsers don't currently support ES6, we're using Babel to compile our ES6
 Also note that no actual physical files are written to the filesystem during the dev build. **For performance, all files exist in memory when served from the webpack server.**. Physical files are only written when you run `npm run build`.
 
 **Tips for debugging via sourcemaps:**  
-1. Browsers vary in the way they allow you to view the original source. Chrome automatically shows the original source if a sourcemap is available. Safari, in contrast, will display the minified source and you'll [have to cmd+click on a given line to be taken to the original source](http://stackoverflow.com/questions/19550060/how-do-i-toggle-source-mapping-in-safari-7).  
-2. Do **not** enable serving files from your filesystem in Chrome dev tools. If you do, Chrome (and perhaps other browsers) may not show you the latest version of your code after you make a source code change. Instead **you must close the source view tab you were using and reopen it to see the updated source code**. It appears Chrome clings to the old sourcemap until you close and reopen the source view tab. To clarify, you don't have to close the actual tab that is displaying the app, just the tab in the console that's displaying the source file that you just changed.  
-3. If the latest source isn't displaying the console, force a refresh. Sometimes Chrome seems to hold onto a previous version of the sourcemap which will cause you to see stale code.
+ 1. Browsers vary in the way they allow you to view the original source. Chrome automatically shows the original source if a sourcemap is available. Safari, in contrast, will display the minified source and you'll [have to cmd+click on a given line to be taken to the original source](http://stackoverflow.com/questions/19550060/how-do-i-toggle-source-mapping-in-safari-7).  
+ 2. Do **not** enable serving files from your filesystem in Chrome dev tools. If you do, Chrome (and perhaps other browsers) may not show you the latest version of your code after you make a source code change. Instead **you must close the source view tab you were using and reopen it to see the updated source code**. It appears Chrome clings to the old sourcemap until you close and reopen the source view tab. To clarify, you don't have to close the actual tab that is displaying the app, just the tab in the console that's displaying the source file that you just changed.  
+ 3. If the latest source isn't displaying the console, force a refresh. Sometimes Chrome seems to hold onto a previous version of the sourcemap which will cause you to see stale code.
 
 ### How do I deploy this?
 Before committing, type `npm run build`. This will setup the project for production. It does the following:
@@ -234,7 +234,7 @@ To hit the external URL, all devices must be on the same LAN. So this means your
 * Integrate Karma for in-browser tests
 * Use Yeoman for easy updates and config, or run npm command to delete example app or remove Redux  
 * Add coveralls and associated badges  
-* Make list of ideas to implement from: [React-starter](https://github.com/webpack/react-starter/blob/master/make-webpack-config.js), Google's [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/), [React Starter Kit](http://www.reactstarterkit.com),  [Webpack React Starter](https://github.com/webpack/react-starter), and HTML5 Boilerplate        
+* Make list of ideas to implement from: [React-starter](https://github.com/webpack/react-starter/blob/master/make-webpack-config.js), Google's [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/), [React Starter Kit](http://www.reactstarterkit.com),  [Webpack React Starter](https://github.com/webpack/react-starter), [Unicorn standard](http://unicornstandard.com/packages/boilerplate.html), and HTML5 Boilerplate        
 * Integrate [React testing tools](https://twitter.com/_ericelliott/status/677636069366603777?s=03)
 * Generate IDs automatically to assist QA automation  
 * Istanbul 1.0 Upgrade (to [eliminate Isparta shim](https://github.com/gotwarlost/istanbul/releases))  
