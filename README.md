@@ -24,7 +24,7 @@ First time running the starter kit? Then complete the [Initial Machine Setup](ht
  2. **Clone the project**  
 Open the command line of your choice and change to the directory where you'd like to start your project. Then clone the project: `git clone https://github.com/coryhouse/vin-react-starter-kit.git your-project-name`.  
  3. **Change directory**  
-`cd your-project-name` into your project's root directory (the project name you chose in step 2).
+`cd your-project-name`. - Change directories into your project's root directory (the project name you chose in step 2):
  4. **Install Node packages**   
 `npm install`
  5. **Run the example app**  
