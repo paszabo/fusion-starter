@@ -65,6 +65,7 @@ Be sure to clone this repo to get started. Then, anytime you want to get the lat
 ├── .editorconfig             # Configures editor rules
 ├── .eslintrc                 # Configures ESLint
 ├── .gitignore                # Tells git which files to ignore
+├── .npmrc                    # Configures npm to save exact by default
 ├── README.md                 # This file.
 ├── dist                      # Folder where the build script places the built app. Use this in prod.
 ├── package.json              # Package configuration. The list of 3rd party libraries and utilities
