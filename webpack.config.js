@@ -10,7 +10,7 @@ const testEnvironment = 'test';
 const productionEnvironment = 'production';
 
 const getPlugins = function(env) {
-  var GLOBALS = {
+  const GLOBALS = {
     'process.env.NODE_ENV': JSON.stringify(env),
     __DEV__: env == developmentEnvironment
   };
@@ -50,7 +50,9 @@ const getEntry = function(env) {
 };
 
 const getLoaders = function(env) {
-  var loaders = [ { test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel', 'eslint'] } ];
+  console.log('env is ' + env);
+
+  const loaders = [ { test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel', 'eslint'] } ];
 
   if (env == productionEnvironment) {
     //generate separate physical stylesheet for production build using ExtractTextPlugin. This provides separate caching and avoids a flash of unstyled content on load.

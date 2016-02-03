@@ -33,7 +33,7 @@ export function fetchCustomers() {
     dispatch(requestCustomers());
     return api.getCustomers().then(function(response) {
       //now that we've gotten the ajax response back, dispatch it.
-      var customers = response.data.Data;
+      const customers = response.data.Data;
       dispatch(receiveCustomers(customers));
     });
   };

@@ -7,7 +7,7 @@ import axios from 'axios';
 let api = null;
 
 const getBaseUrl = function() {
-  var inDevelopment = window.location.hostname == 'localhost';
+  const inDevelopment = window.location.hostname == 'localhost';
   //Note that this baseUrl assumes you're running CarDashboard via IIS at motosnap.com via a hosts file entry.
   //See https://github.com/coryhouse/vin-react-starter-kit#initial-machine-setup for more info.
   return inDevelopment ? 'http://motosnap.com/CarDashboard/' : '/CarDashboard/';
@@ -16,7 +16,7 @@ const getBaseUrl = function() {
 //Note that this can't be called until we're in the browser
 //since we need to sniff the URL to know what environment we're in
 //and therefore, what the baseURL should be for API calls.
-var getInitializedApi = function() {
+const getInitializedApi = function() {
   if (api) return api; //return initialized api if already initialized.
   return axios.create({
     baseURL: getBaseUrl(),
@@ -25,11 +25,11 @@ var getInitializedApi = function() {
   });
 };
 
-var get = function(url) {
+const get = function(url) {
   return getInitializedApi().get(url);
 };
 
-var post = function(url, data) {
+const post = function(url, data) {
   return getInitializedApi().post(url, data);
 };
 
