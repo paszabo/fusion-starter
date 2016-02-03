@@ -1,28 +1,35 @@
 // For info about this file refer to webpack and webpack-hot-middleware documentation
 // Rather than having hard coded webpack.config.js for each environment, this
 // file generates a webpack config for the environment passed to the getConfig method.
-var webpack = require('webpack');
-var path = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+import webpack from 'webpack';
+import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-var getPlugins = function(env) {
+const developmentEnvironment = 'development';
+const testEnvironment = 'test';
+const productionEnvironment = 'production';
+
+const getPlugins = function(env) {
   var GLOBALS = {
     'process.env.NODE_ENV': JSON.stringify(env),
-    __DEV__: env == 'development'
+    __DEV__: env == developmentEnvironment
   };
 
-  var plugins = [
+  const plugins = [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin(GLOBALS) //Passes variables to Webpack. https://facebook.github.io/react/downloads.html
   ];
 
   switch(env) {
-    case 'production':
+    case productionEnvironment:
       plugins.push(new ExtractTextPlugin('styles.css'));
       plugins.push(new webpack.optimize.DedupePlugin());
-      plugins.push(new webpack.optimize.UglifyJsPlugin());
+      plugins.push(new webpack.optimize.UglifyJsPlugin({
+        compressor: {screw_ie8: true, keep_fnames: false, warnings: false},
+        mangle: {screw_ie8: true, keep_fnames: false}
+      }));
       break;
-    case 'development':
+    case developmentEnvironment:
       plugins.push(new webpack.HotModuleReplacementPlugin());
       plugins.push(new webpack.NoErrorsPlugin());
       break;
@@ -31,10 +38,10 @@ var getPlugins = function(env) {
   return plugins;
 };
 
-var getEntry = function(env) {
-  var entry = [];
+const getEntry = function(env) {
+  const entry = [];
 
-  if (env == 'development') { //only want hot reloading when in dev.
+  if (env == developmentEnvironment) { //only want hot reloading when in dev.
     entry.push('webpack-hot-middleware/client');
   }
 
@@ -42,10 +49,10 @@ var getEntry = function(env) {
   return entry;
 };
 
-var getLoaders = function(env) {
+const getLoaders = function(env) {
   var loaders = [ { test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel', 'eslint'] } ];
 
-  if (env == 'production') {
+  if (env == productionEnvironment) {
     //generate separate physical stylesheet for production build using ExtractTextPlugin. This provides separate caching and avoids a flash of unstyled content on load.
     loaders.push({ test: /(\.css|\.scss)$/, include: path.join(__dirname, 'src'), loader: ExtractTextPlugin.extract("css?sourceMap!sass?sourceMap") });
   } else {
@@ -61,10 +68,10 @@ var getLoaders = function(env) {
 module.exports = function getConfig(env) {
   return {
     debug: true,
-    devtool: env == 'production' ? 'source-map' : 'cheap-module-eval-source-map', //more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
+    devtool: env == productionEnvironment ? 'source-map' : 'cheap-module-eval-source-map', //more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
     noInfo: true, //set to false to see a list of every file being bundled.
     entry: getEntry(env),
-    target: env == 'test' ? 'node' : 'web', //necessary per https://webpack.github.io/docs/testing.html#compile-and-test
+    target: env == testEnvironment ? 'node' : 'web', //necessary per https://webpack.github.io/docs/testing.html#compile-and-test
     output: {
       path: __dirname + '/dist', //Note: Physical files are only output by the production build task `npm run build`.
       publicPath: '',

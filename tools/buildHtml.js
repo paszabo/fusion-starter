@@ -7,19 +7,19 @@
 // Allowing console calls below since this is a build file.
 /*eslint-disable no-console */
 
-var fs = require('fs');
-var colors = require('colors');
-var cheerio = require('cheerio');
+import fs from 'fs';
+import colors from 'colors';
+import cheerio from 'cheerio';
 
 fs.readFile('src/index.html', 'utf8', function (err,data) {
   if (err) return console.log(err);
 
-  var $ = cheerio.load(data);
+  const $ = cheerio.load(data);
 
   //since a separate spreadsheet is only utilized for the production build, need to dynamically add this here.
   $('head').prepend('<link rel="stylesheet" href="styles.css">');
 
-  var trackJsCode = "\n<script>window._trackJs = { token: '69ff2d61429a4c5da881a2026decd7d7' };</script><script src=https://d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js></script>";
+  const trackJsCode = "\n<script>window._trackJs = { token: '69ff2d61429a4c5da881a2026decd7d7' };</script><script src=https://d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js></script>";
 
   //add TrackJS tracking code to the top of <head> as suggested in their docs.
   $('head').prepend(trackJsCode);
