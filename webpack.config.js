@@ -50,8 +50,6 @@ const getEntry = function(env) {
 };
 
 const getLoaders = function(env) {
-  console.log('env is ' + env);
-
   const loaders = [ { test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel', 'eslint'] } ];
 
   if (env == productionEnvironment) {
