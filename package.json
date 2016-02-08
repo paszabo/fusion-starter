@@ -16,7 +16,7 @@
     "test": "cross-env NODE_ENV=test mocha --reporter progress --compilers js:babel/register --recursive \"./src/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch",
     "coverage": "cross-env NODE_ENV=test istanbul cover _mocha -- --compilers js:babel/register --recursive \"./src/**/*.spec.js\"  --reporter min",
-    "open-coverage": "npm run coverage-es5 && open coverage/lcov-report/index.html"
+    "open-coverage": "npm run coverage && open coverage/lcov-report/index.html"
   },
   "author": "Cory House",
   "license": "MIT",
