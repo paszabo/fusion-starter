@@ -13,7 +13,12 @@ import thunkMiddleware from 'redux-thunk';
 const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
 
 export default function configureStore(initialState) {
-  const store = createStoreWithMiddleware(rootReducer, initialState);
+  let store;
+  if (window.devToolsExtension) { //Enable Redux devtools if the extension is installed in developer's browser
+    store = window.devToolsExtension()(createStoreWithMiddleware)(rootReducer, initialState);
+  } else {
+    store = createStoreWithMiddleware(rootReducer, initialState);
+  }
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
