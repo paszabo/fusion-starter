@@ -4,33 +4,31 @@ import React, {PropTypes} from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import FuelSavingsApp from '../components/FuelSavingsApp';
-import * as FuelSavingsActions from '../actions/fuelSavingsActions';
+import * as actions from '../actions/fuelSavingsActions';
 
 class App extends React.Component {
   render() {
-    const { fuelSavingsAppState, actions } = this.props;
-
-    return (
-        <FuelSavingsApp fuelSavingsAppState={fuelSavingsAppState} actions={actions} />
-    );
+    return <FuelSavingsApp appState={this.props.appState} actions={this.props.actions} />;
   }
 }
 
 App.propTypes = {
   actions: PropTypes.object.isRequired,
-  fuelSavingsAppState: PropTypes.object.isRequired
+  appState: PropTypes.object.isRequired
 };
 
-//Tell Redux exactly what state slice we want from the global state
+// Tell Redux exactly what state slice we want from the global state
+// Note that state.fuelSavingsAppState below is the name of
+// the reducer function in /reducers/fuelSavings.js
 function mapStateToProps(state) {
   return {
-    fuelSavingsAppState: state.fuelSavingsAppState
+    appState: state.fuelSavingsAppState
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(FuelSavingsActions, dispatch)
+    actions: bindActionCreators(actions, dispatch)
   };
 }
 
