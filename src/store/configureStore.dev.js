@@ -4,13 +4,14 @@
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from '../reducers';
 import thunkMiddleware from 'redux-thunk';
+import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 
 //Without middleware, Redux only supports synchronous data flow. http://redux.js.org/docs/advanced/AsyncFlow.html
 //So we're applying the thunk middleware to support async (ajax calls) within our actions.
 //To clarify, middleware simply lets us slap some behavior in between dispatching an action
 //and the moment it reaches the reducer. You can do other things like log, crash report, route, and so on.
 //Thunk middleware lets us dispatch() functions, (useful for handling ajax calls in reducers)
-const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
+const createStoreWithMiddleware = applyMiddleware(thunkMiddleware, reduxImmutableStateInvariant())(createStore);
 
 export default function configureStore(initialState) {
   let store;
