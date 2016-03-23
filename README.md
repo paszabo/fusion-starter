@@ -283,7 +283,7 @@ To hit the external URL, all devices must be on the same LAN. So this means your
 * Integrate Karma for in-browser tests
 * Use Yeoman for easy updates and config, or run npm command to delete example app or remove Redux  
 * Add coveralls and associated badges  
-* Make list of ideas to implement from: [React-starter](https://github.com/webpack/react-starter/blob/master/make-webpack-config.js), Google's [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/), [React Starter Kit](http://www.reactstarterkit.com),  [Webpack React Starter](https://github.com/webpack/react-starter), [Unicorn standard](http://unicornstandard.com/packages/boilerplate.html), and HTML5 Boilerplate        
+* Make list of ideas to implement from: [React-starter](https://github.com/webpack/react-starter/blob/master/make-webpack-config.js), Google's [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/), [React Starter Kit](http://www.reactstarterkit.com),  [Webpack React Starter](https://github.com/webpack/react-starter), [Unicorn standard](http://unicornstandard.com/packages/boilerplate.html), [nwb](https://medium.com/@dtinth/quickly-start-a-new-react-application-using-nwb-334db59691d9#.e93hd0oz8), [React Project](https://github.com/ryanflorence/react-project), and HTML5 Boilerplate        
 * Integrate [React testing tools](https://twitter.com/_ericelliott/status/677636069366603777?s=03)
 * Generate IDs automatically to assist QA automation  
 * Istanbul 1.0 Upgrade (to [eliminate Isparta shim](https://github.com/gotwarlost/istanbul/releases))  
