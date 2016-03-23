@@ -4,7 +4,7 @@
   "description": "Starter kit for creating React apps at Vinsolutions",
   "scripts": {
     "prestart": "npm run remove-dist",
-    "start": "parallelshell \"npm run lint:tools\" \"npm run test:watch\" \"npm run open:src\"",
+    "start": "npm-run-all --parallel lint:tools test:watch open:src ",
     "open:src": "babel-node tools/srcServer.js",
     "open:dist": "babel-node tools/distServer.js",
     "lint:tools": "eslint webpack.config.js tools",
@@ -54,8 +54,8 @@
     "istanbul": "0.3.22",
     "mocha": "2.3.4",
     "node-sass": "3.4.2",
+    "npm-run-all": "1.6.0",
     "null-loader": "0.1.1",
-    "parallelshell": "2.0.0",
     "react-transform-catch-errors": "1.0.1",
     "react-transform-hmr": "1.0.1",
     "redbox-react": "1.2.0",
