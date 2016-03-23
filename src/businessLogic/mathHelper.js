@@ -13,13 +13,9 @@ class MathHelper {
     }
 
     static addArray(values) { //adds array of values passed.
-        if (values == null) {
-            return null;
-        }
-
-        const total = values.reduce(function(previousValue, currentValue, currentIndex) {
+        const total = values.reduce((previousValue, currentValue) => {
           return previousValue + parseInt(this.convertToPennies(currentValue)); //do math in pennies to assure accuracy.
-        });
+        }, 0);
 
         return total / 100; //convert back into dollars
     }
