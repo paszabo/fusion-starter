@@ -36,8 +36,8 @@ This will run the automated build process, start up a webserver, and open the ap
  9. **[Enable CORS on the APIs](https://github.com/coryhouse/vin-react-starter-kit#how-do-i-call-our-existing-web-apis) you need to call** 
 
 ##Initial Machine Setup
- 1. **Install [Node 4.0.0 or greater](https://nodejs.org)**
- 2. **Install [Git](https://git-scm.com/downloads)**.  
+ 1. **Install [the newest version of Node.js](https://nodejs.org)**
+ 2. **Install [Git](https://git-scm.com/downloads)**.  The recommended defaults are fine.
  3. **Install [Python 2.7](https://www.python.org/downloads/)**. Browser-sync (and various other Node modules) rely on node-gyp, which requires Python on Windows.  
  4. **Install C++ Compiler**. Open Visual Studio and go to File -> New -> Project -> Visual C++ -> Install Visual C++ Tools for Windows Desktop. The C++ compiler is used to compile browser-sync (and perhaps other Node modules).
  5. **Install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** in Chrome. (Optional, but helpful)
