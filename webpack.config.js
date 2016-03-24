@@ -65,6 +65,9 @@ const getLoaders = function(env) {
 //Webpack uses this chunk of JSON for configuration.
 //The functions above are useful for configuring Webpack
 //for different environments.
+//NOTE: The resolve section at the bottom is necessary
+//to keep material-ui happy by assuring all references
+//to React point to the same spot.
 module.exports = function getConfig(env) {
   return {
     debug: true,
@@ -80,6 +83,12 @@ module.exports = function getConfig(env) {
     plugins: getPlugins(env),
     module: {
       loaders: getLoaders(env)
+    },
+    resolve: {
+      alias: {
+        'react': path.join(__dirname, 'node_modules', 'react')
+      },
+      extensions: ['', '.js']
     }
   };
 };
