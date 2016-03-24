@@ -55,7 +55,6 @@
     "mocha": "2.4.5",
     "node-sass": "3.4.2",
     "npm-run-all": "1.6.0",
-    "null-loader": "0.1.1",
     "react-transform-catch-errors": "1.0.2",
     "react-transform-hmr": "1.0.4",
     "redbox-react": "1.2.2",
