@@ -42,6 +42,7 @@ const getEntry = function(env) {
   const entry = [];
 
   if (env == developmentEnvironment) { //only want hot reloading when in dev.
+    entry.push('eventsource-polyfill'); // necessary for hot reloading with IE 
     entry.push('webpack-hot-middleware/client?reload=true');
   }
 
