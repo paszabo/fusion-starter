@@ -55,7 +55,6 @@
     "mocha": "2.4.5",
     "node-sass": "3.4.2",
     "npm-run-all": "1.6.0",
-    "redbox-react": "1.2.2",
     "redux-immutable-state-invariant": "1.2.2",
     "rimraf": "2.5.2",
     "sass-loader": "3.2.0",
