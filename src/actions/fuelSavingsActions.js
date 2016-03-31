@@ -1,4 +1,4 @@
-import * as types from '../constants/ActionTypes';
+import * as types from '../constants/actionTypes';
 import api from '../api/api';
 
 export function saveFuelSavings(settings) {
