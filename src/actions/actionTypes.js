@@ -1,4 +1,11 @@
+// Fuel Savings
 export const SAVE_FUEL_SAVINGS = 'SAVE_FUEL_SAVINGS';
 export const CALCULATE_FUEL_SAVINGS = 'CALCULATE_FUEL_SAVINGS';
+
+// Customers
 export const REQUEST_CUSTOMERS = 'REQUEST_CUSTOMERS';
 export const RECEIVE_CUSTOMERS = 'RECEIVE_CUSTOMERS';
+
+// Loadings
+export const LOADING = 'LOADING';
+export const LOADING_COMPLETE = 'LOADING_COMPLETE';

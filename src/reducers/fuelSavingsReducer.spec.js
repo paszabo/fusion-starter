@@ -1,4 +1,4 @@
-import fuelSavings from './fuelSavings';
+import fuelSavings from './fuelSavingsReducer';
 import {saveFuelSavings} from '../actions/fuelSavingsActions';
 import chai from 'chai';
 
@@ -11,7 +11,7 @@ describe('Fuel Savings Reducer', () => {
       //arrange
       var stateBefore = {
         dateModified: 'dummy value'
-      }
+      };
 
       //act
       var stateAfter = fuelSavings(stateBefore, saveFuelSavings(stateBefore));
