@@ -1,5 +1,9 @@
 {
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
   "plugins": [
     "react"
   ],
@@ -17,10 +21,6 @@
     "jquery": true,
     "mocha": true
   },
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
-  },
   "rules": {
     "quotes": 0,
     "no-console": 1,
@@ -34,6 +34,7 @@
     "no-alert": 0,
     "no-lone-blocks": 0,
     "jsx-quotes": 1,
+    "import/default": 0,
     "react/display-name": [ 1, {"ignoreTranspilerName": false }],
     "react/forbid-prop-types": [1, {"forbid": ["any"]}],
     "react/jsx-boolean-value": 0,
