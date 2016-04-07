@@ -14,9 +14,9 @@
     "build:html": "babel-node tools/buildHtml.js",
     "prebuild": "npm run clean-dist && npm run build:html",
     "build": "babel-node tools/build.js && npm run open:dist",
-    "test": "cross-env NODE_ENV=test mocha --reporter progress --compilers js:babel-core/register --recursive \"./src/**/*.spec.js\" --require ignore-styles",
+    "test": "cross-env NODE_ENV=test mocha --reporter progress --compilers js:babel-core/register --recursive \"./src/**/*.test.js\" --require ignore-styles",
     "test:watch": "npm run test -- --watch",
-    "coverage": "cross-env NODE_ENV=test istanbul cover _mocha -- --compilers js:babel-core/register --recursive \"./src/**/*.spec.js\"  --reporter min",
+    "coverage": "cross-env NODE_ENV=test istanbul cover _mocha -- --compilers js:babel-core/register --recursive \"./src/**/*.test.js\"  --reporter min",
     "open-coverage": "npm run coverage && open coverage/lcov-report/index.html"
   },
   "author": "Cory House",
