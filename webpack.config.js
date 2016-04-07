@@ -6,7 +6,6 @@ import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const developmentEnvironment = 'development';
-const testEnvironment = 'test';
 const productionEnvironment = 'production';
 
 const getPlugins = function(env) {
@@ -42,7 +41,7 @@ const getEntry = function(env) {
   const entry = [];
 
   if (env == developmentEnvironment) { //only want hot reloading when in dev.
-    entry.push('eventsource-polyfill'); // necessary for hot reloading with IE 
+    entry.push('eventsource-polyfill'); // necessary for hot reloading with IE
     entry.push('webpack-hot-middleware/client?reload=true');
   }
 
@@ -75,9 +74,9 @@ module.exports = function getConfig(env) {
     devtool: env == productionEnvironment ? 'source-map' : 'cheap-module-eval-source-map', //more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
     noInfo: true, //set to false to see a list of every file being bundled.
     entry: getEntry(env),
-    target: env == testEnvironment ? 'node' : 'web', //necessary per https://webpack.github.io/docs/testing.html#compile-and-test
-    output: {
-      path: __dirname + '/dist', //Note: Physical files are only output by the production build task `npm run build`.
+    target: 'web',
+    output: { // Note: Only prod environment actually outputs files.
+      path: __dirname + '/dist',
       publicPath: '',
       filename: 'bundle.js'
     },
