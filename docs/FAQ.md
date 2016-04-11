@@ -92,6 +92,7 @@ Be sure to clone this repo to get started. Then, anytime you want to get the lat
 |node-sass| Adds SASS support to Webpack |
 |parallelshell| Display results of multiple commands on single command line |
 |react-addons-test-utils| Adds React TestUtils |
+|redux-immutable-state-invariant| Throw error when you mutate Redux store state|
 |rimraf|Delete files |
 |sass-loader| Adds Sass support to Webpack|
 |sinon| Standalone test spies, stubs and mocks for JavaScript |
