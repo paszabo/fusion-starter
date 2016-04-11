@@ -14,7 +14,7 @@ const FuelSavingsResults = (props) => {
   //composed within the parentheses. Return is necessary here because some
   //variables are set above.
   return (
-    <table>
+    <table id="fuel-savings-results">
       <tbody>
       <tr>
         <td className="fuel-savings-label">{resultLabel}</td>
