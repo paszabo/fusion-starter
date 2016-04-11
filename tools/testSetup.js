@@ -1,12 +1,13 @@
 // Tests are placed alongside files under test.
 // This file does the following:
 // 1. Registers babel for transpiling our code for testing
-// 2. Requires jsdom so we can test via an in-memory DOM in Node
-// 3. Sets up global vars that mimic a browser.
+// 2. Disables Webpack-specific features that Mocha doesn't understand.
+// 3. Requires jsdom so we can test via an in-memory DOM in Node
+// 4. Sets up global vars that mimic a browser.
 
 /*eslint-disable no-var*/
 
-process.env.NODE_ENV = 'test'; // this assures the .babelrc dev config doesn't apply.
+process.env.NODE_ENV = 'production'; // this assures the .babelrc dev config doesn't apply.
 
 // Disable webpack-specific features for tests since
 // Mocha doesn't know what to do with them.
