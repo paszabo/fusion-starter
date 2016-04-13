@@ -9,12 +9,12 @@ describe('Fuel Savings Reducer', () => {
   describe('Save Fuel Savings', () => {
     it('Updates dateModified', () => {
       //arrange
-      var stateBefore = {
+      const stateBefore = {
         dateModified: 'dummy value'
       };
 
       //act
-      var stateAfter = fuelSavings(stateBefore, saveFuelSavings(stateBefore));
+      const stateAfter = fuelSavings(stateBefore, saveFuelSavings(stateBefore));
 
       //assert
       stateBefore.should.not.equal(stateAfter);

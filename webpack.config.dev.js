@@ -23,7 +23,7 @@ export default {
   ],
   module: {
     loaders: [
-      {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel', 'eslint']},
+      {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
       {test: /(\.css|\.scss)$/, include: path.join(__dirname, 'src'), loaders: ['style', 'css?sourceMap', 'sass?sourceMap']}
     ]
   },
