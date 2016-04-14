@@ -33,10 +33,10 @@ describe('Fuel Savings Calculator', () => {
     describe("milesPerMonth", () => {
         it("converts a weekly timeframe to a monthly timeframe", () => {
             //arrange
-            var milesPerWeek = 100;
+            const milesPerWeek = 100;
 
             //act
-            var milesPerMonth = Calculator().calculateMilesDrivenPerMonth(milesPerWeek, 'week');
+            const milesPerMonth = Calculator().calculateMilesDrivenPerMonth(milesPerWeek, 'week');
             
             //assert
             milesPerMonth.should.equal(433.3333333333333);
@@ -44,10 +44,10 @@ describe('Fuel Savings Calculator', () => {
 
         it("returns a monthly timeframe untouched", () => {
             //arrange
-            var milesPerMonth = 300;
+            const milesPerMonth = 300;
 
             //act
-            var milesPerMonthCalculated = Calculator().calculateMilesDrivenPerMonth(milesPerMonth, 'month');
+            const milesPerMonthCalculated = Calculator().calculateMilesDrivenPerMonth(milesPerMonth, 'month');
             
             //assert
             milesPerMonthCalculated.should.equal(milesPerMonth); 
@@ -55,10 +55,10 @@ describe('Fuel Savings Calculator', () => {
 
         it("converts a yearly timeframe to a monthly timeframe", () => {
             //arrange
-            var milesPerYear = 1200;
+            const milesPerYear = 1200;
             
             //act
-            var milesPerMonth = Calculator().calculateMilesDrivenPerMonth(milesPerYear, 'year');
+            const milesPerMonth = Calculator().calculateMilesDrivenPerMonth(milesPerYear, 'year');
             
             //assert
             milesPerMonth.should.equal(100);
@@ -68,7 +68,7 @@ describe('Fuel Savings Calculator', () => {
     describe("calculateSavingsPerMonth", () => {
         it("returns 29.93 in savings per month with these settings", () => {
             //arrange
-            var settings = {
+            const settings = {
                 tradePpg: 3.75,
                 tradeMpg: 24,
                 newPpg: 3.75,
@@ -78,7 +78,7 @@ describe('Fuel Savings Calculator', () => {
             };
 
             //act
-            var savingsPerMonth = Calculator().calculateSavingsPerMonth(settings);
+            const savingsPerMonth = Calculator().calculateSavingsPerMonth(settings);
             
             //assert
             savingsPerMonth.should.equal(29.93);
@@ -86,7 +86,7 @@ describe('Fuel Savings Calculator', () => {
 
         it("returns 40.83 in savings per month with these settings", () => {
             //arrange
-            var settings = {
+            const settings = {
                 tradePpg: 4.15,
                 tradeMpg: 24,
                 newPpg: 3.75,
@@ -96,7 +96,7 @@ describe('Fuel Savings Calculator', () => {
             };
 
             //act
-            var savingsPerMonth = Calculator().calculateSavingsPerMonth(settings);
+            const savingsPerMonth = Calculator().calculateSavingsPerMonth(settings);
             
             //assert
             savingsPerMonth.should.equal(40.83);
@@ -104,7 +104,7 @@ describe('Fuel Savings Calculator', () => {
 
         it("returns -157.12 in loss per month with these settings", () => {
             //arrange
-            var settings = {
+            const settings = {
                 tradePpg: 3.15,
                 tradeMpg: 40,
                 newPpg: 3.75,
@@ -114,7 +114,7 @@ describe('Fuel Savings Calculator', () => {
             };
 
             //act
-            var savingsPerMonth = Calculator().calculateSavingsPerMonth(settings);
+            const savingsPerMonth = Calculator().calculateSavingsPerMonth(settings);
             
             //assert
             savingsPerMonth.should.equal(-157.12);
