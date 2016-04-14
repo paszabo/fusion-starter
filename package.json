@@ -8,7 +8,7 @@
     "start": "npm-run-all --parallel test:watch open:src lint",
     "open:src": "babel-node tools/srcServer.js",
     "open:dist": "babel-node tools/distServer.js",
-    "lint": "node_modules/.bin/esw --watch src",
+    "lint": "node_modules/.bin/esw --watch webpack.config.* src tools",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "node_modules/.bin/rimraf ./dist",
     "build:html": "babel-node tools/buildHtml.js",
