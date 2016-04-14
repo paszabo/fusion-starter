@@ -1,18 +1,14 @@
-// Tests are placed alongside files under test.
-// This file does the following:
-// 1. Registers babel for transpiling our code for testing
-// 2. Disables Webpack-specific features that Mocha doesn't understand.
-// 3. Requires jsdom so we can test via an in-memory DOM in Node
-// 4. Sets up global vars that mimic a browser.
-
-/*eslint-disable no-var*/
-
-process.env.NODE_ENV = 'production'; // this assures the .babelrc dev config doesn't apply.
-
-require('babel-register')();
+// This file is written in ES5 since it's not
+// transpiled by Babel.
 var glob = require('glob');
 
-// Warn if no test files are found. Mocha will present a crypic message otherwise.
+// 1. Register babel for transpiling our code for testing
+require('babel-register')();
+
+// 2. Set NODE_ENV to production to assure the .babelrc dev config doesn't apply.
+process.env.NODE_ENV = 'production';
+
+// 3. Warn if no test files are found. Mocha will present a crypic message otherwise.
 glob("src/**/*.spec.js", {}, function(err, files) {
   if (files.length === 0) {
     console.warn(`No tests found in the src directory. Create at least one test file in the src directory ending in .spec.js. Or, disable tests.`); // eslint-disable-line no-console
@@ -20,16 +16,16 @@ glob("src/**/*.spec.js", {}, function(err, files) {
   }
 });
 
-// Disable webpack-specific features for tests since
+// 4. Disable webpack-specific features for tests since
 // Mocha doesn't know what to do with them.
 require.extensions['.css'] = function(){ return null; };
 require.extensions['.png'] = function(){ return null; };
 require.extensions['.jpg'] = function(){ return null; };
 
-// Configure JSDOM and set global variables
+// 5. Configure JSDOM and set global variables
 // to simulate a browser environment for tests.
+// This way we can test via an in-memory DOM in Node
 var jsdom = require('jsdom').jsdom;
-
 var exposedProperties = ['window', 'navigator', 'document'];
 
 global.document = jsdom('');
