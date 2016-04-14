@@ -14,7 +14,7 @@ describe('Fuel Savings App', () => {
 
   it('should display results when they can be calculated', () => {
     //arrange
-    const fuelSavings = initialState.fuelSavings;
+    const fuelSavings = Object.assign({}, initialState.fuelSavings);
     fuelSavings.tradeMpg = 20;
     fuelSavings.newMpg = 20;
     fuelSavings.tradePpg = 1.20;
