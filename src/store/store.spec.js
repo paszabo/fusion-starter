@@ -1,4 +1,4 @@
-import * as ActionTypes from '../actions/ActionTypes';
+import * as ActionTypes from '../actions/actionTypes';
 import { createStore } from 'redux';
 import { expect } from 'chai';
 import rootReducer from '../reducers';
@@ -17,7 +17,7 @@ describe('Store', function() {
       { type: ActionTypes.CALCULATE_FUEL_SAVINGS, settings: store.getState(), fieldName: 'tradePpg', value: 1.50 },
       { type: ActionTypes.CALCULATE_FUEL_SAVINGS, settings: store.getState(), fieldName: 'milesDriven', value: 100 },
       { type: ActionTypes.CALCULATE_FUEL_SAVINGS, settings: store.getState(), fieldName: 'milesDrivenTimeframe', value: 'month' }
-    ]
+    ];
     actions.forEach(action => store.dispatch(action));
 
     const actual = store.getState();
@@ -47,7 +47,7 @@ describe('Store', function() {
       { type: ActionTypes.CALCULATE_FUEL_SAVINGS, settings: store.getState(), fieldName: 'tradePpg', value: 1.50 },
       { type: ActionTypes.CALCULATE_FUEL_SAVINGS, settings: store.getState(), fieldName: 'milesDriven', value: 100 },
       { type: ActionTypes.CALCULATE_FUEL_SAVINGS, settings: store.getState(), fieldName: 'milesDrivenTimeframe', value: 'month' }
-    ]
+    ];
 
     actions.forEach(action => store.dispatch(action));
 
@@ -91,7 +91,7 @@ describe('Store', function() {
       { type: ActionTypes.CALCULATE_FUEL_SAVINGS, settings: store.getState(), fieldName: 'newMpg', value: 20 },
       { type: ActionTypes.CALCULATE_FUEL_SAVINGS, settings: store.getState(), fieldName: 'tradeMpg', value: 10 },
       { type: ActionTypes.CALCULATE_FUEL_SAVINGS, settings: store.getState(), fieldName: 'newPpg', value: 1.50 }
-    ]
+    ];
     actions.forEach(action => store.dispatch(action));
 
     const lastGoodSavings = calculator().calculateSavings(store.getState().fuelSavings);
@@ -100,7 +100,7 @@ describe('Store', function() {
       { type: ActionTypes.CALCULATE_FUEL_SAVINGS, settings: store.getState(), fieldName: 'tradePpg', value: 0 },
       { type: ActionTypes.CALCULATE_FUEL_SAVINGS, settings: store.getState(), fieldName: 'milesDriven', value: 100 },
       { type: ActionTypes.CALCULATE_FUEL_SAVINGS, settings: store.getState(), fieldName: 'milesDrivenTimeframe', value: 'year' }
-    ]
+    ];
 
     // actions.push(...moreActions);
     moreActions.forEach(action => store.dispatch(action));
