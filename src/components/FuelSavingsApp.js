@@ -28,10 +28,6 @@ class FuelSavingsApp extends React.Component {
 
     return (
       <div>
-        <img src={require("../images/gas-pump.jpg")} width="50" height="50"
-             title="Note that this image uses a traditional source tag because it's size is above the file size threshold specified in the require statement."/>
-        <img src={require("../images/gas-pump-icon.png")} width="16" height="16"
-             title="Note that this small image is base64 encoded to save an HTTP request because it's below the file size threshold specified in the require statement."/>
         <h2>Fuel Savings Analysis</h2>
         <table>
           <tbody>
@@ -55,7 +51,7 @@ class FuelSavingsApp extends React.Component {
             <td><label htmlFor="milesDriven">Miles Driven</label></td>
             <td>
               <FuelSavingsTextInput onChange={this.fuelSavingsKeypress} name="milesDriven" value={settings.milesDriven}/>
-              miles per
+              {" miles per "}
               <select name="milesDrivenTimeframe" onChange={this.onTimeframeChange} value={settings.milesDrivenTimeframe}>
                 <option value="week">Week</option>
                 <option value="month">Month</option>
