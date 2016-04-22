@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {fetchCustomers} from '../actions/customerActions';
 
-// This component shows an example of firing off an AJAX call
-// to an existing service.
 class Customers extends React.Component {
   onFetchCustomersClick(event) {
     event.preventDefault();
@@ -13,6 +13,8 @@ class Customers extends React.Component {
 
     return (
       <div>
+        <h1>Customers</h1>
+        <p>This simple app shows how to use <a href="https://github.com/gaearon/redux-thunk">redux-thunk</a> to make AJAX calls.</p>
         {loading && <h1>Loading...</h1>}
         <a href="#" onClick={this.onFetchCustomersClick}>Fetch customers via AJAX</a>
         {customers.length > 0 && <p> {customers.length} customers found.</p>}
@@ -27,5 +29,18 @@ Customers.propTypes = {
   loading: PropTypes.bool.isRequired
 };
 
-export default Customers;
+function mapStateToProps(state, ownProps) {
+  return {
+    customers: state.customers,
+    loading: state.loadingStatus
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchCustomers: () => dispatch(fetchCustomers())
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Customers);
 

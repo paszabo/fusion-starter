@@ -1,6 +1,9 @@
 import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
 import FuelSavingsResults from './FuelSavingsResults';
 import FuelSavingsTextInput from './FuelSavingsTextInput';
+import * as fuelSavingsActions from '../actions/fuelSavingsActions';
 
 class FuelSavingsApp extends React.Component {
   constructor(props, context) {
@@ -80,4 +83,24 @@ FuelSavingsApp.propTypes = {
   fuelSavings: PropTypes.object.isRequired
 };
 
-export default FuelSavingsApp;
+// Tell Redux exactly what state slice we want from the global state
+// Note that state.fuelSavingsAppState below is the name of
+// the reducer function in /reducers/fuelSavings.js
+function mapStateToProps(state) {
+  return {
+    fuelSavings: state.fuelSavings,
+    loading: state.ajaxCallsInProgress > 0
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    // Bindactioncreators will wrap all actions in fuelSavingsActions
+    // in a dispatch call so they're all available to the component
+    // above on this.props.fuelSavingsActions.
+    // See the Customer's App for an example of an alternative approach.
+    actions: bindActionCreators(fuelSavingsActions, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FuelSavingsApp);
