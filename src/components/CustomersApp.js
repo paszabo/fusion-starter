@@ -16,7 +16,10 @@ class Customers extends React.Component {
         <h1>Customers</h1>
         <p>This simple app shows how to use <a href="https://github.com/gaearon/redux-thunk">redux-thunk</a> to make AJAX calls.</p>
         {loading && <h1>Loading...</h1>}
-        <a href="#" onClick={this.onFetchCustomersClick}>Fetch customers via AJAX</a>
+        <input type="submit"
+               value="Get Customers"
+               className="btn btn-primary"
+               onClick={this.onFetchCustomersClick}/>
         {customers.length > 0 && <p> {customers.length} customers found.</p>}
       </div>
     );
@@ -32,7 +35,7 @@ Customers.propTypes = {
 function mapStateToProps(state, ownProps) {
   return {
     customers: state.customers,
-    loading: state.loadingStatus
+    loading: state.loadingStatus.ajaxCallsInProgress > 0
   };
 }
 
