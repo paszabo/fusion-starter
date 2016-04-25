@@ -4,6 +4,7 @@
 // Require Browsersync along with webpack and middleware for it
 import browserSync from 'browser-sync';
 import webpack from 'webpack';
+import historyApiFallback from 'connect-history-api-fallback';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import config from '../webpack.config.dev';
@@ -35,7 +36,10 @@ browserSync({
       }),
 
       // bundler should be the same as above
-      webpackHotMiddleware(bundler)
+      webpackHotMiddleware(bundler),
+
+      // Support reloading deep links on the client during dev.
+      historyApiFallback()
     ]
   },
 

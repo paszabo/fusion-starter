@@ -31,7 +31,7 @@ class FuelSavingsApp extends React.Component {
 
     return (
       <div>
-        <h2>Fuel Savings Analysis</h2>
+        <h1>Fuel Savings</h1>
         <table>
           <tbody>
           <tr>
@@ -99,7 +99,7 @@ function mapDispatchToProps(dispatch) {
     // in a dispatch call so they're all available to the component
     // above on this.props.fuelSavingsActions.
     // See the Customer's App for an example of an alternative approach.
-    actions: bindActionCreators(fuelSavingsActions, dispatch),
+    actions: bindActionCreators(fuelSavingsActions, dispatch)
   };
 }
 
