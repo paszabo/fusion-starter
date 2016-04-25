@@ -1,8 +1,6 @@
 import React, {PropTypes} from 'react';
 import Button from 'react-bootstrap/lib/Button';
 import ButtonGroup from 'react-bootstrap/lib/ButtonGroup';
-import Popover from 'react-bootstrap/lib/Popover';
-import Tooltip from 'react-bootstrap/lib/Tooltip';
 import BootstrapModal from './gallery/BootstrapModalExample';
 import DraftJs from './gallery/DraftJsExample';
 
