@@ -2,7 +2,6 @@ import React, {PropTypes} from 'react';
 import Button from 'react-bootstrap/lib/Button';
 import ButtonGroup from 'react-bootstrap/lib/ButtonGroup';
 import BootstrapModal from './gallery/BootstrapModalExample';
-import DraftJs from './gallery/DraftJsExample';
 
 class ComponentGallery extends React.Component {
   render() {
