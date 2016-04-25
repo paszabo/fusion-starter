@@ -10,9 +10,6 @@ class ComponentGallery extends React.Component {
         <h1>Component Gallery</h1>
         <p>Recommended components:</p>
 
-        <h2><a href="https://facebook.github.io/draft-js/">Draft.js</a></h2>
-        <DraftJs/>
-
         <h2><a href="https://react-bootstrap.github.io">React Bootstrap</a></h2>
         <h3>Button</h3>
         <Button bsStyle="success">Success</Button>
