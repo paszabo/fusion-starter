@@ -34,7 +34,7 @@ export default {
   ],
   module: {
     loaders: [
-      {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
+      {test: /(\.js|\.jsx)$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
       {test: /(\.css|\.scss)$/, loader: ExtractTextPlugin.extract("css?sourceMap!sass?sourceMap")},
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file"},
       {test: /\.(woff|woff2)$/, loader: "url?prefix=font/&limit=5000"},
@@ -46,6 +46,6 @@ export default {
     alias: {
       'react': path.join(__dirname, 'node_modules', 'react')
     },
-    extensions: ['', '.js']
+    extensions: ['', '.js', '.jsx']
   }
 };

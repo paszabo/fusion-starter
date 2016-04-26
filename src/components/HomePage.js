@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import Jumbotron from 'react-bootstrap/lib/Jumbotron'
+import Jumbotron from 'react-bootstrap/lib/Jumbotron';
 
 const HomePage = (props) => {
   return (
