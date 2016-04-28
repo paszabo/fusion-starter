@@ -5,10 +5,26 @@ var glob = require('glob');
 // 1. Register babel for transpiling our code for testing
 require('babel-register')();
 
-// 2. Set NODE_ENV to production to assure the .babelrc dev config doesn't apply.
+/* 2. Set NODE_ENV to production
+   This setting assures the .babelrc dev config (which includes
+   hot module reloading code) doesn't apply for tests.
+   But also, setting the environment to prod here
+   assures that our tests are run against the
+   production version of React which has 3 advantages:
+   1. It runs faster
+   2. It assures we're testing the final prod code (obviously)
+   3. We don't have to pass all required PropTypes in our tests.
+   If we set the environment to something other than production
+   then we have to pass every required propType or propType warnings
+   will litter our test results.
+
+   However, it also has a downside:
+   1. You won't see any PropType validation warnings, since the
+   code is running in prod mode.
+ */
 process.env.NODE_ENV = 'production';
 
-// 3. Warn if no test files are found. Mocha will present a crypic message otherwise.
+// 3. Warn if no test files are found. Mocha will present a cryptic message otherwise.
 glob("src/**/*.spec.js", {}, function(err, files) {
   if (files.length === 0) {
     console.warn(`No tests found in the src directory. Create at least one test file in the src directory ending in .spec.js. Or, disable tests.`); // eslint-disable-line no-console
