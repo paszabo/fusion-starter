@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FuelSavingsResults from './FuelSavingsResults';
 import FuelSavingsTextInput from './FuelSavingsTextInput';
-import * as fuelSavingsActions from '../actions/fuelSavingsActions';
+import * as fuelSavingsActions from '../../actions/fuelSavingsActions';
 
 class FuelSavingsApp extends React.Component {
   constructor(props, context) {

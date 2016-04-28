@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import Button from 'react-bootstrap/lib/Button';
 import ButtonGroup from 'react-bootstrap/lib/ButtonGroup';
-import BootstrapModal from './gallery/BootstrapModalExample';
+import BootstrapModal from './BootstrapModalExample';
 
 const ComponentGallery = (props) => {
   return (

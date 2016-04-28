@@ -2,7 +2,7 @@ import React from 'react';
 import {expect} from 'chai';
 import { mount, shallow } from 'enzyme';
 import FuelSavingsApp from './FuelSavingsApp';
-import initialState from '../reducers/initialState';
+import initialState from '../../reducers/initialState';
 
 describe('Fuel Savings App', () => {
   // it('should hide results when they cannot be calculated', () => {
