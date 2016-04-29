@@ -7,7 +7,7 @@ const ComponentGallery = (props) => {
   return (
     <div>
       <h1>Component Gallery</h1>
-      <p>Recommended components:</p>
+      <p>This gallery displays examples of suggested React components.</p>
 
       <h2><a href="https://react-bootstrap.github.io">React Bootstrap</a></h2>
       <h3>Button</h3>
