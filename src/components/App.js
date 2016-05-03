@@ -3,7 +3,7 @@ import { Link, IndexLink } from 'react-router';
 
 const App = ({children}) => {
   return (
-    <div>
+    <div className="container-fluid">
       <IndexLink to="/">Home</IndexLink>
       {" | "}
       <Link to="components">Components</Link>
