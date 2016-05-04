@@ -12,19 +12,19 @@ class FuelSavingsForm extends React.Component {
   }
 
   onTimeframeChange(e) {
-    this.props.calculateFuelSavings(this.props.appState, 'milesDrivenTimeframe', e.target.value);
+    this.props.calculateFuelSavings(this.props.fuelSavings, 'milesDrivenTimeframe', e.target.value);
   }
 
   fuelSavingsKeypress(name, value) {
-    this.props.calculateFuelSavings(this.props.appState, name, value);
+    this.props.calculateFuelSavings(this.props.fuelSavings, name, value);
   }
 
   save() {
-    this.props.saveFuelSavings(this.props.appState);
+    this.props.saveFuelSavings(this.props.fuelSavings);
   }
 
   render() {
-    const {appState} = this.props;
+    const {fuelSavings} = this.props;
 
     return (
       <div>
@@ -33,27 +33,27 @@ class FuelSavingsForm extends React.Component {
           <tbody>
           <tr>
             <td><label htmlFor="newMpg">New Vehicle MPG</label></td>
-            <td><FuelSavingsTextInput onChange={this.fuelSavingsKeypress} name="newMpg" value={appState.newMpg}/></td>
+            <td><FuelSavingsTextInput onChange={this.fuelSavingsKeypress} name="newMpg" value={fuelSavings.newMpg}/></td>
           </tr>
           <tr>
             <td><label htmlFor="tradeMpg">Trade-in MPG</label></td>
-            <td><FuelSavingsTextInput onChange={this.fuelSavingsKeypress} name="tradeMpg" value={appState.tradeMpg}/></td>
+            <td><FuelSavingsTextInput onChange={this.fuelSavingsKeypress} name="tradeMpg" value={fuelSavings.tradeMpg}/></td>
           </tr>
           <tr>
             <td><label htmlFor="newPpg">New Vehicle price per gallon</label></td>
-            <td><FuelSavingsTextInput onChange={this.fuelSavingsKeypress} name="newPpg" value={appState.newPpg}/></td>
+            <td><FuelSavingsTextInput onChange={this.fuelSavingsKeypress} name="newPpg" value={fuelSavings.newPpg}/></td>
           </tr>
           <tr>
             <td><label htmlFor="tradePpg">Trade-in price per gallon</label></td>
-            <td><FuelSavingsTextInput onChange={this.fuelSavingsKeypress} name="tradePpg" value={appState.tradePpg}/></td>
+            <td><FuelSavingsTextInput onChange={this.fuelSavingsKeypress} name="tradePpg" value={fuelSavings.tradePpg}/></td>
           </tr>
           <tr>
             <td><label htmlFor="milesDriven">Miles Driven</label></td>
             <td>
-              <FuelSavingsTextInput onChange={this.fuelSavingsKeypress} name="milesDriven" value={appState.milesDriven}/>
+              <FuelSavingsTextInput onChange={this.fuelSavingsKeypress} name="milesDriven" value={fuelSavings.milesDriven}/>
               miles
               per
-              <select name="milesDrivenTimeframe" onChange={this.onTimeframeChange} value={appState.milesDrivenTimeframe}>
+              <select name="milesDrivenTimeframe" onChange={this.onTimeframeChange} value={fuelSavings.milesDrivenTimeframe}>
                 <option value="week">Week</option>
                 <option value="month">Month</option>
                 <option value="year">Year</option>
@@ -62,14 +62,14 @@ class FuelSavingsForm extends React.Component {
           </tr>
           <tr>
             <td><label>Date Modified</label></td>
-            <td>{appState.dateModified}</td>
+            <td>{fuelSavings.dateModified}</td>
           </tr>
           </tbody>
         </table>
 
         <hr/>
 
-        {appState.necessaryDataIsProvidedToCalculateSavings && <FuelSavingsResults savings={appState.savings}/>}
+        {fuelSavings.necessaryDataIsProvidedToCalculateSavings && <FuelSavingsResults savings={fuelSavings.savings}/>}
         <input type="submit" value="Save" onClick={this.save}/>
       </div>
     );
@@ -79,7 +79,7 @@ class FuelSavingsForm extends React.Component {
 FuelSavingsForm.propTypes = {
   saveFuelSavings: PropTypes.func.isRequired,
   calculateFuelSavings: PropTypes.func.isRequired,
-  appState: PropTypes.object.isRequired
+  fuelSavings: PropTypes.object.isRequired
 };
 
 export default FuelSavingsForm;

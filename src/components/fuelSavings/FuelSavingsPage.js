@@ -35,20 +35,20 @@ export class FuelSavingsPage extends React.Component {
       <FuelSavingsForm
         saveFuelSavings={this.props.actions.saveFuelSavings}
         calculateFuelSavings={this.props.actions.calculateFuelSavings}
-        appState={this.props.appState}
+        fuelSavings={this.props.fuelSavings}
       />
-    )
+    );
   }
 }
 
 FuelSavingsPage.propTypes = {
   actions: PropTypes.object.isRequired,
-  appState: PropTypes.object.isRequired
+  fuelSavings: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    appState: state.fuelSavings
+    fuelSavings: state.fuelSavings
   };
 }
 
