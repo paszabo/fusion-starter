@@ -1,5 +1,5 @@
 // This file is written in ES5 since it's not transpiled by Babel.
-/*eslint-disable no-var */
+/* eslint-disable no-var */
 var glob = require('glob');
 
 // 1. Register babel for transpiling our code for testing
@@ -57,4 +57,4 @@ global.navigator = {
   userAgent: 'node.js'
 };
 
-documentRef = document; //eslint-disable-line no-undef
+documentRef = document; // eslint-disable-line no-undef

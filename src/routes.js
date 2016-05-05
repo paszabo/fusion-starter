@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, IndexRoute} from 'react-router';
 import App from './components/App';
-import FuelSavingsPage from './components/fuelSavings/FuelSavingsPage'; //eslint-disable-line import/no-named-as-default
+import FuelSavingsPage from './components/fuelSavings/FuelSavingsPage'; // eslint-disable-line import/no-named-as-default
 import CustomersPage from './components/customers/CustomersPage';
 import ComponentGallery from './components/gallery/ComponentGallery';
 import HomePage from './components/HomePage';
