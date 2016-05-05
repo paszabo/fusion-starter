@@ -6,8 +6,7 @@ class NumberFormatter {
       return '';
     }
 
-    value = this.getFormattedNumber(value);
-    return '$' + value;
+    return '$' + this.getFormattedNumber(value);
   }
 
   static getFormattedNumber(value) {

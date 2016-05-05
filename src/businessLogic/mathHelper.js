@@ -20,12 +20,12 @@ class MathHelper {
     return total / 100; // convert back into dollars
   }
 
-  static convertToPennies(dollarValue) {
-    if (dollarValue === 0) {
+  static convertToPennies(val) {
+    if (val === 0) {
       return 0;
     }
 
-    dollarValue = parseFloat(dollarValue);
+    let dollarValue = parseFloat(val);
     dollarValue = this.roundNumber(dollarValue, 2); // round to 2 decimal places.
     const dollarValueContainsDecimal = (dollarValue.toString().indexOf(".") !== -1);
     return (dollarValueContainsDecimal) ? parseInt(dollarValue.toString().replace('.', '')) : parseInt(dollarValue) * 100;
