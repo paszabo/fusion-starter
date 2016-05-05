@@ -32,7 +32,7 @@ Customers.propTypes = {
   loading: PropTypes.bool.isRequired
 };
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
   return {
     customers: state.customers,
     loading: state.loadingStatus.ajaxCallsInProgress > 0

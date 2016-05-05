@@ -16,7 +16,7 @@ export default function fuelSavingsReducer(state = initialState.fuelSavings, act
 
 	switch (action.type) {
 		case SAVE_FUEL_SAVINGS:
-			//in a real app we'd trigger an AJAX call here. For this example, just simulating a save by changing date modified.
+			// in a real app we'd trigger an AJAX call here. For this example, just simulating a save by changing date modified.
 			return objectAssign({}, state, { dateModified: dateHelper.getFormattedDateTime(new Date()) });
 
 		case CALCULATE_FUEL_SAVINGS:

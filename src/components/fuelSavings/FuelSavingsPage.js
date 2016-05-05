@@ -29,8 +29,6 @@ export class FuelSavingsPage extends React.Component {
   }
 
   render() {
-    const settings = this.props.fuelSavings;
-
     return (
       <FuelSavingsForm
         saveFuelSavings={this.props.actions.saveFuelSavings}

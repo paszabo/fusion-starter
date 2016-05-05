@@ -1,4 +1,4 @@
-import {REQUEST_CUSTOMERS, RECEIVE_CUSTOMERS} from '../actions/actionTypes';
+import {RECEIVE_CUSTOMERS} from '../actions/actionTypes';
 import initialState from './initialState';
 import objectAssign from 'object-assign';
 

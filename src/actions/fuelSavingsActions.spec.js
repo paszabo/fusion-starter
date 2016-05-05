@@ -1,4 +1,3 @@
-import React from 'react';
 import { expect } from 'chai';
 import * as ActionCreators from './fuelSavingsActions';
 import * as ActionTypes from './actionTypes';

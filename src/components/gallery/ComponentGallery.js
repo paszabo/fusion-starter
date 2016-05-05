@@ -1,9 +1,9 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
 import ButtonGroup from 'react-bootstrap/lib/ButtonGroup';
 import BootstrapModal from './BootstrapModalExample';
 
-const ComponentGallery = (props) => {
+const ComponentGallery = () => {
   return (
     <div>
       <h1>Component Gallery</h1>

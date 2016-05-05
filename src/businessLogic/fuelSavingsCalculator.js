@@ -1,19 +1,19 @@
 import mathHelper from './mathHelper';
 import NumberFormatter from './numberFormatter';
 
-//This file uses the factory function pattern instead of a class.
-//Just showing an alternative to using a class.
-//This declares a function with a private method.
-//The public function returns an object literal.
-//Could arguably be called FuelSavingCalculatorFactory.
+// This file uses the factory function pattern instead of a class.
+// Just showing an alternative to using a class.
+// This declares a function with a private method.
+// The public function returns an object literal.
+// Could arguably be called FuelSavingCalculatorFactory.
 let fuelSavingsCalculator = function() {
-    //private
+    // private
     let calculateMonthlyCost = function(milesDrivenPerMonth, ppg, mpg) {
         let gallonsUsedPerMonth = milesDrivenPerMonth / mpg;
         return gallonsUsedPerMonth * ppg;
     };
 
-    //public
+    // public
     return {
         calculateMilesDrivenPerMonth: function(milesDriven, milesDrivenTimeframe) {
           const monthsPerYear = 12;

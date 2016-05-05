@@ -1,7 +1,7 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import Jumbotron from 'react-bootstrap/lib/Jumbotron';
 
-const HomePage = (props) => {
+const HomePage = () => {
   return (
     <Jumbotron>
       <h1>Vin React Starter Kit</h1>

@@ -1,11 +1,11 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
 import Modal from 'react-bootstrap/lib/Modal';
 import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
 import Popover from 'react-bootstrap/lib/Popover';
 import Tooltip from 'react-bootstrap/lib/Tooltip';
 
-/*eslint-disable react/no-set-state*/
+/* eslint-disable react/no-set-state*/
 
 class BootstrapModalExample extends React.Component {
   constructor(props, context) {

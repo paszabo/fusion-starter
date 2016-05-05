@@ -6,17 +6,17 @@ chai.should();
 describe('Fuel Savings Calculator', () => {
     describe('necessaryDataIsProvidedToCalculateSavings', () => {
         it('returns false when necessary data isn\'t provided', () => {
-            //arrange
+            // arrange
             let settings = {
                 newMpg: 20
             };
 
-            //assert
+            // assert
             Calculator().necessaryDataIsProvidedToCalculateSavings(settings).should.equal(false);
         });
 
         it('returns true when necessary data is provided', () => {
-            //arrange
+            // arrange
             let settings = { 
                 newMpg: 20,
                 tradeMpg: 10,
@@ -25,49 +25,49 @@ describe('Fuel Savings Calculator', () => {
                 milesDriven: 100
             };
 
-            //assert
+            // assert
             Calculator().necessaryDataIsProvidedToCalculateSavings(settings).should.equal(true);
         });
     });
 
     describe("milesPerMonth", () => {
         it("converts a weekly timeframe to a monthly timeframe", () => {
-            //arrange
+            // arrange
             const milesPerWeek = 100;
 
-            //act
+            // act
             const milesPerMonth = Calculator().calculateMilesDrivenPerMonth(milesPerWeek, 'week');
             
-            //assert
+            // assert
             milesPerMonth.should.equal(433.3333333333333);
         });
 
         it("returns a monthly timeframe untouched", () => {
-            //arrange
+            // arrange
             const milesPerMonth = 300;
 
-            //act
+            // act
             const milesPerMonthCalculated = Calculator().calculateMilesDrivenPerMonth(milesPerMonth, 'month');
             
-            //assert
+            // assert
             milesPerMonthCalculated.should.equal(milesPerMonth); 
         });
 
         it("converts a yearly timeframe to a monthly timeframe", () => {
-            //arrange
+            // arrange
             const milesPerYear = 1200;
             
-            //act
+            // act
             const milesPerMonth = Calculator().calculateMilesDrivenPerMonth(milesPerYear, 'year');
             
-            //assert
+            // assert
             milesPerMonth.should.equal(100);
         });
     });
 
     describe("calculateSavingsPerMonth", () => {
         it("returns 29.93 in savings per month with these settings", () => {
-            //arrange
+            // arrange
             const settings = {
                 tradePpg: 3.75,
                 tradeMpg: 24,
@@ -77,15 +77,15 @@ describe('Fuel Savings Calculator', () => {
                 milesDrivenTimeframe: 'week'
             };
 
-            //act
+            // act
             const savingsPerMonth = Calculator().calculateSavingsPerMonth(settings);
             
-            //assert
+            // assert
             savingsPerMonth.should.equal(29.93);
         });
 
         it("returns 40.83 in savings per month with these settings", () => {
-            //arrange
+            // arrange
             const settings = {
                 tradePpg: 4.15,
                 tradeMpg: 24,
@@ -95,15 +95,15 @@ describe('Fuel Savings Calculator', () => {
                 milesDrivenTimeframe: 'month'
             };
 
-            //act
+            // act
             const savingsPerMonth = Calculator().calculateSavingsPerMonth(settings);
             
-            //assert
+            // assert
             savingsPerMonth.should.equal(40.83);
         });
 
         it("returns -157.12 in loss per month with these settings", () => {
-            //arrange
+            // arrange
             const settings = {
                 tradePpg: 3.15,
                 tradeMpg: 40,
@@ -113,10 +113,10 @@ describe('Fuel Savings Calculator', () => {
                 milesDrivenTimeframe: 'year'
             };
 
-            //act
+            // act
             const savingsPerMonth = Calculator().calculateSavingsPerMonth(settings);
             
-            //assert
+            // assert
             savingsPerMonth.should.equal(-157.12);
         });
     });

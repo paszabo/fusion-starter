@@ -24,7 +24,7 @@ describe('<FuelSavingsTextInput />', () => {
     const actual = wrapper.type();
     const expected = 'input';
 
-    actual.should.be.to.equal(expected);
+    actual.should.equal(expected);
   });
 
   it('should handle change', () => {
@@ -40,6 +40,7 @@ describe('<FuelSavingsTextInput />', () => {
     const actual = wrapper.type();
     const expected = 'input';
 
+    actual.should.equal(expected);
     props.onChange.should.not.have.been.called;
     wrapper.simulate('change', { target: { value: 101 }});
     props.onChange.should.have.been.calledWith('newMpg', 101);
