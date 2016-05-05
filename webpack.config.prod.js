@@ -8,13 +8,13 @@ const GLOBALS = {
   __DEV__: false
 };
 
-//NOTE: The resolve section at the bottom is necessary
-//to keep material-ui happy by assuring all references
-//to React point to the same spot.
+// NOTE: The resolve section at the bottom is necessary
+// to keep material-ui happy by assuring all references
+// to React point to the same spot.
 export default {
   debug: true,
-  devtool: 'source-map', //more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
-  noInfo: true, //set to false to see a list of every file being bundled.
+  devtool: 'source-map', // more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
+  noInfo: true, // set to false to see a list of every file being bundled.
   entry: './src/index',
   target: 'web',
   output: { // Note: Only prod environment actually outputs files.
@@ -24,7 +24,7 @@ export default {
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.DefinePlugin(GLOBALS), //Passes variables to Webpack. https://facebook.github.io/react/downloads.html
+    new webpack.DefinePlugin(GLOBALS), // Passes variables to Webpack. https://facebook.github.io/react/downloads.html
     new ExtractTextPlugin('styles.css'),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
