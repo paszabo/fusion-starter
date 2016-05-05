@@ -1,4 +1,4 @@
-import { LOADING, LOADING_COMPLETE} from '../actions/actionTypes';
+import {LOADING, LOADING_COMPLETE} from '../actions/actionTypes';
 import initialState from './initialState';
 
 // IMPORTANT: Note that with Redux, state should NEVER be changed.
@@ -8,17 +8,17 @@ import initialState from './initialState';
 // and update values on the copy.
 export default function loadingStatusReducer(state = initialState.ajaxCallsInProgress, action) {
   switch (action.type) {
-    case LOADING:
-      return Object.assign({}, state, {
-        ajaxCallsInProgress: state.ajaxCallsInProgress + 1
-      });
+  case LOADING:
+    return Object.assign({}, state, {
+      ajaxCallsInProgress: state.ajaxCallsInProgress + 1
+    });
 
-    case LOADING_COMPLETE:
-      return Object.assign({}, state, {
-        ajaxCallsInProgress: state.ajaxCallsInProgress - 1
-      });
+  case LOADING_COMPLETE:
+    return Object.assign({}, state, {
+      ajaxCallsInProgress: state.ajaxCallsInProgress - 1
+    });
 
-    default:
-      return state;
+  default:
+    return state;
   }
 }

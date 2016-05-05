@@ -10,10 +10,10 @@ import objectAssign from 'object-assign';
 // This function is wired up in with the top level component in /containers.App.js
 export default function customerReducer(state = initialState.customers, action) {
   switch (action.type) {
-    case RECEIVE_CUSTOMERS:
-      return objectAssign({}, state, { customers: action.customers } );
+  case RECEIVE_CUSTOMERS:
+    return objectAssign({}, state, {customers: action.customers});
 
-    default:
-      return state;
+  default:
+    return state;
   }
 }

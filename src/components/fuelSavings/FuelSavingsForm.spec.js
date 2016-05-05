@@ -11,7 +11,7 @@ describe('<FuelSavingsForm />', () => {
   it('should contain <FuelSavingsTextInput /> components', () => {
     const saveFuelSavings = () => {};
     const calculateFuelSavings = () => {};
-    const fuelSavings =  {
+    const fuelSavings = {
       newMpg: 20,
       tradeMpg: 10,
       newPpg: 1.50,
@@ -51,7 +51,7 @@ describe('<FuelSavingsForm />', () => {
   it('should contain options to change miles driven timeframe', () => {
     const saveFuelSavings = () => {};
     const calculateFuelSavings = () => {};
-    const fuelSavings =  {
+    const fuelSavings = {
       newMpg: 20,
       tradeMpg: 10,
       newPpg: 1.50,
@@ -85,7 +85,7 @@ describe('<FuelSavingsForm />', () => {
   it('should contain <FuelSavingsResults /> when necessary conditions are met', () => {
     const saveFuelSavings = () => {};
     const calculateFuelSavings = () => {};
-    const fuelSavings =  {
+    const fuelSavings = {
       newMpg: 20,
       tradeMpg: 10,
       newPpg: 1.50,
@@ -176,7 +176,7 @@ describe('<FuelSavingsForm />', () => {
   it('should submit appState', () => {
     const saveFuelSavings = sinon.spy();
     const calculateFuelSavings = () => {};
-    const fuelSavings =  {
+    const fuelSavings = {
       newMpg: 20,
       tradeMpg: 10,
       newPpg: 1.50,
@@ -207,7 +207,7 @@ describe('<FuelSavingsForm />', () => {
   it('should calculate fuel savings on text input change', () => {
     const saveFuelSavings = () => {};
     const calculateFuelSavings = sinon.spy();
-    const fuelSavings =  {
+    const fuelSavings = {
       newMpg: 20,
       tradeMpg: 10,
       newPpg: 1.50,
@@ -238,7 +238,7 @@ describe('<FuelSavingsForm />', () => {
   it('should calculate fuel savings on miles driven timeframe change', () => {
     const saveFuelSavings = () => {};
     const calculateFuelSavings = sinon.spy();
-    const fuelSavings =  {
+    const fuelSavings = {
       newMpg: 20,
       tradeMpg: 10,
       newPpg: 1.50,
