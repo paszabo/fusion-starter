@@ -5,7 +5,6 @@ import dateHelper from '../businessLogic/dateHelper';
 import initialState from './initialState';
 
 describe('Reducers::FuelSavings', function() {
-
   const getInitialState = () => {
     return Object.assign({}, initialState.fuelSavings);
   };

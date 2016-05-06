@@ -9,7 +9,6 @@ chai.use(sinonChai);
 
 
 describe('<FuelSavingsTextInput />', () => {
-
   it('should be an input element', () => {
     const props = {
       name: 'testName',
