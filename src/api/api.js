@@ -4,7 +4,7 @@
 // Axois weighs about 20k. But note that jQuery's promise implementation is quirky.
 import axios from 'axios';
 
-let api = null;
+const api = null;
 
 const getBaseUrl = function() {
   const inDevelopment = window.location.hostname == 'localhost';

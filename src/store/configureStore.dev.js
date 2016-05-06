@@ -12,7 +12,7 @@ import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 // and the moment it reaches the reducer. You can do other things like log, crash report, route, and so on.
 // Thunk middleware lets us dispatch() functions, (useful for handling ajax calls in reducers)
 export default function configureStore(initialState) {
-  let store = createStore(
+  const store = createStore(
     rootReducer,
     initialState,
     compose(

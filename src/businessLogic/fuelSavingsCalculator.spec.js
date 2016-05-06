@@ -5,7 +5,7 @@ describe('Fuel Savings calculator', () => {
   describe('necessaryDataIsProvidedToCalculateSavings', () => {
     it('returns false when necessary data isn\'t provided', () => {
       // arrange
-      let settings = {
+      const settings = {
         newMpg: 20
       };
 
@@ -15,7 +15,7 @@ describe('Fuel Savings calculator', () => {
 
     it('returns true when necessary data is provided', () => {
       // arrange
-      let settings = {
+      const settings = {
         newMpg: 20,
         tradeMpg: 10,
         newPpg: 1.50,

@@ -12,7 +12,7 @@ import initialState from './initialState';
 // This function is wired up in with the top level component in /containers.App.js
 export default function fuelSavingsReducer(state = initialState.fuelSavings, action) {
   let newState;
-  let calc = calculator();
+  const calc = calculator();
 
   switch (action.type) {
   case SAVE_FUEL_SAVINGS:
