@@ -27,7 +27,7 @@ class MathHelper {
 
     let dollarValue = parseFloat(val);
     dollarValue = this.roundNumber(dollarValue, 2); // round to 2 decimal places.
-    const dollarValueContainsDecimal = (dollarValue.toString().indexOf(".") !== -1);
+    const dollarValueContainsDecimal = (dollarValue.toString().indexOf('.') !== -1);
     return (dollarValueContainsDecimal) ? parseInt(dollarValue.toString().replace('.', ''), 10) : parseInt(dollarValue, 10) * 100;
   }
 }

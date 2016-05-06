@@ -30,8 +30,8 @@ describe('Fuel Savings calculator', () => {
     });
   });
 
-  describe("milesPerMonth", () => {
-    it("converts a weekly timeframe to a monthly timeframe", () => {
+  describe('milesPerMonth', () => {
+    it('converts a weekly timeframe to a monthly timeframe', () => {
       // arrange
       const milesPerWeek = 100;
 
@@ -42,7 +42,7 @@ describe('Fuel Savings calculator', () => {
       milesPerMonth.should.equal(433.3333333333333);
     });
 
-    it("returns a monthly timeframe untouched", () => {
+    it('returns a monthly timeframe untouched', () => {
       // arrange
       const milesPerMonth = 300;
 
@@ -53,7 +53,7 @@ describe('Fuel Savings calculator', () => {
       milesPerMonthCalculated.should.equal(milesPerMonth);
     });
 
-    it("converts a yearly timeframe to a monthly timeframe", () => {
+    it('converts a yearly timeframe to a monthly timeframe', () => {
       // arrange
       const milesPerYear = 1200;
 
@@ -65,8 +65,8 @@ describe('Fuel Savings calculator', () => {
     });
   });
 
-  describe("calculateSavingsPerMonth", () => {
-    it("returns 29.93 in savings per month with these settings", () => {
+  describe('calculateSavingsPerMonth', () => {
+    it('returns 29.93 in savings per month with these settings', () => {
       // arrange
       const settings = {
         tradePpg: 3.75,
@@ -84,7 +84,7 @@ describe('Fuel Savings calculator', () => {
       savingsPerMonth.should.equal(29.93);
     });
 
-    it("returns 40.83 in savings per month with these settings", () => {
+    it('returns 40.83 in savings per month with these settings', () => {
       // arrange
       const settings = {
         tradePpg: 4.15,
@@ -102,7 +102,7 @@ describe('Fuel Savings calculator', () => {
       savingsPerMonth.should.equal(40.83);
     });
 
-    it("returns -157.12 in loss per month with these settings", () => {
+    it('returns -157.12 in loss per month with these settings', () => {
       // arrange
       const settings = {
         tradePpg: 3.15,

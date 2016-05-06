@@ -6,7 +6,7 @@ chai.should();
 describe('Number Formatter', () => {
   describe('getCurrencyFormattedNumber', () => {
     it('returns $5.50 when passed 5.5', () => {
-      NumberFormatter.getCurrencyFormattedNumber(5.5).should.equal("$5.50");
+      NumberFormatter.getCurrencyFormattedNumber(5.5).should.equal('$5.50');
     });
   });
 

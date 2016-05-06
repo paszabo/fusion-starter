@@ -13,9 +13,9 @@ describe('<FuelSavingsTextInput />', () => {
 
   it('should be an input element', () => {
     const props = {
-      name: "testName",
+      name: 'testName',
       onChange: sinon.spy(),
-      placeholder: "Type Here",
+      placeholder: 'Type Here',
       value: 100
     };
 
@@ -29,9 +29,9 @@ describe('<FuelSavingsTextInput />', () => {
 
   it('should handle change', () => {
     const props = {
-      name: "newMpg",
+      name: 'newMpg',
       onChange: sinon.spy(),
-      placeholder: "Type Here",
+      placeholder: 'Type Here',
       value: 100
     };
 

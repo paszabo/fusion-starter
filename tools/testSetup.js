@@ -25,9 +25,9 @@ require('babel-register')();
 process.env.NODE_ENV = 'production';
 
 // 3. Warn if no test files are found. Mocha will present a cryptic message otherwise.
-glob("src/**/*.spec.js", {}, function (err, files) {
+glob('src/**/*.spec.js', {}, function (err, files) {
   if (files.length === 0) {
-    console.warn(`No tests found in the src directory. Create at least one test file in the src directory ending in .spec.js. Or, disable tests.`); // eslint-disable-line no-console
+    console.warn('No tests found in the src directory. Create at least one test file in the src directory ending in .spec.js. Or, disable tests.'); // eslint-disable-line no-console
     process.exit(1); // Return 1 to signify failure and stop additional processing
   }
 });
