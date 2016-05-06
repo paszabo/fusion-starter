@@ -7,7 +7,7 @@ import axios from 'axios';
 const api = null;
 
 const getBaseUrl = function() {
-  const inDevelopment = window.location.hostname == 'localhost';
+  const inDevelopment = window.location.hostname === 'localhost';
   // Note that this baseUrl assumes you're running CarDashboard via IIS at motosnap.com via a hosts file entry.
   // See https://github.com/coryhouse/vin-react-starter-kit#initial-machine-setup for more info.
   return inDevelopment ? 'http://motosnap.com/CarDashboard/' : '/CarDashboard/';

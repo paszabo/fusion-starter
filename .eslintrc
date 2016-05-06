@@ -24,6 +24,7 @@
   "rules": {
     "quotes": [1, "single"],
     "indent": [1, 2],
+    "eqeqeq": 1,
     "new-cap": 1,
     "no-console": 1,
     "no-debugger": 1,
