@@ -4,11 +4,11 @@ import path from 'path';
 
 export default {
   debug: true,
-  devtool: 'cheap-module-eval-source-map', //more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
-  noInfo: true, //set to false to see a list of every file being bundled.
+  devtool: 'cheap-module-eval-source-map', // more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
+  noInfo: true, // set to false to see a list of every file being bundled.
   entry: [
     'eventsource-polyfill', // necessary for hot reloading with IE
-    'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
+    'webpack-hot-middleware/client?reload=true', // note that it reloads the page if hot module reloading fails.
     './src/index'
   ],
   target: 'web',
