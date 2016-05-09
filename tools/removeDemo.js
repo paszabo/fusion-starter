@@ -12,7 +12,7 @@ const pathsToRemove = [
   './src/containers/*',
   './src/images',
   './src/reducers/*',
-  './src/store/*',
+  './src/store/store.spec.js',
   './src/styles',
   './src/routes.js',
   './src/index.js'
@@ -32,12 +32,27 @@ function createSpecFile() {
   });
 }
 
+function createEntryPoint() {
+  fs.writeFile('./src/index.js', '// Setup your application entry point here...', error => {
+    if (error) throw new Error(error);
+  });
+}
+
+function createRootReducer() {
+  fs.writeFile('./src/reducers/index.js', '// Setup your root reducer here...', error => {
+    if (error) throw new Error(error);
+  });
+}
+
 let numPathsRemoved = 0;
 pathsToRemove.map(path => {
   removePath(path, () => {
     numPathsRemoved++;
     if (numPathsRemoved === pathsToRemove.length) { // All paths have been processed
-      createSpecFile(); // Now we can create files since we're done deleting.
+      // Now we can create files since we're done deleting.
+      createSpecFile();
+      createEntryPoint();
+      createRootReducer();
     }
   });
 });
