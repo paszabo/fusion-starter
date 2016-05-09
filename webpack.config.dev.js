@@ -13,7 +13,7 @@ export default {
   ],
   target: 'web',
   output: { // Note: Only prod environment actually outputs files.
-    path: __dirname + '/dist',
+    path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
     publicPath: '',
     filename: 'bundle.js'
   },
