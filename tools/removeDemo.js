@@ -26,20 +26,20 @@ function removePath(path, callback) {
 }
 
 function createSpecFile() {
-  const fileContent = '// You must have at least one test file in this directory or Mocha will throw an error.';
+  const fileContent = '// Must have at least one test file in this directory or Mocha will throw an error.';
   fs.writeFile('./src/components/emptyTest.spec.js', fileContent, error => {
     if (error) throw new Error(error);
   });
 }
 
 function createEntryPoint() {
-  fs.writeFile('./src/index.js', '// Setup your application entry point here...', error => {
+  fs.writeFile('./src/index.js', '// Set up your application entry point here...', error => {
     if (error) throw new Error(error);
   });
 }
 
 function createRootReducer() {
-  fs.writeFile('./src/reducers/index.js', '// Setup your root reducer here...', error => {
+  fs.writeFile('./src/reducers/index.js', '// Set up your root reducer here...\n import { combineReducers } from \'redux\';\n export default combineReducers;', error => {
     if (error) throw new Error(error);
   });
 }
