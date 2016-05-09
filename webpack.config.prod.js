@@ -17,7 +17,7 @@ export default {
   noInfo: true, // set to false to see a list of every file being bundled.
   entry: './src/index',
   target: 'web',
-  output: { // Note: Only prod environment actually outputs files.
+  output: {
     path: __dirname + '/dist',
     publicPath: '',
     filename: 'bundle.js'
