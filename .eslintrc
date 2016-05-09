@@ -30,6 +30,7 @@
     "no-debugger": 1,
     "no-multi-spaces": 1,
     "no-param-reassign": 1,
+    "no-throw-literal": 1,
     "no-var": 2,
     "padded-blocks": [1, "never"],
     "prefer-const": 1,
