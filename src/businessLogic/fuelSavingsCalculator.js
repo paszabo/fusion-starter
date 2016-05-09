@@ -27,7 +27,7 @@ const fuelSavingsCalculator = function () {
       case 'year':
         return milesDriven / monthsPerYear;
       default:
-        throw 'Unknown milesDrivenTimeframe passed: ' + milesDrivenTimeframe;
+        throw new Error('Unknown milesDrivenTimeframe passed: ' + milesDrivenTimeframe);
       }
     },
 
