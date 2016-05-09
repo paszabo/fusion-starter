@@ -9,6 +9,7 @@ const HomePage = () => {
       <ol>
         <li>Review component examples</li>
         <li>Review example apps</li>
+        <li>Remove this demo app: npm run remove-demo</li>
       </ol>
     </Jumbotron>
   );
