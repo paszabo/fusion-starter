@@ -1,4 +1,8 @@
 # Vin React Starter Kit
+
+[![build status](https://img.shields.io/travis/vinsolutions-kc/vin-react-starter-kit.svg?style=flat-square)](https://travis-ci.org/vinsolutions-kc/vin-react-starter-kit)
+[![Dependency Status](https://david-dm.org/vinsolutions-kc/vin-react-starter-kit.svg?style=flat-square)](https://david-dm.org/vinsolutions-kc/vin-react-starter-kit)
+
 React is a lightweight library, so to build real apps, you need more. This starter kit provides a comprehensive framework for building fast, testable applications with React. It offers a rich development experience including:
 
 | **Tech** | **Description** |**Learn More**|
