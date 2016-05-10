@@ -10,8 +10,11 @@ const HomePage = () => {
       <ol>
         <li>Review suggested components in the <Link to="gallery">component gallery</Link></li>
         <li>Review demo apps: <Link to="fuel-savings">Fuel Savings</Link>, <Link to="customers">Customers</Link></li>
-        <li>Remove demo apps and start coding! npm run remove-demo</li>
+        <li>Remove this demo and start coding: npm run remove-demo</li>
       </ol>
+
+      <p>Questions? Check out the <a href="https://github.com/vinsolutions-kc/vin-react-starter-kit/blob/master/docs/FAQ.md">FAQ</a>.</p>
+
     </Jumbotron>
   );
 };
