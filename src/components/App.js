@@ -6,7 +6,7 @@ const App = ({children}) => {
     <div className="container-fluid">
       <IndexLink to="/">Home</IndexLink>
       {" | "}
-      <Link to="components">Components</Link>
+      <Link to="gallery">Gallery</Link>
       {" | "}
       <Link to="fuelsavings">Fuel Savings</Link>
       {" | "}
