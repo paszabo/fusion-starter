@@ -7,6 +7,7 @@ Unfortunately, scripts in package.json can't be commented inline because the JSO
 
 | **Script** | **Description** |
 |----------|-------|
+| remove-demo | Removes the demo application so you can begin development. |
 | prestart | Runs automatically before start. Calls remove-dist script which deletes the dist folder. This helps remind you to run the build script before committing since the dist folder will be deleted if you don't. ;) |
 | start | Runs tests, lints, starts dev webserver, and opens the app in your default browser. |
 | lint:tools | Runs ESLint on build related JS files. (eslint-loader lints src files via webpack when `npm start` is run) |
@@ -162,23 +163,19 @@ private void EnableCrossOriginRequestsFromLocalhost(HttpRequest request)
 The example project includes /api/api.js. This file uses Axios to make AJAX calls. It's recommended to centralize your API calls there. See the example in api.js. api.js properly sets the base url based on whether it's running locally, but be sure to add a hosts entry for motosnap.com (as outlined in the initial machine setup) to assure it works properly.
 
 ### I just want an empty starter kit.
-This starter kit includes an example app so you can see how everything hangs together on a real app. To create an empty project, you can delete the following:  
-
- 1. Components in src/components  
- 2. Styles in src/styles/styles.scss  
- 3. Delete files in src/businessLogic  
+This starter kit includes an example app so you can see how everything hangs together on a real app. When you're done reviewing it, run this to remove the demo app:
+  
+  `npm run remove-demo`
 
 Don't want to use Redux? See the next question for some steps on removing Redux.
 
 ### Do I have to use Redux?
 Nope. Redux is useful for applications with more complex data flows. If your app is simple, Redux is overkill. Remove Redux like this:
 
- 1. Delete the following folders and their contents: actions, constants, reducers, containers, store
+ 1. Run `npm run remove-demo`
  2. Uninstall Redux related packages: `npm uninstall redux react-redux redux-thunk`
- 3. Remove Redux related imports from /src/index.js: `import configureStore from './store/configureStore';`, `import App from './containers/App';` and `import { Provider } from 'react-redux';`
- 4. Remove this line from /src/index.js: `const store = configureStore();`
- 5. Delete components in /components and create a new empty component.
- 6. Replace the call to `<Provider><App/></Provider>` in /src/index.js with a call to the new top level component you just created in step 5.
+ 3. Create a new empty component in /components.
+ 4. Call render on the new top level component you created in step 3 in src/index.js.
 
 ### How do I remove React Router?
  1. Uninstall React Router and routing related packages: `npm uninstall --save react-router connect-history-api-fallback`
