@@ -35,8 +35,8 @@ Open the command line of your choice and change to the directory where you'd lik
 `npm start`
 This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development with this kit, you'll want to keep the command line open at all times so that your code is rebuilt and tests run automatically every time you hit save. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
  6. **Review the example app.** This starter kit includes a working example app that calculates fuel savings. Note how all source code is placed under /src. Tests are placed alongside the file under test. The final built app is placed under /dist. These are the files you run in production.
- 7. **Delete the example app files.** Once you're comfortable with how the example app works, you can [delete those files and begin creating your own app](https://github.com/coryhouse/vin-javascript-starter-kit#i-just-want-an-empty-starter-kit). You can always refer to this repo for the example app code that you deleted.
- 8. **Plop these files inside your .NET solution.** - However, important note: **DO NOT** add node_modules to your solution. Just like Nuget, these files shouldn't be checked in. 
+ 7. **Delete the example app files.** Once you're comfortable with how the example app works, you can delete those files and begin creating your own app: `npm run remove-demo`.
+ 8. **Plop these files inside your .NET solution.** - However, important note: **DO NOT** add node_modules to your solution or source control. Just like Nuget, these files shouldn't be checked in. 
  9. **[Enable CORS on the APIs](https://github.com/coryhouse/vin-react-starter-kit#how-do-i-call-our-existing-web-apis) you need to call** 
 
 ##Initial Machine Setup
