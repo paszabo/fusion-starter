@@ -9,7 +9,7 @@ const api = null;
 const getBaseUrl = function() {
   const inDevelopment = window.location.hostname === 'localhost';
   // Note that this baseUrl assumes you're running CarDashboard via IIS at motosnap.com via a hosts file entry.
-  // See https://github.com/coryhouse/vin-react-starter-kit#initial-machine-setup for more info.
+  // See https://github.com/cox-auto-kc/react-starter#initial-machine-setup for more info.
   return inDevelopment ? 'http://motosnap.com/CarDashboard/' : '/CarDashboard/';
 };
 
@@ -29,15 +29,11 @@ const get = function(url) {
   return getInitializedApi().get(url);
 };
 
-
 const post = function(url, data) { // eslint-disable-line no-unused-vars
   return getInitializedApi().post(url, data);
 };
 
-// The API calls your app uses go down here so they're exported for use elsewhere...
-module.exports = {
-  // This is just an example API call
-  getCustomers() {
-    return get('API/CRMServiceBase/v1/users/search/');
-  }
-};
+// The API calls your app uses go down here. Export each function so they can be imported for use elsewhere...
+export function getCustomers() {
+  return get('API/CRMServiceBase/v1/users/search/');
+}

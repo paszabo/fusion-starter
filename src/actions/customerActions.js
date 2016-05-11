@@ -1,6 +1,6 @@
 import * as types from './actionTypes';
 import {loading, loadingComplete} from './loadingStatusActions';
-import api from '../api/api';
+import {getCustomers} from '../api/api';
 
 // This is called from fetchCustomers when the ajax call resolves.
 export function receiveCustomers(customers) {
@@ -19,7 +19,7 @@ export function fetchCustomers() {
   return function(dispatch) {
     // call the loading action creator below so the UI is updated to reflect the AJAX call in progress.
     dispatch(loading());
-    return api.getCustomers().then(function(response) {
+    return getCustomers().then(function(response) {
       // now that we've gotten the ajax response back, dispatch it.
       const customers = response.data.Data;
       dispatch(receiveCustomers(customers));
