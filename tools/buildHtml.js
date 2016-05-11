@@ -8,7 +8,7 @@
 /* eslint-disable no-console */
 
 import fs from 'fs';
-import colors from 'colors'; // eslint-disable-line no-unused-vars
+import {chalkSuccess} from './chalkConfig';
 import cheerio from 'cheerio';
 
 fs.readFile('src/index.html', 'utf8', function (err,data) {
@@ -26,6 +26,6 @@ fs.readFile('src/index.html', 'utf8', function (err,data) {
 
   fs.writeFile('dist/index.html', $.html(), 'utf8', function (err) {
     if (err) return console.log(err);
-    console.log('index.html written to /dist'.green);
+    console.log(chalkSuccess('index.html written to /dist'));
   });
 });
