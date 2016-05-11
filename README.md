@@ -1,9 +1,9 @@
-# Vin React Starter Kit
+# React Starter
 
-[![build status](https://img.shields.io/travis/vinsolutions-kc/vin-react-starter-kit.svg?style=flat-square)](https://travis-ci.org/vinsolutions-kc/vin-react-starter-kit)
-[![Dependency Status](https://david-dm.org/vinsolutions-kc/vin-react-starter-kit.svg?style=flat-square)](https://david-dm.org/vinsolutions-kc/vin-react-starter-kit)
+[![build status](https://img.shields.io/travis/cox-auto-kc/react-starter.svg?style=flat-square)](https://travis-ci.org/cox-auto-kc/react-starter)
+[![Dependency Status](https://david-dm.org/cox-auto-kc/react-starter.svg?style=flat-square)](https://david-dm.org/cox-auto-kc/react-starter)
 
-React Slingshot is a comprehensive starter kit for rapid application development using React. It offers a rich development experience including:
+React Starter is a comprehensive starter kit for rapid application development using React. It offers a rich development experience including:
 
 | **Tech** | **Description** |**Learn More**|
 |----------|-------|---|
