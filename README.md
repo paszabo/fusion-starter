@@ -1,9 +1,9 @@
-# React Starter
+# Fusion Starter
 
-[![build status](https://img.shields.io/travis/cox-auto-kc/react-starter.svg?style=flat-square)](https://travis-ci.org/cox-auto-kc/react-starter)
-[![Dependency Status](https://david-dm.org/cox-auto-kc/react-starter.svg?style=flat-square)](https://david-dm.org/cox-auto-kc/react-starter)
+[![build status](https://img.shields.io/travis/cox-auto-kc/fusion-starter.svg?style=flat-square)](https://travis-ci.org/cox-auto-kc/fusion-starter)
+[![Dependency Status](https://david-dm.org/cox-auto-kc/fusion-starter.svg?style=flat-square)](https://david-dm.org/cox-auto-kc/fusion-starter)
 
-React Starter is a comprehensive starter kit for rapid application development using React. It offers a rich development experience including:
+Fusion Starter is a comprehensive starter kit for rapid application development using React. It offers a rich development experience including:
 
 | **Tech** | **Description** |**Learn More**|
 |----------|-------|---|
@@ -26,7 +26,7 @@ The starter kit includes a working example app that puts all of the above to use
  1. **Initial Machine Setup**  
 First time running the starter kit? Then complete the [Initial Machine Setup](#initial-machine-setup).
  2. **Clone the project**  
-Open the command line of your choice and change to the directory where you'd like to start your project. Then clone the project: `git clone https://github.com/vinsolutions-kc/vin-react-starter-kit.git your-project-name`.  
+Open the command line of your choice and change to the directory where you'd like to start your project. Then clone the project: `git clone https://github.com/vinsolutions-kc/fusion-starter.git your-project-name`.  
  3. **Change directory**  
 `cd your-project-name`. - Change directories into your project's root directory (the project name you chose in step 2):
  4. **Install Node packages**   
@@ -37,7 +37,7 @@ This will run the automated build process, start up a webserver, and open the ap
  6. **Review the example app.** This starter kit includes a working example app that calculates fuel savings. Note how all source code is placed under /src. Tests are placed alongside the file under test. The final built app is placed under /dist. These are the files you run in production.
  7. **Delete the example app files.** Once you're comfortable with how the example app works, you can delete those files and begin creating your own app: `npm run remove-demo`.
  8. **Plop these files inside your solution.** - However, important note: **DO NOT** add node_modules to your solution or source control.
- 9. **[Enable CORS on the APIs](https://github.com/cox-auto-kc/react-starter/blob/master/docs/FAQ.md#how-do-i-call-our-existing-web-apis) you need to call** 
+ 9. **[Enable CORS on the APIs](https://github.com/cox-auto-kc/fusion-starter/blob/master/docs/FAQ.md#how-do-i-call-our-existing-web-apis) you need to call** 
 
 ##Initial Machine Setup
  1. **Install [the newest version of Node.js](https://nodejs.org)**
