@@ -20,10 +20,10 @@ Unfortunately, scripts in package.json can't be commented inline because the JSO
 | test | Runs tests (files ending in .spec.js) using Mocha and outputs results to the command line. Watches all files so tests are re-run upon save. |
 
 ###What command line should I use?
-This kit works on both the Windows DOS command line or in Git Bash on Windows. Git Bash is installed along with Git.
+Whatever you like. This kit works on Windows, Mac, and Linux.
 
 ###How do I keep my app updated with the latest features of the starter kit?
-Clone this repo to get started. Then, anytime you want to get the latest version of this repo, type `git pull` on the command line in the root of your project. This will merge in all updates.
+Assuming your project isn't using Git itself, you can clone this repo to get started. Then, anytime you want to get the latest version of this repo, type `git pull` on the command line in the root of your project. This will merge in all updates.
 
 ###Can you explain the folder structure?
 **Note that the files that start with a dot below will be hidden by default in Windows.** [Here's how to see them](http://windows.microsoft.com/en-us/windows/show-hidden-files#show-hidden-files=windows-7). Or type `ls -la` in Git Bash.
@@ -102,7 +102,6 @@ Clone this repo to get started. Then, anytime you want to get the latest version
 |webpack| Bundler with plugin system and integrated development server |
 |webpack-dev-middleware| Used to integrate Webpack with Browser-sync |
 |webpack-hot-middleware| Use to integrate Webpack's hot reloading support with Browser-sync |
-|yargs| Easily parse command-line arguments |
 
 ### Where are the files being served from when I run `npm start`?
 Webpack serves your app in memory when you run `npm start`. No physical files are written. However, the web root is /src, so you can reference files under /src in index.html. When the app is built using `npm run build`, physical files are written to /dist and the app is served from /dist.
