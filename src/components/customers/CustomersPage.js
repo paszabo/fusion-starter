@@ -13,7 +13,7 @@ class Customers extends React.Component {
 
     return (
       <div>
-        <h1>Customers</h1>
+        <h2>Customers</h2>
         <p>This simple app shows how to use <a href="https://github.com/gaearon/redux-thunk">redux-thunk</a> to make AJAX calls. To test this, make sure you're logged into dev VinConnect.</p>
         {loading && <h1>Loading...</h1>}
         <input type="submit"
