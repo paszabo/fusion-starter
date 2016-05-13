@@ -5,24 +5,10 @@ var glob = require('glob');
 // 1. Register babel for transpiling our code for testing
 require('babel-register')();
 
-/* 2. Set NODE_ENV to production
- This setting assures the .babelrc dev config (which includes
- hot module reloading code) doesn't apply for tests.
- But also, setting the environment to prod here
- assures that our tests are run against the
- production version of React which has 3 advantages:
- 1. It runs faster
- 2. It assures we're testing the final prod code (obviously)
- 3. We don't have to pass all required PropTypes in our tests.
- If we set the environment to something other than production
- then we have to pass every required propType or propType warnings
- will litter our test results.
-
- However, it also has a downside:
- 1. You won't see any PropType validation warnings, since the
- code is running in prod mode.
- */
-process.env.NODE_ENV = 'production';
+// 2. Set NODE_ENV to production
+// This assures the .babelrc dev config (which includes
+// hot module reloading code) doesn't apply for tests.
+process.env.NODE_ENV = 'test';
 
 // 3. Warn if no test files are found. Mocha will present a cryptic message otherwise.
 glob('src/**/*.spec.js', {}, function (err, files) {
@@ -34,9 +20,9 @@ glob('src/**/*.spec.js', {}, function (err, files) {
 
 // 4. Disable webpack-specific features for tests since
 // Mocha doesn't know what to do with them.
-require.extensions['.css'] = function(){ return null; };
-require.extensions['.png'] = function(){ return null; };
-require.extensions['.jpg'] = function(){ return null; };
+['.css', '.scss', '.png', '.jpg'].forEach(ext => {
+  require.extensions[ext] = () => null;
+});
 
 // 5. Configure JSDOM and set global variables
 // to simulate a browser environment for tests.
