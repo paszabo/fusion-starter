@@ -3,6 +3,10 @@ import {connect} from 'react-redux';
 import {fetchCustomers} from '../../actions/customerActions';
 
 class Customers extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onFetchCustomersClick = this.onFetchCustomersClick.bind(this);
+  }
   onFetchCustomersClick(event) {
     event.preventDefault();
     this.props.fetchCustomers();
