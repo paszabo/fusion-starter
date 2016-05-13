@@ -6,11 +6,13 @@ const App = ({children}) => {
     <div className="container-fluid">
       <IndexLink to="/">Home</IndexLink>
       {" | "}
-      <Link to="gallery">Gallery</Link>
+      <Link to="style-guide">Style Guide</Link>
       {" | "}
-      <Link to="fuelsavings">Fuel Savings</Link>
+      <Link to="dashboard">Dashboard Demo</Link>
       {" | "}
-      <Link to="customers">Customers</Link>
+      <Link to="fuelsavings">Fuel Savings Demo</Link>
+      {" | "}
+      <Link to="customers">Customers Demo</Link>
       <br/>
       {children}
     </div>
