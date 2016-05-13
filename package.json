@@ -16,8 +16,7 @@
     "build:html": "babel-node tools/buildHtml.js",
     "prebuild": "npm run clean-dist && npm run build:html && npm run lint && npm run test",
     "build": "babel-node tools/build.js && npm run open:dist",
-    "test:comment": "**NOTE: You need to manually add a glob for any tests nested more than 1 layer deep. Haven't found a way to search infinite depth via mocha command line**",
-    "test": "mocha tools/testSetup.js src/**/*.spec.js src/components/**/*.spec.js --reporter progress",
+    "test": "mocha tools/testSetup.js \"src/**/*.spec.js\" --reporter progress",
     "test:watch": "npm run test -- --watch"
   },
   "author": "Cory House",
