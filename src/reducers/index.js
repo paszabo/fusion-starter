@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import fuelSavings from './fuelSavingsReducer';
 import customers from './customerReducer';
-import ajaxCallsInProgress from './ajaxStatusReducer';
+import ajaxCallsInProgress from './loadingStatusReducer';
 
 // Note that I chose a shorter name above when importing reducers.
 // This keeps the calls to these reducers in our container components
