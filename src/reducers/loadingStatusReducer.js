@@ -9,10 +9,10 @@ import initialState from './initialState';
 export default function loadingStatusReducer(state = initialState.ajaxCallsInProgress, action) {
   switch (action.type) {
   case LOADING:
-    return state.ajaxCallsInProgress + 1;
+    return state + 1;
 
   case LOADING_COMPLETE:
-    return state.ajaxCallsInProgress - 1;
+    return state - 1;
 
   default:
     return state;
