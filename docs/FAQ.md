@@ -18,6 +18,8 @@ Unfortunately, scripts in package.json can't be commented inline because the JSO
 | prebuild | Runs automatically before build script (due to naming convention). Cleans dist folder, builds html, and builds sass. |
 | build | Bundles all JavaScript using webpack and writes it to /dist. |
 | test | Runs tests (files ending in .spec.js) using Mocha and outputs results to the command line. Watches all files so tests are re-run upon save. |
+| test:cover | Display test coverage |
+| open:cover | Open test coverage report in default browser |
 
 ###What command line should I use?
 Whatever you like. This kit works on Windows, Mac, and Linux.
@@ -81,6 +83,8 @@ Assuming your project isn't using Git itself, you can clone this repo to get sta
 |chai|Assertion library for use with Mocha|
 |chalk|Adds color support to terminal |
 |cheerio|Supports querying DOM with jQuery like syntax - Useful in testing and build process for HTML manipulation|
+|connect-history-api-fallback|Supports reloading deep links on the client|
+|coveralls|Display code coverage on Github via badge|
 |cross-env|Cross-environment friendly way to handle environment variables|
 |css-loader|Add CSS support to Webpack|
 |enzyme|Simplified JavaScript Testing utilities for React|
@@ -89,6 +93,8 @@ Assuming your project isn't using Git itself, you can clone this repo to get sta
 |eslint-plugin-react|Adds additional React-related rules to ESLint|
 |extract-text-webpack-plugin| Extracts CSS into separate file for production build |
 |file-loader| Adds file loading support to Webpack |
+|glob|For match files via wildcards|
+|isparta|Code coverage tool that wraps Istanbul to add ES6 support|
 |mocha| JavaScript testing library |
 |node-sass| Adds SASS support to Webpack |
 |parallelshell| Display results of multiple commands on single command line |

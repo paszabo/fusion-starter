@@ -1,6 +1,7 @@
 // For info about this file refer to webpack and webpack-hot-middleware documentation
 import webpack from 'webpack';
 import path from 'path';
+import NpmInstallPlugin from 'npm-install-webpack-plugin';
 
 export default {
   debug: true,
@@ -19,7 +20,8 @@ export default {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new NpmInstallPlugin() // automatically install uninstalled dependencies
   ],
   module: {
     loaders: [
