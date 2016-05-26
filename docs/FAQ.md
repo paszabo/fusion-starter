@@ -40,7 +40,7 @@ Assuming your project isn't using Git itself, you can clone this repo to get sta
 ├── dist                      # Folder where the build script places the built app. Use this in prod.
 ├── package.json              # Package configuration. The list of 3rd party libraries and utilities
 ├── src                       # Source code
-│   ├── actions               # Flux/Redux actions. List of distinct actions that can occur in the app.  
+│   ├── actions               # Redux actions. List of distinct actions that can occur in the app.  
 │   ├── api                   # Centralized place to make AJAX calls. Includes example call.
 │   ├── businessLogic         # Plain old JS objects (POJOs). Pure logic. No framework specific code here.
 │   ├── components            # React components
