@@ -1,6 +1,7 @@
 # Fusion Starter
 
-[![build status](https://img.shields.io/travis/cox-auto-kc/fusion-starter.svg?style=flat-square)](https://travis-ci.org/cox-auto-kc/fusion-starter)
+[![Build status: Linux](https://img.shields.io/travis/cox-auto-kc/fusion-starter.svg?style=flat-square)](https://travis-ci.org/cox-auto-kc/fusion-starter)
+[![Build status: Windows](https://ci.appveyor.com/api/projects/status/xrtxiqy55dtj7qe4?svg=true)](https://ci.appveyor.com/project/coryhouse/fusion-starter/branch/master)
 [![Dependency Status](https://david-dm.org/cox-auto-kc/fusion-starter.svg?style=flat-square)](https://david-dm.org/cox-auto-kc/fusion-starter)
 
 Fusion Starter is a comprehensive starter kit for rapid application development using React. It offers a rich development experience including:
