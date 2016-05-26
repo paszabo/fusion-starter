@@ -22,13 +22,3 @@ test_script:
 
 # Don't actually build.
 build: off
-
-notifications:
-- provider: Email
-  to:
-  - coryhouse@vinsolutions.com
-  subject: 'Build failed: fusion-starter'
-  message: The continuous integration build failed. See https://ci.appveyor.com/project/CoryHouse/fusion-starter/ for details.
-  on_build_success: false
-  on_build_failure: true
-  on_build_status_changed: false
