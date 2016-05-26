@@ -97,6 +97,7 @@ Assuming your project isn't using Git itself, you can clone this repo to get sta
 |isparta|Code coverage tool that wraps Istanbul to add ES6 support|
 |mocha| JavaScript testing library |
 |node-sass| Adds SASS support to Webpack |
+|npm-install-webpack-plugin|Automatically install missing dependencies|
 |parallelshell| Display results of multiple commands on single command line |
 |react-addons-test-utils| Adds React TestUtils |
 |redux-immutable-state-invariant| Throw error when you mutate Redux store state|
