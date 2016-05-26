@@ -23,24 +23,3 @@ glob('src/**/*.spec.js', {}, function (err, files) {
 ['.css', '.scss', '.png', '.jpg'].forEach(ext => {
   require.extensions[ext] = () => null;
 });
-
-// 5. Configure JSDOM and set global variables
-// to simulate a browser environment for tests.
-// This way we can test via an in-memory DOM in Node
-var jsdom = require('jsdom').jsdom;
-var exposedProperties = ['window', 'navigator', 'document'];
-
-global.document = jsdom('');
-global.window = document.defaultView;
-Object.keys(document.defaultView).forEach((property) => {
-  if (typeof global[property] === 'undefined') {
-    exposedProperties.push(property);
-    global[property] = document.defaultView[property];
-  }
-});
-
-global.navigator = {
-  userAgent: 'node.js'
-};
-
-documentRef = document; // eslint-disable-line no-undef
