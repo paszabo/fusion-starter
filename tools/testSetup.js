@@ -23,3 +23,8 @@ glob('src/**/*.spec.js', {}, function (err, files) {
 ['.css', '.scss', '.png', '.jpg'].forEach(ext => {
   require.extensions[ext] = () => null;
 });
+
+// 5. Setup simulated browser environment for jsdom (Used by Enzyme)
+global.document = require('jsdom').jsdom('<body></body>');
+global.window = document.defaultView;
+global.navigator = window.navigator;
