@@ -22,12 +22,12 @@ export default {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new NpmInstallPlugin({ // Automatically install uninstalled dependencies
-      dev: function(module, path) {
+      dev: function(module) {
         return [
-            "babel-preset-react-hmre",
-            "webpack-dev-middleware",
-            "webpack-hot-middleware"
-          ].indexOf(module) !== -1;
+          'babel-preset-react-hmre',
+          'webpack-dev-middleware',
+          'webpack-hot-middleware'
+        ].indexOf(module) !== -1;
       }
     })
   ],
