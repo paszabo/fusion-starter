@@ -1,6 +1,7 @@
 # Fusion Starter
 
-[![build status](https://img.shields.io/travis/cox-auto-kc/fusion-starter.svg?style=flat-square)](https://travis-ci.org/cox-auto-kc/fusion-starter)
+[![Build status: Linux](https://img.shields.io/travis/cox-auto-kc/fusion-starter.svg?style=flat-square)](https://travis-ci.org/cox-auto-kc/fusion-starter)
+[![Build status: Windows](https://ci.appveyor.com/api/projects/status/xrtxiqy55dtj7qe4?svg=true)](https://ci.appveyor.com/project/coryhouse/fusion-starter/branch/master)
 [![Dependency Status](https://david-dm.org/cox-auto-kc/fusion-starter.svg?style=flat-square)](https://david-dm.org/cox-auto-kc/fusion-starter)
 
 Fusion Starter is a comprehensive starter kit for rapid application development using React. It offers a rich development experience including:
@@ -23,15 +24,15 @@ Fusion Starter is a comprehensive starter kit for rapid application development 
 The starter kit includes a working example app that puts all of the above to use.
 
 ## Get Started
- 1. **Initial Machine Setup**  
+ 1. **Initial Machine Setup**
 First time running the starter kit? Then complete the [Initial Machine Setup](#initial-machine-setup).
- 2. **Clone the project**  
+ 2. **Clone the project**
 Open the command line of your choice and change to the directory where you'd like to start your project. Then clone the project: `git clone https://github.com/vinsolutions-kc/fusion-starter.git your-project-name`.  
- 3. **Change directory**  
+ 3. **Change directory**
 `cd your-project-name`. - Change directories into your project's root directory (the project name you chose in step 2):
- 4. **Install Node packages**   
+ 4. **Install Node packages** 
 `npm install`
- 5. **Run the app**  
+ 5. **Run the app**
 `npm start`
 This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development with this kit, you'll want to keep the command line open at all times so that your code is rebuilt and tests run automatically every time you hit save. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
  6. **Review the example app.** This starter kit includes a working example app that calculates fuel savings. Note how all source code is placed under /src. Tests are placed alongside the file under test. The final built app is placed under /dist. These are the files you run in production.

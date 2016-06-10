@@ -39,7 +39,7 @@ Customers.propTypes = {
 function mapStateToProps(state) {
   return {
     customers: state.customers,
-    loading: state.loadingStatus.ajaxCallsInProgress > 0
+    loading: state.ajaxCallsInProgress > 0
   };
 }
 

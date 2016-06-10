@@ -17,7 +17,7 @@ fs.readFile('src/index.html', 'utf8', function (err,data) {
   const $ = cheerio.load(data);
 
   // Since a separate stylesheet is only utilized for the production build, need to dynamically add this here.
-  $('head').prepend('<link rel="stylesheet" href="styles.css">');
+  $('head').append('<link rel="stylesheet" href="styles.css">');
 
   const trackJsCode = '\n<script>window._trackJs = { token: "69ff2d61429a4c5da881a2026decd7d7" };</script><script src=https://d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js></script>';
 

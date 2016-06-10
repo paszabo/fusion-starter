@@ -18,6 +18,8 @@ Unfortunately, scripts in package.json can't be commented inline because the JSO
 | prebuild | Runs automatically before build script (due to naming convention). Cleans dist folder, builds html, and builds sass. |
 | build | Bundles all JavaScript using webpack and writes it to /dist. |
 | test | Runs tests (files ending in .spec.js) using Mocha and outputs results to the command line. Watches all files so tests are re-run upon save. |
+| test:cover | Display test coverage |
+| open:cover | Open test coverage report in default browser |
 
 ###What command line should I use?
 Whatever you like. This kit works on Windows, Mac, and Linux.
@@ -38,7 +40,7 @@ Assuming your project isn't using Git itself, you can clone this repo to get sta
 ├── dist                      # Folder where the build script places the built app. Use this in prod.
 ├── package.json              # Package configuration. The list of 3rd party libraries and utilities
 ├── src                       # Source code
-│   ├── actions               # Flux/Redux actions. List of distinct actions that can occur in the app.  
+│   ├── actions               # Redux actions. List of distinct actions that can occur in the app.  
 │   ├── api                   # Centralized place to make AJAX calls. Includes example call.
 │   ├── businessLogic         # Plain old JS objects (POJOs). Pure logic. No framework specific code here.
 │   ├── components            # React components
@@ -81,6 +83,8 @@ Assuming your project isn't using Git itself, you can clone this repo to get sta
 |chai|Assertion library for use with Mocha|
 |chalk|Adds color support to terminal |
 |cheerio|Supports querying DOM with jQuery like syntax - Useful in testing and build process for HTML manipulation|
+|connect-history-api-fallback|Supports reloading deep links on the client|
+|coveralls|Display code coverage on Github via badge|
 |cross-env|Cross-environment friendly way to handle environment variables|
 |css-loader|Add CSS support to Webpack|
 |enzyme|Simplified JavaScript Testing utilities for React|
@@ -89,8 +93,11 @@ Assuming your project isn't using Git itself, you can clone this repo to get sta
 |eslint-plugin-react|Adds additional React-related rules to ESLint|
 |extract-text-webpack-plugin| Extracts CSS into separate file for production build |
 |file-loader| Adds file loading support to Webpack |
+|glob|For match files via wildcards|
+|isparta|Code coverage tool that wraps Istanbul to add ES6 support|
 |mocha| JavaScript testing library |
 |node-sass| Adds SASS support to Webpack |
+|npm-install-webpack-plugin|Automatically install missing dependencies|
 |parallelshell| Display results of multiple commands on single command line |
 |react-addons-test-utils| Adds React TestUtils |
 |redux-immutable-state-invariant| Throw error when you mutate Redux store state|
@@ -199,7 +206,9 @@ Streamlined automated testing is a core feature of this starter kit. All tests a
 Code coverage is calculated and reported via Istanbul. To view your current code coverage, run `npm run open-coverage`. This will open a tab in your default browser which displays code coverage statistics. You can optionally update the npm script config to run your code coverage on the command line each time you hit save.
 
 ### How do I debug?
-Since browsers don't currently support ES6, we're using Babel to compile our ES6 down to ES5. This means the code that runs in the browser looks different than what we wrote. But good news, a [sourcemap](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/) is generated to enable easy debugging. This means your original JS source will be displayed in your browser's dev console.
+Since browsers don't currently support all of ES6, we're using Babel to compile ES6 down to ES5. This means the code that runs in the browser looks different than what we wrote. But good news, a [sourcemap](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/) is generated to enable easy debugging. This means your original JS source will be displayed in your browser's dev console.
+<img width="1280" alt="screen shot 2016-06-07 at 2 18 24 pm" src="https://cloud.githubusercontent.com/assets/1688997/15871653/68113838-2cbb-11e6-89d9-095a12bf91b1.png">
+
 *Note:* When you run `npm start`, no JS is minified. Why? Because minifying slows the build. So JS is only minified when you run the `npm run build` script. See [more on building for production below](https://github.com/coryhouse/vin-javascript-starter-kit#how-do-i-deploy-this).
 
 Also note that no actual physical files are written to the filesystem during the dev build. **For performance, all files exist in memory when served from the webpack server.**. Physical files are only written when you run `npm run build`.

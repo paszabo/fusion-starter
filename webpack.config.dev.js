@@ -1,6 +1,7 @@
 // For info about this file refer to webpack and webpack-hot-middleware documentation
 import webpack from 'webpack';
 import path from 'path';
+import NpmInstallPlugin from 'npm-install-webpack-plugin';
 
 export default {
   debug: true,
@@ -19,7 +20,16 @@ export default {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new NpmInstallPlugin({ // Automatically install uninstalled dependencies
+      dev: function(module) {
+        return [
+          'babel-preset-react-hmre',
+          'webpack-dev-middleware',
+          'webpack-hot-middleware'
+        ].indexOf(module) !== -1;
+      }
+    })
   ],
   module: {
     loaders: [

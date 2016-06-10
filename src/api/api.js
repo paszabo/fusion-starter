@@ -20,7 +20,7 @@ const getInitializedApi = function() {
   if (api) return api; // return initialized api if already initialized.
   return axios.create({
     baseURL: getBaseUrl(),
-    accept: 'json',
+    responseType: 'json',
     withCredentials: true
   });
 };
