@@ -1,5 +1,5 @@
-// All AJAX calls should be centralized here.
-// Axios returns a promise for all calls.
+// This service abstracts away the specific network request tech and config that we're using.
+// This keeps all API calls short and consistent.
 // If you are already using jQuery, you can use it to make AJAX calls here instead since
 // Axois weighs about 20k. But note that jQuery's promise implementation is quirky.
 import axios from 'axios';
