@@ -6,7 +6,7 @@ describe('Reducers::loadingStatus', function() {
   it('should increment calls in progress', function() {
     const action = { type: ActionTypes.LOADING };
     const initialState = 1;
-    const actual = reducer(1, action);
+    const actual = reducer(initialState, action);
     expect(actual).to.equal(2);
   });
 
