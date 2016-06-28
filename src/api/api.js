@@ -4,36 +4,63 @@
 // Axios weighs about 20k. But note that jQuery's promise implementation is quirky.
 import axios from 'axios';
 
-const api = null;
+const inDevelopment = window.location.hostname === 'localhost';
 
-const getBaseUrl = function() {
-  const inDevelopment = window.location.hostname === 'localhost';
+function getLoginApiBaseUrl() {
   // Note that this baseUrl assumes you're running CarDashboard via IIS at motosnap.com via a hosts file entry.
   // See https://github.com/cox-auto-kc/fusion-starter#initial-machine-setup for more info.
-  return inDevelopment ? 'http://motosnap.com/CarDashboard/' : '/CarDashboard/';
-};
+  return inDevelopment ? 'http://betahrm9h02.na.autotrader.int:81/api/' : '/CarDashboard/';
+}
 
-// Note that this can't be called until we're in the browser
-// since we need to sniff the URL to know what environment we're in
-// and therefore, what the baseURL should be for API calls.
-const getInitializedApi = function() {
-  if (api) return api; // return initialized api if already initialized.
-  return axios.create({
-    baseURL: getBaseUrl(),
+function getCustomerApiBaseUrl() {
+  // Note that this baseUrl assumes you're running CarDashboard via IIS at motosnap.com via a hosts file entry.
+  // See https://github.com/cox-auto-kc/fusion-starter#initial-machine-setup for more info.
+  return inDevelopment ? 'http://wsvc.qa.vinsolutions.com:80/Vin.Api.Customer.WebHost/api/v1/' : '/CarDashboard/';
+}
+
+function submitAjaxCall(url, method, data, token) {
+  return axios({
+    method: method,
+    url: url,
+    data: data,
     responseType: 'json',
-    withCredentials: true
+    withCredentials: true,
+    headers: {
+      'www-authenticate': 'VinTokenAuthenticationProvider',
+      'Accept': 'application/json',
+      'Vin-Token': token
+    }
   });
-};
+}
 
-const get = function(url) {
-  return getInitializedApi().get(url);
-};
+function get(url, token) { // eslint-disable-line no-unused-vars
+  return submitAjaxCall(url, 'get', null, token);
+}
 
-const post = function(url, data) { // eslint-disable-line no-unused-vars
-  return getInitializedApi().post(url, data);
-};
+function post(url, data, token) { // eslint-disable-line no-unused-vars
+  return submitAjaxCall(url, 'post', data, token);
+}
 
 // The API calls your app uses go down here. Export each function so they can be imported for use elsewhere...
 export function getCustomers() {
   return get('API/CRMServiceBase/v1/users/search/');
+}
+
+export function searchCustomers(search) {
+  const url = getCustomerApiBaseUrl() + 'Customer/Search';
+  return post(url,
+    {
+      'searchText': search,
+      'resultLimit': 0,
+      'isMasked': true,
+      'fieldMask': 0,
+      'leadStatusTypeId': 0
+    }
+  );
+}
+
+export function login() {
+  const url = 'http://betahrm9h02.na.autotrader.int:81/api/Login';
+  const data = { login: "chouse1", password: "Vin123456" };
+  return post(url, data);
 }
