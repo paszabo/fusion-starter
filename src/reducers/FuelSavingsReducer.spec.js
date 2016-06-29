@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import * as ActionTypes from '../actions/actionTypes';
 import reducer from './fuelSavingsReducer';
-import dateHelper from '../businessLogic/dateHelper';
+import dateHelper from '../utils/dateHelper';
 import initialState from './initialState';
 
 describe('Reducers::FuelSavings', function() {

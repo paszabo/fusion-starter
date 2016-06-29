@@ -1,7 +1,7 @@
 import {SAVE_FUEL_SAVINGS, CALCULATE_FUEL_SAVINGS} from '../actions/actionTypes';
 import objectAssign from 'object-assign';
-import calculator from '../businessLogic/fuelSavingsCalculator';
-import dateHelper from '../businessLogic/dateHelper';
+import calculator from '../utils/fuelSavingsCalculator';
+import dateHelper from '../utils/dateHelper';
 import initialState from './initialState';
 
 // IMPORTANT: Note that with Redux, state should NEVER be changed.

@@ -6,15 +6,15 @@ import initialState from './initialState';
 // create a copy of the state passed and set new values on the copy.
 // Note that I'm using Object.assign to create a copy of current state
 // and update values on the copy.
-export default function loadingStatusReducer(state = initialState.ajaxCallsInProgress, action) {
+export default function loadingStatusReducer(ajaxCallsInProgress = initialState.ajaxCallsInProgress, action) {
   switch (action.type) {
   case LOADING:
-    return state + 1;
+    return ajaxCallsInProgress + 1;
 
   case LOADING_COMPLETE:
-    return state - 1;
+    return ajaxCallsInProgress - 1;
 
   default:
-    return state;
+    return ajaxCallsInProgress;
   }
 }
