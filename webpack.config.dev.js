@@ -2,6 +2,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import NpmInstallPlugin from 'npm-install-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   debug: true,
@@ -21,7 +22,15 @@ export default {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new NpmInstallPlugin({ // Automatically install uninstalled dependencies
+
+    // Create HTML file that includes references to bundled CSS and JS.
+    new HtmlWebpackPlugin({
+      template: 'src/index.ejs',
+      inject: true
+    }),
+
+    // Automatically install uninstalled dependencies
+    new NpmInstallPlugin({
       dev: function(module) {
         return [
           'babel-preset-react-hmre',
