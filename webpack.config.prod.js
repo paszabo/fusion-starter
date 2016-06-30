@@ -67,7 +67,7 @@ export default {
     }),
 
     // Generate an external css file with a hash in the filename
-    new ExtractTextPlugin('[name].[chunkhash].css'),
+    new ExtractTextPlugin('[name].[contenthash].css'),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {screw_ie8: true, keep_fnames: false, warnings: false},
