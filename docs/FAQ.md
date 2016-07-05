@@ -169,7 +169,7 @@ private void EnableCrossOriginRequestsFromLocalhost(HttpRequest request)
     }
 }
 ```
-The example project includes /api/api.js. This file uses Axios to make AJAX calls. It's recommended to centralize your API calls there. See the example in api.js. api.js properly sets the base url based on whether it's running locally, but be sure to add a hosts entry for motosnap.com (as outlined in the initial machine setup) to assure it works properly.
+The example project includes /api/api.js. This file uses Axios to make AJAX calls. It's recommended to centralize your API calls there. See the example in api.js. api.js properly sets the base url based on whether it's running locally, but be sure to add a hosts entry for vinconnect.com (as outlined in the initial machine setup) to assure it works properly.
 
 ### I just want an empty starter kit.
 This starter kit includes an example app so you can see how everything hangs together on a real app. When you're done reviewing it, run this to remove the demo app:
