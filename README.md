@@ -9,7 +9,7 @@ Fusion Starter is a comprehensive starter kit for rapid application development 
 | **Tech** | **Description** |**Learn More**|
 |----------|-------|---|
 |  [React](https://facebook.github.io/react/)  |   Fast, composable client-side components    |[Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html) [Pluralsight Courses](https://www.pluralsight.com/search?q=react&categories=course)  |
-|  [Redux](http://redux.js.org) |  Enforces unidirectional data flows and immutable stores. Useful on larger apps with complex data flows. Alternative to [Facebook's Flux](https://facebook.github.io/flux/docs/overview.html).| [Tutorial Video](https://egghead.io/series/getting-started-with-redux) [Code-based tutorial](https://github.com/happypoulp/redux-tutorial)   |
+|  [Redux](http://redux.js.org) |  Enforces unidirectional data flows and immutable stores. Useful on larger apps with complex data flows. Alternative to [Facebook's Flux](https://facebook.github.io/flux/docs/overview.html).| [Tutorial Video](https://egghead.io/series/getting-started-with-redux) [Pluralsight Course](https://app.pluralsight.com/library/courses/react-redux-react-router-es6/table-of-contents) [Code-based tutorial](https://github.com/happypoulp/redux-tutorial)   |
 |  [Babel](http://babeljs.io) |  Compiles ES6 to ES5. Enjoy the new version of JavaScript today     | [ES6 REPL](https://babeljs.io/repl/), [ES6 vs ES5](http://es6-features.org), [ES6 Katas](http://es6katas.org), [Pluralsight course](http://www.pluralsight.com/courses/javascript-fundamentals-es6)    |
 | [Webpack](http://webpack.github.io) | Bundles npm packages and our JS into a single file. Supports hot reloading. | [Quick Webpack How-to](https://github.com/petehunt/webpack-howto) [Pluralsight Course](https://www.pluralsight.com/courses/webpack-fundamentals)|
 | [BrowserSync](http://www.browsersync.com) | Lightweight development HTTP server that supports synchronized testing and debugging on multiple devices. | [Intro vid](https://www.youtube.com/watch?time_continue=1&v=heNWfzc7ufQ)|
@@ -47,12 +47,12 @@ This will run the automated build process, start up a webserver, and open the ap
  4. **Install C++ Compiler**. Open Visual Studio and go to File -> New -> Project -> Visual C++ -> Install Visual C++ Tools for Windows Desktop. The C++ compiler is used to compile browser-sync (and perhaps other Node modules).
  5. **Install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** in Chrome. (Optional, but helpful)
  6. **Configure your Editor for React**. [Install the appropriate plugin](https://github.com/facebook/react/wiki/Complementary-Tools#jsx-integrations) and [configure your editor](https://github.com/kriasoft/react-starter-kit/blob/master/docs/how-to-configure-text-editors.md).
- 7. **Add two lines to your [Windows hosts file](https://www.rackspace.com/knowledge_center/article/modify-your-hosts-file)** for motosnap.com: 
+ 7. **Add two lines to your [Windows hosts file](https://www.rackspace.com/knowledge_center/article/modify-your-hosts-file)** for vinconnect.com: 
 ```
-127.0.0.1 motosnap.com
-127.0.0.1 www.motosnap.com
+127.0.0.1 vinconnect.com
+127.0.0.1 www.vinconnect.com
 ```
-The api configuration example (in /src/api/api.js) assumes that you're running VinConnect and its APIs locally at motosnap.com, so these host entries make sure cross origin calls like this succeed: `motosnap.com/CarDashboard/API/CRMServiceBase/v1/customers/attachments/list?customerId=212746634`
+The api configuration example (in /src/api/api.js) assumes that you're running VinConnect and its APIs locally at vinconnect.com, so these host entries make sure cross origin calls like this succeed: `vinconnect.com/CarDashboard/API/CRMServiceBase/v1/customers/attachments/list?customerId=212746634`
 
 ## Questions?
 Check out the [FAQ](/docs/FAQ.md)
