@@ -15,6 +15,8 @@ Fusion Starter is a comprehensive starter kit for rapid application development 
 5. **Working example app** - The included example app shows how this all works together.
 6. **Automated production build** - Type `npm run build` to do all this:
 
+[![Fusion Starter Production Build](https://img.youtube.com/vi/qlfDLsX-J0U/0.jpg)](https://www.youtube.com/watch?v=qlfDLsX-J0U)
+
 It offers a rich development experience including:
 
 | **Tech** | **Description** |**Learn More**|
