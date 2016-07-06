@@ -6,7 +6,7 @@
 
 Fusion Starter is a comprehensive starter kit for rapid application development using React. 
 
-#Why Use this?
+##Why Use this?
 
 1. **One command to get started** - Type `npm start` to start development in your default browser.
 2. **Rapid feedback** - Each time you hit save, changes hot reload and linting and automated tests run.
@@ -17,7 +17,7 @@ Fusion Starter is a comprehensive starter kit for rapid application development 
 
 [![Fusion Starter Production Build](https://img.youtube.com/vi/qlfDLsX-J0U/0.jpg)](https://www.youtube.com/watch?v=qlfDLsX-J0U)
 
-It offers a rich development experience including:
+##Technologies
 
 | **Tech** | **Description** |**Learn More**|
 |----------|-------|---|
@@ -33,8 +33,6 @@ It offers a rich development experience including:
 | [SASS](http://sass-lang.com/) | Compiled CSS styles with variables, functions, and more. | [Pluralsight Course](https://www.pluralsight.com/courses/better-css)|
 | [Editor Config](http://editorconfig.org) | Enforce consistent editor settings (spaces vs tabs, etc). | [IDE Plugins](http://editorconfig.org/#download) |
 | [npm Scripts](https://docs.npmjs.com/misc/scripts)| Glues all this together in a handy automated build. | [Pluralsight course](https://www.pluralsight.com/courses/npm-build-tool-introduction) [Why not Gulp?](https://medium.com/@housecor/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8#.vtaziro8n)  |
-
-The starter kit includes a working example app that puts all of the above to use.
 
 ## Get Started
  1. **Initial Machine Setup**
