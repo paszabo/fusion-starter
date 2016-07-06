@@ -4,7 +4,18 @@
 [![Build status: Windows](https://ci.appveyor.com/api/projects/status/xrtxiqy55dtj7qe4?svg=true)](https://ci.appveyor.com/project/coryhouse/fusion-starter/branch/master)
 [![Dependency Status](https://david-dm.org/cox-auto-kc/fusion-starter.svg?style=flat-square)](https://david-dm.org/cox-auto-kc/fusion-starter)
 
-Fusion Starter is a comprehensive starter kit for rapid application development using React. It offers a rich development experience including:
+Fusion Starter is a comprehensive starter kit for rapid application development using React. 
+
+#Why Use this?
+
+1. **One command to get started** - Type `npm start` to start development in your default browser.
+2. **Rapid feedback** - Each time you hit save, changes hot reload and linting and automated tests run.
+3. **One command line to check** - All feedback is displayed on a single command line.
+4. **No more JavaScript fatigue** - Slingshot uses the most popular and powerful libraries for working with React.
+5. **Working example app** - The included example app shows how this all works together.
+6. **Automated production build** - Type `npm run build` to do all this:
+
+It offers a rich development experience including:
 
 | **Tech** | **Description** |**Learn More**|
 |----------|-------|---|
