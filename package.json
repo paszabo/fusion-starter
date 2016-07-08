@@ -2,7 +2,11 @@
   "name": "vin-react-starter-kit",
   "version": "5.0.0",
   "description": "Starter kit for creating React apps at Vinsolutions",
+  "engines": {
+    "npm": ">=4"
+  },
   "scripts": {
+    "preinstall": "npm run tools/nodeVersionCheck",
     "remove-demo": "babel-node tools/removeDemo.js",
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm-run-all --parallel start-message remove-dist",
