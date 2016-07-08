@@ -21,6 +21,9 @@ browserSync({
     baseDir: 'src',
 
     middleware: [
+      // Support reloading deep links on the client during dev.
+      historyApiFallback(),
+
       webpackDevMiddleware(bundler, {
         // Dev middleware can't access config, so we provide publicPath
         publicPath: config.output.publicPath,
@@ -36,10 +39,7 @@ browserSync({
       }),
 
       // bundler should be the same as above
-      webpackHotMiddleware(bundler),
-
-      // Support reloading deep links on the client during dev.
-      historyApiFallback()
+      webpackHotMiddleware(bundler)
     ]
   },
 
