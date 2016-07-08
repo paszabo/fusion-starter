@@ -3,7 +3,7 @@
   "version": "5.0.0",
   "description": "Starter kit for creating React apps at Vinsolutions",
   "engines": {
-    "npm": ">=4"
+    "npm": ">=3"
   },
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
