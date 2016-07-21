@@ -11,7 +11,7 @@ import objectAssign from 'object-assign';
 export default function customerReducer(state = initialState.customers, action) {
   switch (action.type) {
   case RECEIVE_CUSTOMERS:
-    return objectAssign({}, state, {customers: action.customers});
+    return action.customers;
 
   default:
     return state;

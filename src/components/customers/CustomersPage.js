@@ -18,13 +18,25 @@ class Customers extends React.Component {
     return (
       <div>
         <h2>Customers</h2>
-        <p>This app uses <a href="https://github.com/gaearon/redux-thunk">redux-thunk</a> to make AJAX calls. To test this, make sure you're logged into dev VinConnect.</p>
+        <p>This app uses <a href="https://github.com/gaearon/redux-thunk">redux-thunk</a> to make AJAX calls. This simple app shows how to call existing APIs hosted locally on IIS.
+          </p>
+          <p>
+            How's this work? It makes a <a href="http://www.html5rocks.com/en/tutorials/cors/">CORS</a> call from the Node-based webserver serving this app to your IIS hosted APIs.
+          </p>
+        <p>
+          To test this:
+        </p>
+        <ol>
+          <li>Build CRMServiceBase</li>
+          <li>Add a host entry as outlined in the <a href="https://github.com/cox-auto-kc/fusion-starter#initial-machine-setup">initial machine setup</a></li>
+          <li>Log into VinConnect on your local machine</li>
+        </ol>
         {loading && <h1>Loading...</h1>}
         <input type="submit"
                value="Get Customers"
                className="btn btn-primary"
                onClick={this.onFetchCustomersClick}/>
-        {customers.length > 0 && <p> {customers.length} customers found.</p>}
+        {customers.length > 0 && <p>Success! {customers.length} customers found.</p>}
       </div>
     );
   }
