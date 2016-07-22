@@ -29,7 +29,8 @@ class Customers extends React.Component {
         <ol>
           <li>Build CRMServiceBase</li>
           <li>Add a host entry as outlined in the <a href="https://github.com/cox-auto-kc/fusion-starter#initial-machine-setup">initial machine setup</a></li>
-          <li>Log into VinConnect on your local machine</li>
+          <li>Log in to VinConnect on your local machine</li>
+          <li>Click the Get Customers button below.</li>
         </ol>
         {loading && <h1>Loading...</h1>}
         <input type="submit"
