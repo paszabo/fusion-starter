@@ -1,6 +1,5 @@
 import {RECEIVE_CUSTOMERS} from '../actions/actionTypes';
 import initialState from './initialState';
-import objectAssign from 'object-assign';
 
 // IMPORTANT: Note that with Redux, state should NEVER be changed.
 // State is considered immutable. Instead,
