@@ -30,7 +30,7 @@ browserSync({
 
         // These settings suppress noisy webpack output so only errors are displayed to the console.
         noInfo: false,
-        quiet: true,
+        quiet: false,
         stats: {
           assets: false,
           colors: true,
