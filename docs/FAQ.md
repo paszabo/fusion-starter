@@ -75,7 +75,8 @@ Assuming your project isn't using Git itself, you can clone this repo to get sta
 |babel-eslint|Connects Babel and ESLint so ES6 code can be linted |
 |babel-loader|Adds Babel support to Webpack |
 |babel-plugin-react-display-name| Add displayName to React.createClass calls |
-|babel-plugin-react-transform| Add support for transforming React code to Babel |
+|babel-plugin-transform-react-constant-elements | Performance optimization: Hoists the creation of elements that are fully static to the top level. reduces calls to React.createElement and the resulting memory allocations. [More info](https://medium.com/doctolib-engineering/improve-react-performance-with-babel-16f1becfaa25#.2wbkg8g4d) |
+|babel-plugin-transform-react-remove-prop-types | Remove propTypes for prod build (saves bandwidth since they're not run anyway) |
 |babel-preset-es2015|Babel preset for ES2015|
 |babel-preset-react-hmre|Hot reloading preset for Babel|
 |babel-preset-react| Add JSX support to Babel |
@@ -98,6 +99,7 @@ Assuming your project isn't using Git itself, you can clone this repo to get sta
 |mocha| JavaScript testing library |
 |node-sass| Adds SASS support to Webpack |
 |npm-install-webpack-plugin|Automatically install missing dependencies|
+|npm-run-all| Run multiple scripts at the same time |
 |parallelshell| Display results of multiple commands on single command line |
 |react-addons-test-utils| Adds React TestUtils |
 |redux-immutable-state-invariant| Throw error when you mutate Redux store state|
