@@ -34,6 +34,7 @@ Assuming your project isn't using Git itself, you can clone this repo to get sta
 ├── .editorconfig             # Configures editor rules
 ├── .eslintrc                 # Configures ESLint
 ├── .gitignore                # Tells git which files to ignore
+├── .istanbul.yml             # Configure istanbul code coverage
 ├── .npmrc                    # Configures npm to save exact by default
 ├── README.md                 # This file.
 ├── dist                      # Folder where the build script places the built app. Use this in prod.
