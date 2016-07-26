@@ -21,24 +21,26 @@ Fusion Starter is a comprehensive starter kit for rapid application development 
 
 | **Tech** | **Description** |**Learn More**|
 |----------|-------|---|
-|  [React](https://facebook.github.io/react/)  |   Fast, composable client-side components    |[Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html) [Pluralsight Courses](https://www.pluralsight.com/search?q=react&categories=course)  |
-|  [Redux](http://redux.js.org) |  Enforces unidirectional data flows and immutable stores. Useful on larger apps with complex data flows. Alternative to [Facebook's Flux](https://facebook.github.io/flux/docs/overview.html).| [Tutorial Video](https://egghead.io/series/getting-started-with-redux) [Pluralsight Course](https://app.pluralsight.com/library/courses/react-redux-react-router-es6/table-of-contents) [Code-based tutorial](https://github.com/happypoulp/redux-tutorial)   |
+|  [React](https://facebook.github.io/react/)  |   Fast, composable client-side components  |[Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html) [Pluralsight Courses](https://www.pluralsight.com/search?q=react&categories=course) |
+| [React Router](https://github.com/reactjs/react-router) | A complete routing library for React. | |
+| [Redux](http://redux.js.org) |  Enforces unidirectional data flows and immutable stores. Useful on larger apps with complex data flows. Alternative to [Facebook's Flux](https://facebook.github.io/flux/docs/overview.html).| [Tutorial Video](https://egghead.io/series/getting-started-with-redux) [Pluralsight Course](https://app.pluralsight.com/library/courses/react-redux-react-router-es6/table-of-contents) [Code-based tutorial](https://github.com/happypoulp/redux-tutorial)   |
 |  [Babel](http://babeljs.io) |  Compiles ES6 to ES5. Enjoy the new version of JavaScript today     | [ES6 REPL](https://babeljs.io/repl/), [ES6 vs ES5](http://es6-features.org), [ES6 Katas](http://es6katas.org), [Pluralsight course](http://www.pluralsight.com/courses/javascript-fundamentals-es6)    |
 | [Webpack](http://webpack.github.io) | Bundles npm packages and our JS into a single file. Supports hot reloading. | [Quick Webpack How-to](https://github.com/petehunt/webpack-howto) [Pluralsight Course](https://www.pluralsight.com/courses/webpack-fundamentals)|
 | [BrowserSync](http://www.browsersync.com) | Lightweight development HTTP server that supports synchronized testing and debugging on multiple devices. | [Intro vid](https://www.youtube.com/watch?time_continue=1&v=heNWfzc7ufQ)|
 | [Mocha](http://mochajs.org) | Automated tests with [Chai](http://chaijs.com/) for assertions and [Enzyme](https://github.com/airbnb/enzyme) for DOM testing without a browser using Node. | [Pluralsight Course](https://www.pluralsight.com/courses/testing-javascript) |
+| [Istanbul](https://github.com/gotwarlost/istanbul) | Code coverage data. Using [Isparta](https://github.com/douglasduteil/isparta) to handle ES6 code. | | | 
 |[TrackJS](http://www.trackjs.com) | JavaScript error tracking. Reports available at TrackJS.com. See Cory for credentials | |  
-|[Istanbul](https://github.com/gotwarlost/istanbul) | Code coverage data | | | 
 | [ESLint](http://eslint.org/)| Lint JS. Reports syntax and style issues. Using [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) for additional React specific linting rules. | |
 | [SASS](http://sass-lang.com/) | Compiled CSS styles with variables, functions, and more. | [Pluralsight Course](https://www.pluralsight.com/courses/better-css)|
+| [PostCSS](http://postcss.org/) | A tool for transforming CSS with JavaScript. We're using [stylelint](http://stylelint.io) to lint styles | | 
 | [Editor Config](http://editorconfig.org) | Enforce consistent editor settings (spaces vs tabs, etc). | [IDE Plugins](http://editorconfig.org/#download) |
-| [npm Scripts](https://docs.npmjs.com/misc/scripts)| Glues all this together in a handy automated build. | [Pluralsight course](https://www.pluralsight.com/courses/npm-build-tool-introduction) [Why not Gulp?](https://medium.com/@housecor/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8#.vtaziro8n)  |
+| [npm Scripts](https://docs.npmjs.com/misc/scripts)| Glues all this together in a handy automated build. | [Pluralsight course](https://www.pluralsight.com/courses/npm-build-tool-introduction), [Why not Gulp?](https://medium.com/@housecor/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8#.vtaziro8n)  |
 
 ## Get Started
  1. **Initial Machine Setup**
 First time running the starter kit? Then complete the [Initial Machine Setup](#initial-machine-setup).
  2. **Clone the project**
-Open the command line of your choice and change to the directory where you'd like to start your project. Then clone the project: `git clone https://github.com/vinsolutions-kc/fusion-starter.git your-project-name`.  
+Open the command line of your choice and change to the directory where you'd like to start your project. Then clone the project: `git clone https://github.com/cox-auto-kc/fusion-starter.git your-project-name`.  
  3. **Change directory**
 `cd your-project-name`. - Change directories into your project's root directory (the project name you chose in step 2):
  4. **Install Node packages** 
