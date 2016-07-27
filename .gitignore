@@ -37,3 +37,7 @@ dist
 
 # Mac files
 .DS_Store
+
+#Windows
+Thumbs.db
+desktop.ini
