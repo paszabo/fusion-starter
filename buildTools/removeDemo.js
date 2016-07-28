@@ -17,21 +17,6 @@ const pathsToRemove = [
   './src/index.js'
 ];
 
-const filesToCreate = [
-  {
-    path: './src/components/emptyTest.spec.js',
-    content: '// Must have at least one test file in this directory or Mocha will throw an error.'
-  },
-  {
-    path: './src/index.js',
-    content: '// Set up your application entry point here...'
-  },
-  {
-    path: './src/reducers/index.js',
-    content: '// Set up your root reducer here...\n import { combineReducers } from \'redux\';\n export default combineReducers;'
-  }
-];
-
 function removePath(path, callback) {
   rimraf(path, error => {
     if (error) throw new Error(error);
@@ -45,13 +30,21 @@ function createFile(file) {
   });
 }
 
+function moveTemplates() {
+  fs.rename('./buildTools/templates/HelloWorld.js', './src/components/HelloWorld.js');
+  fs.rename('./buildTools/templates/HelloWorld.spec.js', './src/components/HelloWorld.spec.js');
+  fs.rename('./buildTools/templates/index.js', './src/index.js');
+  fs.rename('./buildTools/templates/rootReducer.js', './src/reducers/index.js');
+}
+
 let numPathsRemoved = 0;
 pathsToRemove.map(path => {
   removePath(path, () => {
     numPathsRemoved++;
     if (numPathsRemoved === pathsToRemove.length) { // All paths have been processed
       // Now we can create files since we're done deleting.
-      filesToCreate.map(file => createFile(file));
+      // Move templates over to their proper place
+      moveTemplates();
     }
   });
 });
