@@ -16,8 +16,8 @@ const GLOBALS = {
 // to React point to the same spot.
 export default {
   debug: true,
-  devtool: 'source-map', // more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
-  noInfo: true, // set to false to see a list of every file being bundled.
+  devtool: 'source-map', // More info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
+  noInfo: true, // Set to false to see a list of every file being bundled.
   entry: {
     // All vendor libraries should be imported in vendor.js. Since vendor libs rarely change, this helps save bandwidth by placing them in a separate file that can be cached separately. Anything not imported in vendor.js will be placed in main.js.
     vendor: './src/vendor.js',
@@ -77,17 +77,28 @@ export default {
   module: {
     loaders: [
       {test: /(\.js|\.jsx)$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
-      {test: /(\.css|\.scss)$/, loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')},
+      {test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader?sourceMap', 'css-loader?sourceMap!postcss-loader')},
+      {test: /\.ico(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?mimetype=image/x-icon'},
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
       {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
       {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
       {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'},
-      {test: /\.(jpe?g|png|gif)$/i, loaders: ['file']}
+      {test: /\.(jpe?g|png|gif)$/i, loaders: ['file?name=[path][name].[ext]?[hash]']}
     ]
+  },
+  postcss: function (webpack) {
+    return [
+      require('postcss-import')({addDependencyTo: webpack}),
+      require('postcss-url')(),
+      require('postcss-cssnext')({
+        browsers: 'last 3 versions, > 1%'
+      })
+    ];
   },
   resolve: {
     alias: {
-      'react': path.join(__dirname, 'node_modules', 'react')
+      'react': path.join(__dirname, 'node_modules', 'react'),
+      'fusion-theme-min': path.join(__dirname, 'node_modules', 'fusion-theme', 'dist', 'fusion-theme.min.css')
     },
     extensions: ['', '.js', '.jsx']
   }

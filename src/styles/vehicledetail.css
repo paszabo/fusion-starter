@@ -1,0 +1,21 @@
+/* Vehicle Object
+ *
+ * Vehicle example component.
+ *
+ */
+
+.vo {
+  position: relative;
+
+  &__labels {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media (--maxwidth-screen-sm) {
+  .vo__labels {
+    position: static;
+  }
+}

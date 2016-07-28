@@ -8,13 +8,13 @@ import initialState from './initialState';
 // and update values on the copy.
 export default function loadingStatusReducer(ajaxCallsInProgress = initialState.ajaxCallsInProgress, action) {
   switch (action.type) {
-  case LOADING:
-    return ajaxCallsInProgress + 1;
+    case LOADING:
+      return ajaxCallsInProgress + 1;
 
-  case LOADING_COMPLETE:
-    return ajaxCallsInProgress - 1;
+    case LOADING_COMPLETE:
+      return ajaxCallsInProgress - 1;
 
-  default:
-    return ajaxCallsInProgress;
+    default:
+      return ajaxCallsInProgress;
   }
 }

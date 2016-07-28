@@ -3,14 +3,15 @@ import webpack from 'webpack';
 import path from 'path';
 import NpmInstallPlugin from 'npm-install-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
 
 export default {
   debug: true,
-  devtool: 'cheap-module-eval-source-map', // more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
-  noInfo: true, // set to false to see a list of every file being bundled.
+  devtool: 'cheap-module-eval-source-map', // More info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
+  noInfo: true, // Set to false to see a list of every file being bundled.
   entry: [
-    'eventsource-polyfill', // necessary for hot reloading with IE
-    'webpack-hot-middleware/client?reload=true', // note that it reloads the page if hot module reloading fails.
+    'eventsource-polyfill', // Necessary for hot reloading with IE
+    'webpack-hot-middleware/client?reload=true', // Note that it reloads the page if hot module reloading fails.
     './src/index'
   ],
   target: 'web',
@@ -22,6 +23,7 @@ export default {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new StyleLintPlugin({files: '**/*.css'}),
 
     // Create HTML file that includes references to bundled CSS and JS.
     new HtmlWebpackPlugin({
@@ -43,7 +45,8 @@ export default {
   module: {
     loaders: [
       {test: /(\.js|\.jsx)$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
-      {test: /(\.css|\.scss)$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap']},
+      {test: /\.css$/, loader: 'style-loader?sourceMap!css-loader?sourceMap!postcss-loader'},
+      {test: /\.ico(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?mimetype=image/x-icon'},
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
       {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
       {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
@@ -51,9 +54,19 @@ export default {
       {test: /\.(jpe?g|png|gif)$/i, loaders: ['file']}
     ]
   },
+  postcss: function (webpack) {
+    return [
+      require('postcss-import')({addDependencyTo: webpack}),
+      require('postcss-url')(),
+      require('postcss-cssnext')({
+        browsers: 'last 3 versions, > 1%'
+      })
+    ];
+  },
   resolve: {
     alias: {
-      'react': path.join(__dirname, 'node_modules', 'react')
+      'react': path.join(__dirname, 'node_modules', 'react'),
+      'fusion-theme-min': path.join(__dirname, 'node_modules', 'fusion-theme', 'dist', 'fusion-theme.min.css')
     },
     extensions: ['', '.js', '.jsx']
   }

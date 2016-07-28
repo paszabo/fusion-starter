@@ -2,6 +2,8 @@ import { combineReducers } from 'redux';
 import fuelSavings from './fuelSavingsReducer';
 import customers from './customerReducer';
 import ajaxCallsInProgress from './loadingStatusReducer';
+import loadingIndicatorStatus from './loadingIndicatorReducer';
+import recentPosts from './recentPostsReducer';
 
 // Note that I chose a shorter name above when importing reducers.
 // This keeps the calls to these reducers in our container components
@@ -11,7 +13,9 @@ import ajaxCallsInProgress from './loadingStatusReducer';
 const rootReducer = combineReducers({
   fuelSavings,
   customers,
-  ajaxCallsInProgress
+  ajaxCallsInProgress,
+  loadingIndicatorStatus,
+  recentPosts
 });
 
 export default rootReducer;

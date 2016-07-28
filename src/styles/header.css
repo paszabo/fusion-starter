@@ -1,0 +1,98 @@
+/* Header
+ *
+ * Styling for the header bar which is an instace of Navbar.
+ * https://react-bootstrap.github.io/components.html#navigation
+ *
+ */
+
+.header-bar {
+  background-color: var(--brand-cox);
+  background-image: none;
+  box-shadow: none;
+  margin-bottom: 0;
+  max-height: 50px;
+
+  &__bell-navitem {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 250px;
+  }
+
+  &__envelope-navitem {
+    width: 250px;
+  }
+
+  &__envelope-preview {
+    white-space: normal;
+  }
+
+  & &__nav-header {
+    float: left;
+    color: var(--gray-lightest);
+    user-select: none;
+  }
+
+  &__nav-logo {
+    margin-right: 14px;
+    margin-bottom: 3px;
+    width: auto;
+    height: 24px;
+  }
+
+  & .navbar-header &__nav-brand,
+  & &__nav-brand:hover {
+    color: var(--gray-lightest);
+  }
+
+  &__nav-brand > img {
+    display: inline-block;
+  }
+
+  &__nav-right.nav.navbar-nav {
+    float: right;
+  }
+
+  & &__nav-right > li.dropdown > a {
+    color: var(--gray-lightest);
+  }
+
+  & &__nav-right > li.open.dropdown > a {
+    background-color: var(--brand-primary);
+    color: var(--gray-lightest);
+  }
+
+  &__nav-right > li {
+    float: left;
+  }
+
+  & &__nav-right > li > a {
+    color: var(--gray-lightest);
+  }
+
+  & &__nav-right > li > a:hover {
+    color: var(--gray-lightest);
+  }
+
+  @media (--maxwidth-screen-xs) {
+    &__nav-brand > img {
+      display: none;
+    }
+
+    & .navbar-nav .open .dropdown-menu {
+      position: absolute;
+      background-color: white;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      right: 0;
+      left: auto;
+    }
+
+    & .navbar-nav {
+      margin: 0 -15px;
+    }
+
+    & &__dropdown > a {
+      padding-top: 13px;
+      padding-bottom: 13px;
+    }
+  }
+}

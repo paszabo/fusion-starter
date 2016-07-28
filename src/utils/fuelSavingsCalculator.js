@@ -20,14 +20,14 @@ const fuelSavingsCalculator = function () {
       const weeksPerYear = 52;
 
       switch (milesDrivenTimeframe) {
-      case 'week':
-        return (milesDriven * weeksPerYear) / monthsPerYear;
-      case 'month':
-        return milesDriven;
-      case 'year':
-        return milesDriven / monthsPerYear;
-      default:
-        throw new Error('Unknown milesDrivenTimeframe passed: ' + milesDrivenTimeframe);
+        case 'week':
+          return (milesDriven * weeksPerYear) / monthsPerYear;
+        case 'month':
+          return milesDriven;
+        case 'year':
+          return milesDriven / monthsPerYear;
+        default:
+          throw new Error('Unknown milesDrivenTimeframe passed: ' + milesDrivenTimeframe);
       }
     },
 

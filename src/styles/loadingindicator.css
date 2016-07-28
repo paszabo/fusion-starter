@@ -1,0 +1,40 @@
+/* React Progress Bar Example
+ *
+ * Styling for the react-progress-bar-plus examples.
+ * https://github.com/vn38minhtran/react-progress-bar-plus
+ *
+ */
+
+.react-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: visible;
+  opacity: 1;
+  z-index: 9999;
+  background: #fff;
+
+  &-percent {
+    height: 2px;
+    background: var(--brand-cox);
+  }
+
+  &-position-relative {
+    position: relative;
+    top: -6px;
+  }
+
+  &-position-relative &-percent {
+    height: 6px;
+  }
+
+  &-position-relative > .react-progress-bar {
+    position: absolute;
+    text-align: left;
+  }
+}
+
+.react-progress-bar-toolbar {
+  display: inline-block;
+}

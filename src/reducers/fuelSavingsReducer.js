@@ -15,23 +15,23 @@ export default function fuelSavingsReducer(state = initialState.fuelSavings, act
   const calc = calculator();
 
   switch (action.type) {
-  case SAVE_FUEL_SAVINGS:
-    // in a real app we'd trigger an AJAX call here. For this example, just simulating a save by changing date modified.
-    return objectAssign({}, state, {dateModified: dateHelper.getFormattedDateTime(new Date())});
+    case SAVE_FUEL_SAVINGS:
+      // in a real app we'd trigger an AJAX call here. For this example, just simulating a save by changing date modified.
+      return objectAssign({}, state, {dateModified: dateHelper.getFormattedDateTime(new Date())});
 
-  case CALCULATE_FUEL_SAVINGS:
-    newState = objectAssign({}, state);
-    newState[action.fieldName] = action.value;
-    newState.necessaryDataIsProvidedToCalculateSavings = calc.necessaryDataIsProvidedToCalculateSavings(newState);
-    newState.dateModified = dateHelper.getFormattedDateTime(new Date());
+    case CALCULATE_FUEL_SAVINGS:
+      newState = objectAssign({}, state);
+      newState[action.fieldName] = action.value;
+      newState.necessaryDataIsProvidedToCalculateSavings = calc.necessaryDataIsProvidedToCalculateSavings(newState);
+      newState.dateModified = dateHelper.getFormattedDateTime(new Date());
 
-    if (newState.necessaryDataIsProvidedToCalculateSavings) {
-      newState.savings = calc.calculateSavings(newState);
-    }
+      if (newState.necessaryDataIsProvidedToCalculateSavings) {
+        newState.savings = calc.calculateSavings(newState);
+      }
 
-    return newState;
+      return newState;
 
-  default:
-    return state;
+    default:
+      return state;
   }
 }
