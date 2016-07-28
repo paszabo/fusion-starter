@@ -13,9 +13,7 @@ Fusion Starter is a comprehensive starter kit for rapid application development 
 3. **One command line to check** - All feedback is displayed on a single command line.
 4. **No more JavaScript fatigue** - Slingshot uses the most popular and powerful libraries for working with React.
 5. **Working example app** - The included example app shows how this all works together.
-6. **Automated production build** - Type `npm run build` to do all this:
-
-[![Fusion Starter Production Build](https://img.youtube.com/vi/qlfDLsX-J0U/0.jpg)](https://www.youtube.com/watch?v=qlfDLsX-J0U)
+6. **Automated production build** - Type `npm run build` to minify and bundle CSS and JS, run tests, lint your code and more.
 
 ##Technologies
 
