@@ -39,26 +39,30 @@ Assuming your project isn't using Git itself, you can clone this repo to get sta
 ├── .stylelintrc              # Configures stylelint.
 ├── README.md                 # This file.
 ├── assets                    # Folder where you will store images, documents, or other other files.
+├── buildTools                # Node scripts that run build related tools
+│   ├── baseUrl.js            # Sets the baseUrl based on runtime environment
+│   ├── build.js              # Runs the production build
+│   ├── buildHtml.js          # Builds index.html
+│   ├── chalkConfig.js        # Configure colored command line output
+│   ├── distServer.js         # Starts webserver and opens final built app that's in dist in your default browser
+│   ├── removeDemo.js         # Remove the demo app so you can begin development
+│   ├── srcServer.js          # Starts dev webserver with hot reloading and opens your app in your default browser
+│   ├── startMessage.js       # Displays a message to the command line when starting the app.
+│   ├── testSetup.js          # Configures Mocha.
 ├── dist                      # Folder where the build script places the built app. Use this in prod.
 ├── package.json              # Package configuration. The list of 3rd party libraries and utilities
-├── src                       # Source code
+├── src                       # The actual application's source code. 
 │   ├── actions               # Redux actions. List of distinct actions that can occur in the app.  
 │   ├── api                   # Centralized place to make AJAX calls. Includes example call.
-│   ├── businessLogic         # Plain old JS objects (POJOs). Pure logic. No framework specific code here.
 │   ├── components            # React components
-│   ├── constants             # Application constants including constants for Redux
 │   ├── containers            # App container for Redux
 │   ├── favicon.ico           # favicon to keep your browser from throwing a 404 during dev. Not actually used in prod build.
 │   ├── index.html            # Start page
 │   ├── index.js              # Entry point for your app
 │   ├── reducers              # Redux reducers. Your state is altered here based on actions
 │   ├── store                 # Redux store configuration
-│   └── styles                # CSS Styles, typically written in Sass
-├── tools                     # Node scripts that run build related tools
-│   ├── build.js              # Runs the production build
-│   ├── buildHtml.js          # Builds index.html
-│   ├── distServer.js         # Starts webserver and opens final built app that's in dist in your default browser
-│   ├── srcServer.js          # Starts dev webserver with hot reloading and opens your app in your default browser
+│   ├── styles                # CSS Styles, typically written in Sass
+│   └── utils                 # Plain old JavaScript. Pure logic. No framework specific code here. Think "business layer".
 └── webpack.config.dev.js     # Configures webpack for development
 └── webpack.config.prod.js    # Configures webpack for production
 ```

@@ -3,7 +3,7 @@
 // If you are already using jQuery, you can use it to make AJAX calls here instead since
 // Axios weighs about 20k. But note that jQuery's promise implementation is quirky.
 import axios from 'axios';
-import getBaseUrl from '../utils/baseUrl';
+import getBaseUrl from '../../buildTools/baseUrl';
 
 const api = null;
 
