@@ -7,6 +7,5 @@ import initialState from '../reducers/initialState';
 describe('Store', function() {
   it('should display results when necessary data is provided', function() {
     const store = createStore(rootReducer, initialState);
-
   });
 });
