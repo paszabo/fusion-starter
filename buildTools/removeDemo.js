@@ -12,7 +12,7 @@ const pathsToRemove = [
   './src/components/pages/!(NotFound.js)',
   './src/components/templates',
   './src/components/widgets/*',
-  './src/reducers/!(initalState|loadingIndicatorReducer|loadingStatusReducer).js',
+  './src/reducers/!(loadingIndicatorReducer|loadingStatusReducer).js',
   './src/store/store.spec.js',
   './src/styles/*',
   './src/routes.js',
@@ -43,7 +43,7 @@ function moveTemplates() {
   fs.rename('./buildTools/templates/index.css','./src/styles/index.css');
   fs.rename('./buildTools/templates/SrcIndex.js','./src/index.js');
   fs.rename('./buildTools/templates/initialState.js','./src/reducers/initialState.js');
-  fs.rename('./buildTools/templates/ReducrersIndex.js','./src/reducers/index.js');
+  fs.rename('./buildTools/templates/ReducersIndex.js','./src/reducers/index.js');
 }
 
 let numPathsRemoved = 0;
