@@ -14,10 +14,10 @@ const pathsToRemove = [
   './src/components/widgets/*',
   './src/reducers/!(initalState|loadingIndicatorReducer|loadingStatusReducer).js',
   './src/store/store.spec.js',
-  './src/styles',
-  './src/routes.js',
+  './src/styles/*',
+  './src/routes.js'];/*,
   './src/index.js'
-];
+];*/
 
 function removePath(path, callback) {
   rimraf(path, error => {
@@ -35,7 +35,7 @@ function createFile(file) {
 function moveTemplates() {
   //fs.rename('./buildTools/templates/HelloWorld.js', './src/components/HelloWorld.js');
   //fs.rename('./buildTools/templates/HelloWorld.spec.js', './src/components/HelloWorld.spec.js');
-  fs.rename('./buildTools/templates/index.js', './src/index.js');
+  //fs.rename('./buildTools/templates/index.js', './src/index.js');
   fs.rename('./buildTools/templates/rootReducer.js', './src/reducers/index.js');
   fs.rename('./buildTools/templates/actionTypes.js','./src/actions/actionTypes.js');
   fs.rename('./buildTools/templates/HomePage.js','./src/components/pages/HomePage.js');
