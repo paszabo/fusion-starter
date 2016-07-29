@@ -5,7 +5,7 @@ import routes from './routes';
 import {Router, browserHistory} from 'react-router';
 import configureStore from './store/configureStore'; // eslint-disable-line import/default
 
-import 'fusion-theme-min'; // eslint-disable-line
+import 'fusion-theme/dist/fusion-theme.min.css'; // eslint-disable-line
 import './styles/index.css';
 
 const store = configureStore();
