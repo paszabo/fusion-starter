@@ -15,9 +15,9 @@ const pathsToRemove = [
   './src/reducers/!(initalState|loadingIndicatorReducer|loadingStatusReducer).js',
   './src/store/store.spec.js',
   './src/styles/*',
-  './src/routes.js'];/*,
+  './src/routes.js'];,
   './src/index.js'
-];*/
+];
 
 function removePath(path, callback) {
   rimraf(path, error => {
@@ -41,6 +41,7 @@ function moveTemplates() {
   fs.rename('./buildTools/templates/HomePage.js','./src/components/pages/HomePage.js');
   fs.rename('./buildTools/templates/store.spec.js','./src/store/store.spec.js');
   fs.rename('./buildTools/templates/index.css','./src/styles/index.css');
+  fs.rename('./buildTools/templates/SrcIndex.js','./src/index.js');
 }
 
 let numPathsRemoved = 0;

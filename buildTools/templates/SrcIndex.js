@@ -13,8 +13,6 @@ const store = configureStore();
 // Don't need React Router?
 // Reference your top level component instead of <Router> below
 render(
-  <Provider store={store}>
-    <HomePage />
-    {/* <Router history={browserHistory} routes={routes} /> */}
-  </Provider>, document.getElementById('app')
+    <HomePage store={store} />
+  , document.getElementById('app')
 );
