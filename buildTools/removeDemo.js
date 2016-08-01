@@ -39,7 +39,7 @@ function moveTemplates() {
   fs.rename('./buildTools/templates/rootReducer.js', './src/reducers/index.js');
   fs.rename('./buildTools/templates/actionTypes.js','./src/actions/actionTypes.js');
   fs.rename('./buildTools/templates/HomePage.js','./src/components/pages/HomePage.js');
-  fs.rename('./buildTools/templates/store.spec.js','./src/store/store.spec.js');
+  //fs.rename('./buildTools/templates/store.spec.js','./src/store/store.spec.js');
   fs.rename('./buildTools/templates/index.css','./src/styles/index.css');
   fs.rename('./buildTools/templates/SrcIndex.js','./src/index.js');
   fs.rename('./buildTools/templates/initialState.js','./src/reducers/initialState.js');

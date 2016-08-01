@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import { Grid, Col, Panel } from 'react-bootstrap';
 
 const HomePage = () => {
