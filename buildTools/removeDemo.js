@@ -33,9 +33,6 @@ function createFile(file) {
 }
 
 function moveTemplates() {
-  //fs.rename('./buildTools/templates/HelloWorld.js', './src/components/HelloWorld.js');
-  //fs.rename('./buildTools/templates/HelloWorld.spec.js', './src/components/HelloWorld.spec.js');
-  //fs.rename('./buildTools/templates/HelloWorldIndex.js', './src/index.js');
   fs.rename('./buildTools/templates/rootReducer.js', './src/reducers/index.js');
   fs.rename('./buildTools/templates/actionTypes.js','./src/actions/actionTypes.js');
   fs.rename('./buildTools/templates/HomePage.js','./src/components/pages/HomePage.js');
@@ -50,7 +47,8 @@ let numPathsRemoved = 0;
 pathsToRemove.map(path => {
   removePath(path, () => {
     numPathsRemoved++;
-    if (numPathsRemoved === pathsToRemove.length) { // All paths have been processed
+    if (numPathsRemoved === pathsToRemove.length) {
+      // All paths have been processed
       // Now we can create files since we're done deleting.
       // Move templates over to their proper place
       moveTemplates();

@@ -7,16 +7,10 @@ const HomePage = () => {
       <Col sm={12} md={12} lg={12}>
         <Panel>
           <div className="template-content-wrapper content-wrapper__content-only">
-            <h1>Content Only Layout</h1>
+            <h1>Hello World!</h1>
 
-            <h3>Pellentesque ornare sem lacinia quam venenatis vestibulum.</h3>
-            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-              Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus
-              auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus,
-              nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum. Vivamus sagittis lacus vel
-              augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-              Etiam porta sem malesuada magna mollis euismod.
+            <h3>This is a content-only layout.</h3>
+            <p>This is just a sample of a content-only page layout and is meant only as a starting point. Change as needed!
             </p>
 
             <h3>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</h3>
