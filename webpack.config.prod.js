@@ -96,10 +96,6 @@ export default {
     ];
   },
   resolve: {
-    alias: {
-      'react': path.join(__dirname, 'node_modules', 'react'),
-      'fusion-theme-min': path.join(__dirname, 'node_modules', 'fusion-theme', 'dist', 'fusion-theme.min.css')
-    },
     extensions: ['', '.js', '.jsx']
   }
 };

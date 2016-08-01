@@ -6,13 +6,15 @@ import {chalkSuccess} from './chalkConfig';
 /* eslint-disable no-console */
 
 const pathsToRemove = [
-  './src/actions/*',
+  './src/actions/!(loadingIndicatorActions.js)',
   './src/utils',
-  './src/components/*',
-  './src/containers/*',
-  './src/reducers/*',
+  './src/components/layouts/DashboardLayout.js',
+  './src/components/pages/!(NotFound.js)',
+  './src/components/templates',
+  './src/components/widgets/*',
+  './src/reducers/!(loadingIndicatorReducer|loadingStatusReducer).js',
   './src/store/store.spec.js',
-  './src/styles',
+  './src/styles/*',
   './src/routes.js',
   './src/index.js'
 ];
@@ -31,17 +33,22 @@ function createFile(file) {
 }
 
 function moveTemplates() {
-  fs.rename('./buildTools/templates/HelloWorld.js', './src/components/HelloWorld.js');
-  fs.rename('./buildTools/templates/HelloWorld.spec.js', './src/components/HelloWorld.spec.js');
-  fs.rename('./buildTools/templates/index.js', './src/index.js');
   fs.rename('./buildTools/templates/rootReducer.js', './src/reducers/index.js');
+  fs.rename('./buildTools/templates/actionTypes.js','./src/actions/actionTypes.js');
+  fs.rename('./buildTools/templates/HomePage.js','./src/components/pages/HomePage.js');
+  fs.rename('./buildTools/templates/store.spec.js','./src/store/store.spec.js');
+  fs.rename('./buildTools/templates/index.css','./src/styles/index.css');
+  fs.rename('./buildTools/templates/srcIndex.js','./src/index.js');
+  fs.rename('./buildTools/templates/initialState.js','./src/reducers/initialState.js');
+  fs.rename('./buildTools/templates/ReducersIndex.js','./src/reducers/index.js');
 }
 
 let numPathsRemoved = 0;
 pathsToRemove.map(path => {
   removePath(path, () => {
     numPathsRemoved++;
-    if (numPathsRemoved === pathsToRemove.length) { // All paths have been processed
+    if (numPathsRemoved === pathsToRemove.length) {
+      // All paths have been processed
       // Now we can create files since we're done deleting.
       // Move templates over to their proper place
       moveTemplates();
