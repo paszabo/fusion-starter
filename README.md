@@ -6,6 +6,9 @@
 
 Fusion Starter is a comprehensive starter kit for rapid application development using React. 
 
+## Demo
+[https://cox-auto-kc.github.io/fusion-starter/](https://cox-auto-kc.github.io/fusion-starter/)
+
 ##Why Use this?
 
 1. **One command to get started** - Type `npm start` to start development in your default browser.
