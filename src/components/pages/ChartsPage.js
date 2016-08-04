@@ -1,15 +1,9 @@
 /* eslint-disable react/no-multi-comp */
-import React, {PropTypes} from 'react';
+import React from 'react';
 import {PageHeader, Panel, Well, Button, Row, Col} from 'react-bootstrap';
-import rd3r from 'react-d3-responsive';
+import {AreaGraph, BarGraph, LineGraph, PieChart, ScatterPlot} from 'react-d3-responsive';
 
-const AreaGraph = rd3r.AreaGraph;
-const BarGraph = rd3r.BarGraph;
-const LineGraph = rd3r.LineGraph;
-const PieChart = rd3r.PieChart;
-const ScatterPlot = rd3r.ScatterPlot;
-
-import ChartData from '../../data/chartsData';
+import chartData from '../../data/chartsData';
 
 const ChartsPage = () => {
   return (
@@ -30,7 +24,7 @@ const ChartsPage = () => {
             yToolTipLabel="Visitors"
             lineType="linear"
             yMaxBuffer={50}
-            data={ChartData.areaGraphData} />
+            data={chartData.areaGraphData} />
         </div>
       </Panel>
       <Row>
@@ -49,7 +43,7 @@ const ChartsPage = () => {
                 yToolTipLabel="Leads"
                 lineType="linear"
                 yMaxBuffer={50}
-                data={ChartData.lineGraphData} />
+                data={chartData.lineGraphData} />
             </div>
           </Panel>
         </Col>
@@ -61,7 +55,7 @@ const ChartsPage = () => {
                 width={400}
                 chartId="pie-chart-custom-ID"
                 chartClassName="pie-chart-custom-CLASS"
-                data={ChartData.pieTestData}
+                data={chartData.pieTestData}
                 innerRadiusRatio={2}
                 labelOffset={1}
                 startAngle={0}
@@ -77,7 +71,7 @@ const ChartsPage = () => {
             xAxisLabel="Month"
             yAxisLabel="Vehicles"
             keys={['new','old','third','four']}
-            data={ChartData.barGraphTestData} />
+            data={chartData.barGraphTestData} />
         </div>
       </Panel>
       <Panel header='Scatter Plot'>
@@ -88,7 +82,7 @@ const ChartsPage = () => {
             xData="x"
             yData="y"
             dataType="data"
-            data={ChartData.scatterPlotData2} />
+            data={chartData.scatterPlotData2} />
         </div>
       </Panel>
 
