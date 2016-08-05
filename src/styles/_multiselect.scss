@@ -7,9 +7,11 @@
 
 .Select {
   position: relative;
+
   &.is-disabled > .Select-control {
     background-color: #f9f9f9;
   }
+
   &.is-disabled .Select-arrow-zone {
     cursor: default;
     pointer-events: none;
@@ -90,6 +92,7 @@
   padding-left: 10px;
   padding-right: 10px;
   vertical-align: middle;
+
   & > input {
     width: 100%;
     background: none transparent;
@@ -332,7 +335,8 @@
   margin-left: 5px;
   clear: left;
   float: left;
-  & < .checkbox-control {
+
+  > .checkbox-control {
     margin-right: 0.5em;
   }
 }

@@ -71,14 +71,14 @@
 
 /* Non-Flexbox Solution for Sidebar/Content/Aside */
 
-@media(--maxwidth-screen-xs) {
+@media(max-width: $screen-xs-max) {
   .template-navigation__bottom,
   .template-navigation__top {
     padding: 0;
   }
 }
 
-@media(--minwidth-screen-sm) {
+@media(min-width: $screen-sm-min) {
   .sidebar__fixed {
     width: inherit;
     max-width: 256px;
