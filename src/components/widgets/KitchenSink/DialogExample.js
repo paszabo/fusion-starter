@@ -1,5 +1,5 @@
 /* eslint-disable react/no-multi-comp */
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Button, ButtonToolbar, Modal, OverlayTrigger, Popover, Tooltip} from 'react-bootstrap';
 
 class DialogExample extends React.Component {
@@ -79,6 +79,10 @@ const SmallModal = (props) =>
     </Modal.Footer>
   </Modal>;
 
+SmallModal.propTypes = {
+  onHide: PropTypes.func.isRequired
+};
+
 const DefaultModal = (props) =>
   <Modal {...props}>
     <Modal.Header closeButton>
@@ -93,6 +97,10 @@ const DefaultModal = (props) =>
     </Modal.Footer>
   </Modal>;
 
+DefaultModal.propTypes = {
+  onHide: PropTypes.func.isRequired
+};
+
 const LargeModal = (props) =>
   <Modal {...props} bsSize="large">
     <Modal.Header closeButton>
@@ -106,5 +114,9 @@ const LargeModal = (props) =>
       <Button onClick={props.onHide} bsStyle="primary">Confirm</Button>
     </Modal.Footer>
   </Modal>;
+
+LargeModal.propTypes = {
+  onHide: PropTypes.func.isRequired
+};
 
 export default DialogExample;
