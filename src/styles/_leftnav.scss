@@ -15,24 +15,20 @@
   width: 225px;
   top: 50px;
   right: auto;
-  color: var(--gray-lightest);
-  background-color: var(--brand-cox);
+  color: $gray-lightest;
+  background-color: $brand-cox;
   overflow: hidden;
 
   @media(max-width: 991px) {
-    & {
-      width: 58px;
-    }
+    width: 58px;
   }
 }
 
 .left-nav {
   &__link {
     font-size: inherit;
-  }
 
-  @media(max-width: 991px) {
-    &__link {
+    @media(max-width: 991px) {
       font-size: 2em;
     }
   }
@@ -41,20 +37,20 @@
     border-bottom: 1px solid #e7e7e7;
   }
 
-  & > &__pills > li + li,
-  & > .nav-stacked > li + li {
+  > &__pills > li + li,
+  > .nav-stacked > li + li {
     margin-top: 0;
   }
 
   &__pills > li > a {
     border-radius: 0;
-    color: var(--gray-lightest);
-    background-color: var(--brand-cox);
-  }
+    color: $gray-lightest;
+    background-color: $brand-cox;
 
-  &__pills > li > a:hover {
-    color: var(--gray-lightest);
-    background-color: var(--brand-cox);
+    &:hover {
+      color: $gray-lightest;
+      background-color: $brand-cox;
+    }
   }
 
   &__pills > li > a.left-nav__link {
@@ -62,12 +58,12 @@
   }
 
   &__pills > li > a.left-nav__link--active {
-    color: var(--gray-lightest);
-    background-color: var(--brand-primary);
-  }
+    color: $gray-lightest;
+    background-color: $brand-primary;
 
-  &__pills > li > a.left-nav__link--active:hover {
-    color: var(--gray-lightest);
-    background-color: var(--brand-primary);
+    &:hover {
+      color: $gray-lightest;
+      background-color: $brand-primary;
+    }
   }
 }
