@@ -16,7 +16,7 @@ class HeaderBar extends React.Component {
 
   render() {
     return (
-      <Navbar fluid={true} staticTop={true} navExpanded={false} onToggle={this.toggleNav} className='header-bar'>
+      <Navbar fluid={true} staticTop={true} onToggle={this.toggleNav} className='header-bar'>
 
         {/* Header Branding */}
         <Navbar.Header className='header-bar__nav-header'>
@@ -32,7 +32,7 @@ class HeaderBar extends React.Component {
         <Nav pullRight className='header-bar__nav-right'>
 
           {/* Messages */}
-          <NavDropdown eventKey={1} title={<FontAwesome name='envelope' fixedWith={true} />} className='header-bar__dropdown'
+          <NavDropdown eventKey={1} title={<FontAwesome name='envelope' fixedWidth={true} />} className='header-bar__dropdown'
             id='header-bar__envelope-dropdown'>
             <MenuItem eventKey={1.1}>
               <div className='header-bar__envelope-navitem'>
@@ -71,20 +71,20 @@ class HeaderBar extends React.Component {
                 {' '}
                 <FontAwesome
                   name='angle-right'
-                  fixedWith={true}
+                  fixedWidth={true}
                 />
               </div>
             </MenuItem>
           </NavDropdown>
 
           {/* Alerts */}
-          <NavDropdown eventKey={2} title={<FontAwesome name='bell' fixedWith={true} />} className='header-bar__dropdown'
+          <NavDropdown eventKey={2} title={<FontAwesome name='bell' fixedWidth={true} />} className='header-bar__dropdown'
             id='header-bar__bell-dropdown'>
             <MenuItem eventKey={2.1}>
               <div className='header-bar__bell-navitem'>
                 <FontAwesome
                   name='comment'
-                  fixedWith={true}
+                  fixedWidth={true}
                 />
                 {' '}
                 New Comment
@@ -97,7 +97,7 @@ class HeaderBar extends React.Component {
               <div className='header-bar__bell-navitem'>
                 <FontAwesome
                   name='envelope'
-                  fixedWith={true}
+                  fixedWidth={true}
                 />
                 {' '}
                 Message Sent
@@ -110,7 +110,7 @@ class HeaderBar extends React.Component {
               <div className='header-bar__bell-navitem'>
               <FontAwesome
                   name='tasks'
-                  fixedWith={true}
+                  fixedWidth={true}
                 />
                 {' '}
                 New Task
@@ -123,7 +123,7 @@ class HeaderBar extends React.Component {
               <div className='header_bar__bell-navitem'>
                 <FontAwesome
                   name='upload'
-                  fixedWith={true}
+                  fixedWidth={true}
                 />
                 {' '}
                 File Sent
@@ -139,7 +139,7 @@ class HeaderBar extends React.Component {
                 {' '}
                 <FontAwesome
                   name='angle-right'
-                  fixedWith={true}
+                  fixedWidth={true}
                 />
               </div>
             </MenuItem>
@@ -151,7 +151,7 @@ class HeaderBar extends React.Component {
             <MenuItem eventKey={3.1}>
               <FontAwesome
                 name='user'
-                fixedWith={true}
+                fixedWidth={true}
               />
               {' '}
               User Profile
@@ -159,7 +159,7 @@ class HeaderBar extends React.Component {
             <MenuItem eventKey={3.2}>
               <FontAwesome
                 name='gear'
-                fixedWith={true}
+                fixedWidth={true}
               />
               {' '}
               Settings
@@ -168,7 +168,7 @@ class HeaderBar extends React.Component {
             <MenuItem eventKey={3.3}>
               <FontAwesome
                 name='sign-out'
-                fixedWith={true}
+                fixedWidth={true}
               />
               {' '}
               Logout

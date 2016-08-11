@@ -1,6 +1,5 @@
 // For info about this file refer to webpack and webpack-hot-middleware documentation
 import webpack from 'webpack';
-import path from 'path';
 import NpmInstallPlugin from 'npm-install-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
@@ -47,7 +46,7 @@ export default {
   ],
   module: {
     loaders: [
-      {test: /(\.js|\.jsx)$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
+      {test: /(\.js|\.jsx)$/, exclude:/node_modules/, loader: 'babel'},
       {test: /(\.css|\.scss)$/, loader: 'style!css?sourceMap!postcss!sass?sourceMap'},
       {test: /\.ico(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?mimetype=image/x-icon'},
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
