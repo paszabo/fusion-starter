@@ -19,7 +19,7 @@
   background-color: $brand-cox;
   overflow: hidden;
 
-  @media(max-width: 991px) {
+  @media (max-width: 991px) {
     width: 58px;
   }
 }
@@ -28,7 +28,7 @@
   &__link {
     font-size: inherit;
 
-    @media(max-width: 991px) {
+    @media (max-width: 991px) {
       font-size: 2em;
     }
   }
