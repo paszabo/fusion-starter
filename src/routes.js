@@ -6,8 +6,7 @@ import DashboardLayout from './components/layouts/DashboardLayout';
 
 import HomePage from './components/pages/HomePage';
 import SavingsCalculatorPage from './components/pages/SavingsCalculatorPage';
-//import DataTablesPage from './components/pages/DataTablesPage';
-import DataTablesPage from './components/pages/DataTablesPageWithPagination';
+import DataTablesPage from './components/pages/DataTablesPage';
 import ChartsPage from './components/pages/ChartsPage';
 import RichTextEditorPage from './components/pages/RichTextEditorPage';
 import LazyLoadingPage from './components/pages/LazyLoadingPage';
