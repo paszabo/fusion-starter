@@ -1,7 +1,5 @@
 import React from 'react';
 
-//Bootstrap Components
-
 import { Pagination } from 'react-bootstrap';
 import EntypoChevronThinLeft from 'react-entypo/lib/entypo/ChevronThinLeft';
 import EntypoChevronThinRight from 'react-entypo/lib/entypo/ChevronThinRight';
@@ -26,14 +24,14 @@ class GriddleCustomPager extends React.Component{
 
   getStyles(){
     const styles = {
-      containerStyle: {
+      containerStyle:{
         textAlign: 'center',
       },
-      iconStyles: {
+      iconStyles:{
         fill: 'currentColor',
         verticalAlign: 'middle'
       }
-    }
+    };
     return styles;
   }
 

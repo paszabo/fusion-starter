@@ -6,7 +6,6 @@
 
 .left-nav-container {
   position: fixed;
-  overflow: auto;
   left: 0;
   right: 0;
   top: 0;
@@ -20,7 +19,7 @@
   overflow: hidden;
 
   @media (max-width: 991px) {
-    width: 58px;
+    width: 116px;
   }
 }
 
@@ -64,6 +63,18 @@
     &:hover {
       color: $gray-lightest;
       background-color: $brand-primary;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .nav-stacked>li {
+    float: left;
+    width: 58px;
+    border-right: 1px solid $gray-lightest;
+    border-bottom: 1px solid $gray-lightest;
+    &+li {
+      margin: 0;
     }
   }
 }

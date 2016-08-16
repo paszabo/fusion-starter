@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import Griddle from 'griddle-react';
 import {PageHeader, Panel, Well, Button} from 'react-bootstrap';
 import GriddleCustomPager from '../widgets/Griddle/GriddleCustomPager';
