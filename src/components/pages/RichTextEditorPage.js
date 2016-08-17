@@ -1,4 +1,3 @@
-/* eslint-disable react/no-multi-comp */
 import React from 'react';
 import {PageHeader, Panel, Well, Button} from 'react-bootstrap';
 import RichEditorDemo from '../widgets/RichTextEditor/RichEditorDemo';
@@ -28,4 +27,4 @@ const RichTextEditorPage = () => {
 };
 
 export default RichTextEditorPage;
-/* eslint-enable react/no-multi-comp */
+
