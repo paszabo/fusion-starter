@@ -74,19 +74,20 @@ a {
 }
 
 .editor-demo .display {
-  padding-top : 10px;
+  padding-top: 10px;
 }
 
 .editor-demo .textarea {
-  height : 100px;
-  width : 100%;
-  border-color : #ddd;
+  height: 100px;
+  width: 100%;
+  border-color: #ddd;
   resize: none;
 }
+
 .editor-demo .log {
-  float : right;
-  margin-top : 10px;
-  padding-right : 5px;
+  float: right;
+  margin-top: 10px;
+  padding-right: 5px;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
