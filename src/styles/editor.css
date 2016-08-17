@@ -80,7 +80,7 @@ a {
 .editor-demo .textarea {
   height : 100px;
   width : 100%;
-  borderColor : #ddd;
+  border-color : #ddd;
   resize: none;
 }
 .editor-demo .log {
