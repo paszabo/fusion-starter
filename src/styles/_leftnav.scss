@@ -66,24 +66,28 @@
       background-color: $brand-primary;
     }
   }
+
   @media (max-width: 991px) {
     width: 136px;
   }
 }
 
 @media (max-width: 991px) {
-  .nav-stacked>li {
+  .nav-stacked > li {
     display: inline-block;
     border-bottom: 1px solid $gray-lightest;
-    &+li {
+
+    & + li {
       margin-top: 0;
     }
   }
-  .nav-stacked>li:nth-child(odd) {
+
+  .nav-stacked > li:nth-child(odd) {
     width: 58px;
     border-right: 1px solid $gray-lightest;
   }
-  .nav-stacked>li:nth-child(even) {
+
+  .nav-stacked > li:nth-child(even) {
     width: 74px;
   }
 }
