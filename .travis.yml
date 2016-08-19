@@ -2,7 +2,6 @@ notifications:
   email:
     recipients:
       - UITeam@vinsolutions.com
-      - coryhouse@vinsolutions.com
 language: node_js
 node_js:
   - "6"
