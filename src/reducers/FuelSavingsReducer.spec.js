@@ -28,6 +28,8 @@ describe('Reducers::FuelSavings', function() {
     };
   };
 
+  const dateModified = dateHelper.getFormattedDateTime();
+
   it('should set initial state by default', function() {
     const action = { type: 'unknown' };
     const expected = getInitialState();
@@ -37,14 +39,14 @@ describe('Reducers::FuelSavings', function() {
   });
 
   it('should handle SAVE_FUEL_SAVINGS', function() {
-    const action = { type: ActionTypes.SAVE_FUEL_SAVINGS, settings: getAppState() };
-    const expected = Object.assign(getAppState(), {dateModified: dateHelper.getFormattedDateTime(new Date())});
+    const action = { type: ActionTypes.SAVE_FUEL_SAVINGS, dateModified, settings: getAppState() };
+    const expected = Object.assign(getAppState(), {dateModified: dateModified});
 
     expect(reducer(getAppState(), action)).to.deep.equal(expected);
   });
 
   it('should handle CALCULATE_FUEL_SAVINGS', function() {
-    const action = { type: ActionTypes.CALCULATE_FUEL_SAVINGS, settings: getAppState(), fieldName: 'newMpg', value: 30 };
+    const action = { type: ActionTypes.CALCULATE_FUEL_SAVINGS, dateModified, settings: getAppState(), fieldName: 'newMpg', value: 30 };
 
     const expectedMpg = 30;
     const expectedSavings = { monthly: '$43.33', annual: '$519.96', threeYear: '$1,559.88' };
