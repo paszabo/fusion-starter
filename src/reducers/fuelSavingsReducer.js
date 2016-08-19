@@ -1,7 +1,6 @@
 import {SAVE_FUEL_SAVINGS, CALCULATE_FUEL_SAVINGS} from '../actions/actionTypes';
 import objectAssign from 'object-assign';
 import calculator from '../utils/fuelSavingsCalculator';
-import dateHelper from '../utils/dateHelper';
 import initialState from './initialState';
 
 // IMPORTANT: Note that with Redux, state should NEVER be changed.
@@ -17,13 +16,13 @@ export default function fuelSavingsReducer(state = initialState.fuelSavings, act
   switch (action.type) {
     case SAVE_FUEL_SAVINGS:
       // in a real app we'd trigger an AJAX call here. For this example, just simulating a save by changing date modified.
-      return objectAssign({}, state, {dateModified: dateHelper.getFormattedDateTime(new Date())});
+      return objectAssign({}, state, {dateModified: action.dateModified});
 
     case CALCULATE_FUEL_SAVINGS:
       newState = objectAssign({}, state);
       newState[action.fieldName] = action.value;
       newState.necessaryDataIsProvidedToCalculateSavings = calc.necessaryDataIsProvidedToCalculateSavings(newState);
-      newState.dateModified = dateHelper.getFormattedDateTime(new Date());
+      newState.dateModified = action.dateModified;
 
       if (newState.necessaryDataIsProvidedToCalculateSavings) {
         newState.savings = calc.calculateSavings(newState);
