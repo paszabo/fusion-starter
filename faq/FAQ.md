@@ -1,4 +1,4 @@
-##FAQ
+`##FAQ
 ###Why does this exist?
 This starter kit implements best practices like testing, minification, bundling, and so on. It codifies a long list of decisions that you no longer have to make to get rolling. It also saves you from the long, painful process of wiring it all together into an automated dev environment.
 
