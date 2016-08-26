@@ -16,7 +16,7 @@ const GLOBALS = {
 export default {
   debug: true,
   devtool: 'source-map', // More info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
-  noInfo: true, // Set to false to see a list of every file being bundled.
+  noInfo: false, // Set to false to see a list of every file being bundled.
   entry: {
     // All vendor libraries should be imported in vendor.js. Since vendor libs rarely change, this helps save bandwidth by placing them in a separate file that can be cached separately. Anything not imported in vendor.js will be placed in main.js.
     vendor: './src/vendor.js',
