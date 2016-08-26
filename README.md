@@ -7,7 +7,7 @@
 Fusion Starter is a comprehensive starter kit for rapid application development using React. 
 
 ## Demo
-[https://cox-auto-kc.github.io/fusion-starter/](https://cox-auto-kc.github.io/fusion-starter/)
+[http://chubby-books.surge.sh](http://chubby-books.surge.sh)
 
 ##Why Use this?
 
