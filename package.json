@@ -117,8 +117,5 @@
   },
   "keywords:": [
     "fusion"
-  ],
-  "pre-commit": [
-    "build-docs"
   ]
 }
