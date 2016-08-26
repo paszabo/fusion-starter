@@ -1,6 +1,6 @@
 {
   "name": "fusion-starter",
-  "version": "8.0.0",
+  "version": "8.1.0",
   "description": "Starter kit for creating React apps at Cox Automotive",
   "homepage": "https://github.com/cox-auto-kc/fusion-starter",
   "repository": {
@@ -14,6 +14,9 @@
   "license": "MIT",
   "scripts": {
     "preinstall": "node buildTools/nodeVersionCheck.js",
+    "prebuild-docs": "rimraf ./docs && npm run prebuild",
+    "build-docs": "babel-node buildTools/build.js",
+    "postbuild-docs": "node buildTools/moveDistToDocs.js",
     "remove-demo": "babel-node buildTools/removeDemo.js",
     "start-message": "babel-node buildTools/startMessage.js",
     "prestart": "npm-run-all --parallel start-message remove-dist",
@@ -29,7 +32,8 @@
     "test": "mocha buildTools/testSetup.js \"src/**/*.spec.js\" --reporter progress",
     "test:watch": "npm run test -- --watch",
     "test:cover": "babel-node node_modules/isparta/bin/isparta cover --root src --report html node_modules/mocha/bin/_mocha -- --require ./buildTools/testSetup.js \"src/**/*.spec.js\" --reporter progress",
-    "open:cover": "npm run test:cover && open coverage/index.html"
+    "open:cover": "npm run test:cover && open coverage/index.html",
+    "preversion": "npm run build-docs"
   },
   "dependencies": {
     "axios": "0.13.1",
@@ -80,7 +84,7 @@
     "eventsource-polyfill": "0.9.6",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
-    "fusion-theme": "2.0.0",
+    "fusion-theme": "2.0.1",
     "glob": "7.0.5",
     "html-webpack-plugin": "2.22.0",
     "isparta": "4.0.0",
@@ -94,7 +98,7 @@
     "postcss": "5.1.2",
     "postcss-loader": "0.9.1",
     "react-addons-test-utils": "15.3.0",
-    "react-entypo": "1.2.4",
+    "react-entypo": "1.2.5",
     "redux-immutable-state-invariant": "1.2.3",
     "rimraf": "2.5.4",
     "sass-loader": "4.0.0",
