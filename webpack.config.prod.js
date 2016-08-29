@@ -26,8 +26,7 @@ export default {
   output: {
     path: __dirname + '/dist',
     publicPath: '',
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js'
+    filename: '[name].[chunkhash].js'
   },
   plugins: [
     // Use CommonsChunkPlugin to create a separate bundle of vendor libraries so that they're cached separately.
