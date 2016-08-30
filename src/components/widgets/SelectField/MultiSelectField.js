@@ -25,30 +25,27 @@ class MultiSelectField extends React.Component {
       options: types,
       value: []
     };
-    this.toggleDisabled = this.toggleDisabled.bind(this);
-    this.toggleVehicle = this.toggleVehicle.bind(this);
-    this.handleSelectChange = this.handleSelectChange.bind(this);
   }
 
-  handleSelectChange(val) {
+  handleSelectChange = val => {
     return (
       this.setState({
         value: val
       })
     );
-  }
+  };
 
-  toggleDisabled(e) {
+  toggleDisabled = e => {
     this.setState({disabled: e.target.checked});
-  }
+  };
 
-  toggleVehicle(e) {
+  toggleVehicle = e => {
     const crazy = e.target.checked;
     this.setState({
       crazy: crazy,
       options: crazy ? WHY_WOULD_YOU : types
     });
-  }
+  };
 
   render() {
     return (

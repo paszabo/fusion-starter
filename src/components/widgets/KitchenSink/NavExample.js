@@ -20,11 +20,12 @@ class TabbedNav extends React.Component {
   constructor(props){
     super(props);
     this.state = { activekey: 1 };
-    this.handleSelect = this.handleSelect.bind(this);
   }
-  handleSelect(selectedKey){
+
+  handleSelect = selectedKey => {
     this.setState({ activekey: selectedKey });
-  }
+  };
+
   render(){
     return (
       <Nav bsStyle="tabs" activeKey={this.state.activekey} onSelect={this.handleSelect}>
@@ -39,11 +40,12 @@ class PillNav extends React.Component {
   constructor(props){
     super(props);
     this.state = { activekey: 1 };
-    this.handleSelect = this.handleSelect.bind(this);
   }
-  handleSelect(selectedKey){
+
+  handleSelect = selectedKey => {
     this.setState({ activekey: selectedKey });
-  }
+  };
+
   render(){
     return (
       <Nav bsStyle="pills" activeKey={this.state.activekey} onSelect={this.handleSelect}>
@@ -58,11 +60,12 @@ class StackedPillNav extends React.Component {
   constructor(props){
     super(props);
     this.state = { activekey: 1 };
-    this.handleSelect = this.handleSelect.bind(this);
   }
-  handleSelect(selectedKey){
+
+  handleSelect = selectedKey => {
     this.setState({ activekey: selectedKey });
-  }
+  };
+
   render(){
     return (
       <Nav bsStyle="pills" stacked activeKey={this.state.activekey} onSelect={this.handleSelect}>

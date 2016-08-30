@@ -4,15 +4,9 @@ import FontAwesome from 'react-fontawesome';
 import HeaderBarUserTitle from './HeaderBarUserTitle';
 
 class HeaderBar extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.toggleNav = this.toggleNav.bind(this);
-  }
-
-  toggleNav() {
+  toggleNav = () => {
     // Todo...
-  }
+  };
 
   render() {
     return (

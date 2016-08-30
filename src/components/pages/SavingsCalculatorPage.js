@@ -7,25 +7,17 @@ import FuelSavingsTextInput from '../widgets/FuelSavings/FuelSavingsTextInput';
 import * as fuelSavingsActions from '../../actions/fuelSavingsActions';
 
 class SavingsCalculatorPage extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.save = this.save.bind(this);
-    this.onTimeframeChange = this.onTimeframeChange.bind(this);
-    this.fuelSavingsKeypress = this.fuelSavingsKeypress.bind(this);
-  }
-
-  save() {
+  save = () => {
     this.props.actions.saveFuelSavings(this.props.fuelSavings);
-  }
+  };
 
-  onTimeframeChange(e) {
+  onTimeframeChange = (e) => {
     this.props.actions.calculateFuelSavings(this.props.fuelSavings, 'milesDrivenTimeframe', e.target.value);
-  }
+  };
 
-  fuelSavingsKeypress(name, value) {
+  fuelSavingsKeypress = (name, value) => {
     this.props.actions.calculateFuelSavings(this.props.fuelSavings, name, value);
-  }
+  };
 
   render() {
     const settings = this.props.fuelSavings;

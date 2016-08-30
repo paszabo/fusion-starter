@@ -8,15 +8,9 @@ import * as recentPostsActions from '../../../actions/recentPostsActions';
 const recentPostData = require('../../../data/recentPosts').recentPosts;
 
 class PostsPanel extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.setRecentPosts = this.setRecentPosts.bind(this);
-  }
-
-  setRecentPosts() {
+  setRecentPosts = () => {
     this.props.actions.setRecentPosts(this.props.recentPosts, recentPostData[this.props.panelType]);
-  }
+  };
 
   render () {
     return (

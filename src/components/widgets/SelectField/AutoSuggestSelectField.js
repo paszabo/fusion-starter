@@ -14,13 +14,9 @@ class AutoSuggestSelectField extends React.Component {
       selectValue: 'new-south-wales',
       clearable: true
     };
-    this.switchCountry = this.switchCountry.bind(this);
-    this.updateValue = this.updateValue.bind(this);
-    this.focusStateSelect = this.focusStateSelect.bind(this);
-    this.toggleCheckbox = this.toggleCheckbox.bind(this);
   }
 
-  switchCountry(e) {
+  switchCountry = e => {
     const newCountry = e.target.value;
     return (
       this.setState({
@@ -28,21 +24,21 @@ class AutoSuggestSelectField extends React.Component {
         selectValue: null
       })
     );
-  }
+  };
 
-  updateValue(newValue) {
+  updateValue = newValue => {
     return (
       this.setState({
         selectValue: newValue
       })
     );
-  }
+  };
 
-  focusStateSelect() {
+  focusStateSelect = () => {
     this.refs.stateSelect.focus();
-  }
+  };
 
-  toggleCheckbox(e) {
+  toggleCheckbox = e => {
     const newState = {};
     newState[e.target.name] = e.target.checked;
     return (
@@ -50,7 +46,7 @@ class AutoSuggestSelectField extends React.Component {
         newState
       )
     );
-  }
+  };
 
   render() {
     let options = states[this.state.country];
