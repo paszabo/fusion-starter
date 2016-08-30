@@ -29,7 +29,7 @@
     "test": "mocha buildTools/testSetup.js \"src/**/*.spec.js\" --reporter progress",
     "test:watch": "npm run test -- --watch",
     "test:cover": "babel-node node_modules/isparta/bin/isparta cover --root src --report html node_modules/mocha/bin/_mocha -- --require ./buildTools/testSetup.js \"src/**/*.spec.js\" --reporter progress",
-    "open:cover": "npm run test:cover && open coverage/index.html"
+    "open:cover": "npm run test:cover && open coverage/index.html",
     "predeploy": "npm run prebuild && babel-node buildTools/build.js",
     "deploy": "firebase deploy --project fusion-starter",
     "preversion": "npm run deploy"
