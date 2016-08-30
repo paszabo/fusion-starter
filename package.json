@@ -14,9 +14,6 @@
   "license": "MIT",
   "scripts": {
     "preinstall": "node buildTools/nodeVersionCheck.js",
-    "prebuild-docs": "rimraf ./docs && npm run prebuild",
-    "build-docs": "babel-node buildTools/build.js",
-    "postbuild-docs": "node buildTools/moveDistToDocs.js",
     "remove-demo": "babel-node buildTools/removeDemo.js",
     "start-message": "babel-node buildTools/startMessage.js",
     "prestart": "npm-run-all --parallel start-message remove-dist",
