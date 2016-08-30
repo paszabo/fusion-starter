@@ -87,4 +87,4 @@ This will run the automated build process, start up a webserver, and open the ap
 The api configuration example (in /src/api/api.js) assumes that you're running VinConnect and its APIs locally at vinconnect.com, so these host entries make sure cross origin calls like this succeed: `vinconnect.com/CarDashboard/API/CRMServiceBase/v1/customers/attachments/list?customerId=212746634`
 
 ## Questions?
-Check out the [FAQ](/docs/FAQ.md)
+Check out the [FAQ](/faq/FAQ.md)

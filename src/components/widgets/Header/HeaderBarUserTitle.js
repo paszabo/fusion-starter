@@ -6,7 +6,7 @@ const HeaderBarUserTitle = (props) => {
     <span>
       <FontAwesome
         name='user'
-        fixedWith={true}
+        fixedWidth={true}
       />
       {' '}
       {/* Using inline style instead of a class... */}

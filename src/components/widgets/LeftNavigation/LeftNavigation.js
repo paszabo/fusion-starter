@@ -10,7 +10,7 @@ const LeftNavigation = () => {
         {/* Dashboard */}
         <li role="presentation">
           <IndexLink activeClassName='left-nav__link--active' className='left-nav__link' to='/'>
-            <FontAwesome name='dashboard' fixedWith={true} />
+            <FontAwesome name='dashboard' fixedWidth={true} />
             <span className='hidden-xs hidden-sm'>{' '}Dashboard Example</span>
           </IndexLink>
         </li>
@@ -18,7 +18,7 @@ const LeftNavigation = () => {
         {/* Savings Calculator */}
         <li role="presentation">
           <IndexLink activeClassName='left-nav__link--active' className='left-nav__link' to='/savingscalc'>
-            <FontAwesome name='calculator' fixedWith={true} />
+            <FontAwesome name='calculator' fixedWidth={true} />
             <span className='hidden-xs hidden-sm'>{' '}Savings Calculator</span>
           </IndexLink>
         </li>
@@ -26,7 +26,7 @@ const LeftNavigation = () => {
         {/* Data Tables */}
          <li role="presentation">
           <IndexLink activeClassName='left-nav__link--active' className='left-nav__link' to='/datatables'>
-            <FontAwesome name='table' fixedWith={true} />
+            <FontAwesome name='table' fixedWidth={true} />
             <span className='hidden-xs hidden-sm'>{' '}Data Tables</span>
           </IndexLink>
         </li>
@@ -34,7 +34,7 @@ const LeftNavigation = () => {
         {/* Charts */}
         <li role="presentation">
           <IndexLink activeClassName='left-nav__link--active' className='left-nav__link' to='/charts'>
-            <FontAwesome name='bar-chart' fixedWith={true} />
+            <FontAwesome name='bar-chart' fixedWidth={true} />
             <span className='hidden-xs hidden-sm'>{' '}Charts</span>
           </IndexLink>
         </li>
@@ -42,7 +42,7 @@ const LeftNavigation = () => {
         {/* Rich Text Editor */}
          <li role="presentation">
           <IndexLink activeClassName='left-nav__link--active' className='left-nav__link' to='/rte'>
-            <FontAwesome name='pencil-square-o' fixedWith={true} />
+            <FontAwesome name='pencil-square-o' fixedWidth={true} />
             <span className='hidden-xs hidden-sm'>{' '}Rich Text Editor</span>
           </IndexLink>
         </li>
@@ -50,7 +50,7 @@ const LeftNavigation = () => {
         {/* Lazy Loading */}
          <li role="presentation">
           <IndexLink activeClassName='left-nav__link--active' className='left-nav__link' to='/lazyload'>
-            <FontAwesome name='spinner' fixedWith={true} />
+            <FontAwesome name='spinner' fixedWidth={true} />
             <span className='hidden-xs hidden-sm'>{' '}Lazy Loading</span>
           </IndexLink>
         </li>
@@ -58,7 +58,7 @@ const LeftNavigation = () => {
         {/* Other Components */}
          <li role="presentation">
           <IndexLink activeClassName='left-nav__link--active' className='left-nav__link' to='/components'>
-            <FontAwesome name='wrench' fixedWith={true} />
+            <FontAwesome name='wrench' fixedWidth={true} />
             <span className='hidden-xs hidden-sm'>{' '}Other Components</span>
           </IndexLink>
         </li>
@@ -66,7 +66,7 @@ const LeftNavigation = () => {
         {/* Grid System */}
          <li role="presentation">
           <IndexLink activeClassName='left-nav__link--active' className='left-nav__link' to='/grid'>
-            <FontAwesome name='th' fixedWith={true} />
+            <FontAwesome name='th' fixedWidth={true} />
             <span className='hidden-xs hidden-sm'>{' '}Grid System</span>
           </IndexLink>
         </li>
@@ -74,7 +74,7 @@ const LeftNavigation = () => {
         {/* Atoms */}
          <li role="presentation">
           <IndexLink activeClassName='left-nav__link--active' className='left-nav__link' to='/atoms'>
-            <FontAwesome name='toggle-off' fixedWith={true} />
+            <FontAwesome name='toggle-off' fixedWidth={true} />
             <span className='hidden-xs hidden-sm'>{' '}Atoms</span>
           </IndexLink>
         </li>
@@ -82,7 +82,7 @@ const LeftNavigation = () => {
         {/* Molecules */}
          <li role="presentation">
           <IndexLink activeClassName='left-nav__link--active' className='left-nav__link' to='/molecules'>
-            <FontAwesome name='tasks' fixedWith={true} />
+            <FontAwesome name='tasks' fixedWidth={true} />
             <span className='hidden-xs hidden-sm'>{' '}Molecules</span>
           </IndexLink>
         </li>
@@ -90,7 +90,7 @@ const LeftNavigation = () => {
         {/* Organisms */}
          <li role="presentation">
           <IndexLink activeClassName='left-nav__link--active' className='left-nav__link' to='/organisms'>
-            <FontAwesome name='object-group' fixedWith={true} />
+            <FontAwesome name='object-group' fixedWidth={true} />
             <span className='hidden-xs hidden-sm'>{' '}Organisms</span>
           </IndexLink>
         </li>
@@ -98,7 +98,7 @@ const LeftNavigation = () => {
         {/* Templates */}
          <li role="presentation">
           <IndexLink activeClassName='left-nav__link--active' className='left-nav__link' to='/templates'>
-            <FontAwesome name='files-o' fixedWith={true} />
+            <FontAwesome name='files-o' fixedWidth={true} />
             <span className='hidden-xs hidden-sm'>{' '}Templates</span>
           </IndexLink>
         </li>
@@ -106,7 +106,7 @@ const LeftNavigation = () => {
         {/* Documentation */}
          <li role="presentation">
           <IndexLink activeClassName='left-nav__link--active' className='left-nav__link' to='/docs'>
-            <FontAwesome name='book' fixedWith={true} />
+            <FontAwesome name='book' fixedWidth={true} />
             <span className='hidden-xs hidden-sm'>{' '}Documentation</span>
           </IndexLink>
         </li>

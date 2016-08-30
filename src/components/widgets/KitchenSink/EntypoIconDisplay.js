@@ -472,11 +472,10 @@ class EntypoIconDisplay extends React.Component {
 
         <h4>Search the Entypo component library</h4>
         <Form horizontal>
-          <FormGroup controlId="entypoSearch" validationState={this.getValidationState()} inline>
+          <FormGroup controlId="entypoSearch" validationState={this.getValidationState()}>
             <Col lg={2} componentClass={ControlLabel}>Find icon: </Col>
             <Col lg={8}>
-              <FormControl type="text" value={this.state.value} placeholder="search term here"
-                           onChange={this.handleChange}/>
+              <FormControl type="text" value={this.state.value} placeholder="search term here" onChange={this.handleChange} />
               <FormControl.Feedback />
             </Col>
           </FormGroup>

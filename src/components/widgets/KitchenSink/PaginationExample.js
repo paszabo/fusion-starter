@@ -1,5 +1,5 @@
 import React from 'react';
-import {Pagination, Pager, PageItem} from 'react-bootstrap';
+import {Pagination, Pager} from 'react-bootstrap';
 import EntypoChevronThinLeft from 'react-entypo/lib/entypo/ChevronThinLeft';
 import EntypoChevronThinRight from 'react-entypo/lib/entypo/ChevronThinRight';
 
@@ -23,8 +23,8 @@ const PaginationExample = () => {
         items={4}/>
 
       <Pager>
-        <PageItem href="#">Prev</PageItem>{' '}
-        <PageItem href="#">Next</PageItem>
+        <Pager.Item href="#">Prev</Pager.Item>{' '}
+        <Pager.Item href="#">Next</Pager.Item>
       </Pager>
     </div>
   );

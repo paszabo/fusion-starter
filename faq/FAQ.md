@@ -1,4 +1,4 @@
-##FAQ
+`##FAQ
 ###Why does this exist?
 This starter kit implements best practices like testing, minification, bundling, and so on. It codifies a long list of decisions that you no longer have to make to get rolling. It also saves you from the long, painful process of wiring it all together into an automated dev environment.
 
@@ -82,10 +82,11 @@ Assuming your project isn't using Git itself, you can clone this repo to get sta
 |babel-core|Babel Core for transpiling the new JavaScript to old |
 |babel-eslint|Connects Babel and ESLint so ES6 code can be linted |
 |babel-loader|Adds Babel support to Webpack |
+|babel-preset-latest|Babel preset for transpiling ES2015/16 to ES5|
 |babel-plugin-react-display-name| Add displayName to React.createClass calls |
+|babel-preset-stage-2|Babel preset for transpiling stage 2 features to ES5|
 |babel-plugin-transform-react-constant-elements | Performance optimization: Hoists the creation of elements that are fully static to the top level. reduces calls to React.createElement and the resulting memory allocations. [More info](https://medium.com/doctolib-engineering/improve-react-performance-with-babel-16f1becfaa25#.2wbkg8g4d) |
 |babel-plugin-transform-react-remove-prop-types | Remove propTypes for prod build (saves bandwidth since they're not run anyway) |
-|babel-preset-es2015|Babel preset for ES2015|
 |babel-preset-react-hmre|Hot reloading preset for Babel|
 |babel-preset-react| Add JSX support to Babel |
 |browser-sync| Supports synchronized testing on multiple devices and serves local app on public URL |
