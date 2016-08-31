@@ -64,16 +64,16 @@ class MultiSelectField extends React.Component {
 
         <div className='react-select__checkbox-section'>
           <Col sm={12} md={6}>
-            <label className='react-select__checkbox checkbox'>
-              <input type='checkbox' className='checkbox-control' checked={this.state.disabled}
+            <label htmlFor="toggle-disabled" className='react-select__checkbox checkbox'>
+              <input id="toggle-disabled" type='checkbox' className='checkbox-control' checked={this.state.disabled}
                      onChange={this.toggleDisabled}/>
               <span className='checkbox-label'>Disable the control</span>
             </label>
           </Col>
 
           <Col sm={12} md={6}>
-            <label className='react-select__checkbox checkbox'>
-              <input type='checkbox' className='checkbox-control' checked={this.state.crazy}
+            <label htmlFor="toggle-vehicle" className='react-select__checkbox checkbox'>
+              <input id="toggle-vehicle" type='checkbox' className='checkbox-control' checked={this.state.crazy}
                      onChange={this.toggleVehicle}/>
               <span className='checkbox-label'>I don&apos;t like Mopeds (disable option)</span>
             </label>

@@ -22,7 +22,7 @@ class HeaderBar extends React.Component {
         <Navbar.Header className='header-bar__nav-header'>
           <Navbar.Brand className='header-bar__nav-brand'>
             <a href='#'>
-             <img className='header-bar__nav-logo' src={require('../../../../assets/images/fusion-icon.png')} />
+             <img alt="Fusion Icon" className='header-bar__nav-logo' src={require('../../../../assets/images/fusion-icon.png')} />
               Fusion
             </a>
           </Navbar.Brand>

@@ -23,7 +23,7 @@ const DocumentationPage = () => {
 
         <br/><br/>
 
-        <center><img src={require('../../../assets/images/rsg.png')} style={{maxWidth: 500, maxHeight: 500}} /></center>
+        <center><img alt="React Style Guide" src={require('../../../assets/images/rsg.png')} style={{maxWidth: 500, maxHeight: 500}} /></center>
 
       </Panel>
 
