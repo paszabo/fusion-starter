@@ -25,12 +25,11 @@ class NavbarDefault extends React.Component {
   constructor(props) {
     super(props);
     this.state = {activekey: 1};
-    this.handleSelect = this.handleSelect.bind(this);
   }
 
-  handleSelect(selectedKey) {
+  handleSelect = selectedKey => {
     this.setState({activekey: selectedKey});
-  }
+  };
 
   render() {
     return (
@@ -54,12 +53,11 @@ class NavbarInverse extends React.Component {
   constructor(props) {
     super(props);
     this.state = {activekey: 1};
-    this.handleSelect = this.handleSelect.bind(this);
   }
 
-  handleSelect(selectedKey) {
+  handleSelect = selectedKey => {
     this.setState({activekey: selectedKey});
-  }
+  };
 
   render() {
     return (

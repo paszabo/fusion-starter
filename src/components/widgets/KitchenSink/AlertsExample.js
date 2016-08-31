@@ -35,12 +35,11 @@ class DismissableAlert extends React.Component {
   constructor(props) {
     super(props);
     this.state = {alertVisible: true};
-    this.handleAlertDismiss = this.handleAlertDismiss.bind(this);
   }
 
-  handleAlertDismiss() {
+  handleAlertDismiss = () => {
     this.setState({alertVisible: false});
-  }
+  };
 
   /*
    This alert on Tracksuit's Kitchen Sink is invalid as it does not list a bsStyle, resulting in a non-styled alert.  "bsStyle" must have one of
