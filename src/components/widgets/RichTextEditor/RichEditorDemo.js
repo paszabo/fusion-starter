@@ -1,27 +1,22 @@
 import React from 'react';
 import RichTextEditor,{createEmptyValue, EditorValue} from 'react-richtext/lib/RichTextEditor';
-import {convertToRaw} from 'draft-js';
 
 class RichEditorDemo extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
       value: createEmptyValue(),
-      format: 'html'}
+      format: 'html'};
+    this.onChange = this.onChange.bind(this);
+    this.onChangeFormat = this.onChangeFormat.bind(this);
+    this.onChangeSource = this.onChangeSource.bind(this);
+    this.logState = this.logState.bind(this);
   }
 
   logState() {
-    console.log(this.state.value); // eslint-disable-line
     const editorState = this.state.value.getEditorState();
     const contentState = window.contentState = editorState.getCurrentContent().toJS();
     console.log(contentState); // eslint-disable-line
-  }
-
-  logStateRaw() {
-    const editorState = this.state.value.getEditorState();
-    const contentState = editorState.getCurrentContent();
-    const rawContentState = window.rawContentState = convertToRaw(contentState);
-    console.log(JSON.stringify(rawContentState)); // eslint-disable-line
   }
 
   onChange = (value= EditorValue) => {
