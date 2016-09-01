@@ -423,15 +423,13 @@ class EntypoIconDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: '', refsFound: true};
-    this.handleChange = this.handleChange.bind(this);
-    this.getValidationState = this.getValidationState.bind(this);
   }
 
-  handleChange(e) {
+  handleChange = e => {
     this.setState({value: e.target.value});
-  }
+  };
 
-  getValidationState() {
+  getValidationState = () => {
     // check all the <IconBlock> components to see if any match the search terms.
     // if so, return success, if not a match, return error.  else, let default.
     const thisvalue = this.state.value;
@@ -452,7 +450,7 @@ class EntypoIconDisplay extends React.Component {
       if (foundvalue > 0 && thisvalue !== '') return 'success';
       if (foundvalue === 0 && thisvalue !== '') return 'error';
     }
-  }
+  };
 
   render() {
     return (
@@ -944,7 +942,7 @@ class IconBlock extends React.Component {
 
     // inline component to return the appropriate icon
     const ReturnIcon = (props) => {
-      let style = {fill: 'currentColor', verticalAlign: 'middle'};
+      const style = {fill: 'currentColor', verticalAlign: 'middle'};
       switch (props.icon) {
         case '500px':
           return <Entypo500px className="iconblock__sample" style={style}/>;

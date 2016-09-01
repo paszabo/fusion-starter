@@ -2,14 +2,9 @@ import React, {Component, PropTypes} from 'react';
 import {FormControl} from 'react-bootstrap';
 
 class FuelSavingsTextInput extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(e) {
+  handleChange = e => {
     this.props.onChange(this.props.name, e.target.value);
-  }
+  };
 
   render() {
     return (

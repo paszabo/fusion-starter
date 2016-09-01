@@ -6,22 +6,15 @@ import ProgressBar from 'react-progress-bar-plus';
 import * as loadingIndicatorActions from '../../../actions/loadingIndicatorActions';
 
 class LoadingIndicator extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.start = this.start.bind(this);
-    this.setPercentage = this.setPercentage.bind(this);
-  }
-
-  start() {
+  start = () => {
     const interval = (Math.random() * (0.5 - 0.2) + 0.2 ) * 100;
     this.props.actions.loadingIndicatorStart(interval);
-  }
+  };
 
-  setPercentage(e) {
+  setPercentage = (e) => {
     const percent = parseInt(e.target.value, 10);
     this.props.actions.loadingIndicatorSetPrecent(percent);
-  }
+  };
 
   renderProgressBar() {
     const status = this.props.loadingIndicatorStatus;
@@ -40,7 +33,7 @@ class LoadingIndicator extends React.Component {
   }
 
   render() {
-    let progressBar = this.renderProgressBar();
+    const progressBar = this.renderProgressBar();
 
     return (
       <div>

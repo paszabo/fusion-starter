@@ -7,10 +7,8 @@ class RichEditorDemo extends React.Component {
     super(props, context);
     this.state = {
       value: createEmptyValue(),
-      format: 'html'},
-    this.onChange = this.onChange.bind(this);
-    this.onChangeFormat = this.onChangeFormat.bind(this);
-    this.onChangeSource = this.onChangeSource.bind(this);
+      format: 'html'
+    };
   }
 
   logState() {
@@ -27,24 +25,24 @@ class RichEditorDemo extends React.Component {
     console.log(JSON.stringify(rawContentState)); // eslint-disable-line
   }
 
-  onChange(value= EditorValue) {
+  onChange = (value= EditorValue) => {
     this.setState({value});
-  }
+  };
 
-  onChangeSource(event= Object) {
+  onChangeSource = (event= Object) => {
     const source = event.target.value;
     const oldValue = this.state.value;
     this.setState({
       value: oldValue.setContentFromString(source, this.state.format),
     });
-  }
+  };
 
-  onChangeFormat(event= Object) {
+  onChangeFormat = (event= Object) => {
     this.setState({format: event.target.value});
-  }
+  };
 
   render(){
-    let {value} = this.state;
+    const {value} = this.state;
     return (
       <div className="editor-demo">
         <div className="row">
