@@ -47,8 +47,9 @@ class RichEditorDemo extends React.Component {
           />
         </div>
 
-        <label className="radio-item" >
+        <label htmlFor="change-format-html" className="radio-item" >
           <input
+            id="change-format-html"
             className="display"
             type="radio"
             name="format"
@@ -58,8 +59,9 @@ class RichEditorDemo extends React.Component {
           />
           <span className="label">HTML</span>
         </label>
-        <label className="radio-item">
+        <label htmlFor="change-format-markdown" className="radio-item">
           <input
+            id="change-format-markdown"
             className="display"
             type="radio"
             name="format"

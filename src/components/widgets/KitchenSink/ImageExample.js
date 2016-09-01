@@ -4,9 +4,9 @@ import {Image} from 'react-bootstrap';
 const ImageExample = () => {
   return (
     <div>
-      <Image src="https://placehold.it/100x100" rounded/>{' '}
-      <Image src="https://placehold.it/100x100" circle/>{' '}
-      <Image src="https://placehold.it/100x100" thumbnail/>
+      <Image alt="Rounded Placeholder" src="https://placehold.it/100x100" rounded/>{' '}
+      <Image alt="Circle Placeholder" src="https://placehold.it/100x100" circle/>{' '}
+      <Image alt="Thumbnail Placeholder" src="https://placehold.it/100x100" thumbnail/>
     </div>
   );
 };

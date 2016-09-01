@@ -66,30 +66,30 @@ class AutoSuggestSelectField extends React.Component {
 
         <div className='react-select__checkbox-section'>
           <Col sm={6}>
-            <label className='react-select__checkbox checkbox'>
-              <input type='checkbox' className='checkbox-control' name='searchable' checked={this.state.searchable}
+            <label htmlFor="searchable-checkbox" className='react-select__checkbox checkbox'>
+              <input id="searchable-checkbox" type='checkbox' className='checkbox-control' name='searchable' checked={this.state.searchable}
                      onChange={this.toggleCheckbox}/>{' '}
               <span className='checkbox-label'>Searchable</span>
             </label>
-            <label className='react-select__checkbox checkbox'>
-              <input type='checkbox' className='checkbox-control' name='disabled' checked={this.state.disabled}
+            <label htmlFor="disabled-checkbox" className='react-select__checkbox checkbox'>
+              <input id="disabled-checkbox" type='checkbox' className='checkbox-control' name='disabled' checked={this.state.disabled}
                      onChange={this.toggleCheckbox}/>{' '}
               <span className='checkbox-label'>Disabled</span>
             </label>
-            <label className='react-select__checkbox checkbox'>
-              <input type='checkbox' className='checkbox-control' name='clearable' checked={this.state.clearable}
+            <label htmlFor="toggle-checkbox" className='react-select__checkbox checkbox'>
+              <input id="toggle-checkbox" type='checkbox' className='checkbox-control' name='clearable' checked={this.state.clearable}
                      onChange={this.toggleCheckbox}/>{' '}
               <span className='checkbox-label'>Clearable</span>
             </label>
           </Col>
           <Col sm={6} className='checkbox-list'>
-            <label className='react-select__checkbox checkbox'>
-              <input type='radio' className='checkbox-control' checked={this.state.country === 'AU'} value='AU'
+            <label htmlFor="switch-country-au" className='react-select__checkbox checkbox'>
+              <input id="switch-country-au" type='radio' className='checkbox-control' checked={this.state.country === 'AU'} value='AU'
                      onChange={this.switchCountry}/>{' '}
               <span className='checkbox-label'>Australia</span>
             </label>
-            <label className='react-select__checkbox checkbox'>
-              <input type='radio' className='checkbox-control' checked={this.state.country === 'US'} value='US'
+            <label htmlFor="switch-country-us" className='react-select__checkbox checkbox'>
+              <input id="switch-country-us" type='radio' className='checkbox-control' checked={this.state.country === 'US'} value='US'
                      onChange={this.switchCountry}/>{' '}
               <span className='checkbox-label'>United States</span>
             </label>
