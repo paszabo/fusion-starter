@@ -10,31 +10,19 @@ class DialogExample extends React.Component {
       mdShow: false,
       lgShow: false
     };
-    this.closeSm = this.closeSm.bind(this);
-    this.openSm = this.openSm.bind(this);
-    this.closeMd = this.closeMd.bind(this);
-    this.openMd = this.openMd.bind(this);
-    this.closeLg = this.closeLg.bind(this);
-    this.openLg = this.openLg.bind(this);
   }
-  closeSm(){
-    this.setState({ smShow: false });
-  }
-  openSm(){
-    this.setState({ smShow: true });
-  }
-  closeMd(){
-    this.setState({ mdShow: false });
-  }
-  openMd(){
-    this.setState({ mdShow: true });
-  }
-  closeLg(){
-    this.setState({ lgShow: false });
-  }
-  openLg(){
-    this.setState({ lgShow: true });
-  }
+
+  toggleSm = () => {
+    this.setState({ smShow: !this.state.smShow });
+  };
+
+  toggleMd = () => {
+    this.setState({ mdShow: !this.state.mdShow });
+  };
+
+  toggleLg = () => {
+    this.setState({ lgShow: !this.state.lgShow });
+  };
 
   render(){
     return (
@@ -52,14 +40,14 @@ class DialogExample extends React.Component {
         </p>
 
         <ButtonToolbar>
-          <Button onClick={this.openSm}>Small Modal</Button>
-          <Button onClick={this.openMd}>Default Modal</Button>
-          <Button onClick={this.openLg}>Large Modal</Button>
+          <Button onClick={this.toggleSm}>Small Modal</Button>
+          <Button onClick={this.toggleMd}>Default Modal</Button>
+          <Button onClick={this.toggleLg}>Large Modal</Button>
         </ButtonToolbar>
 
-        <SmallModal show={this.state.smShow} onHide={this.closeSm} />
-        <DefaultModal show={this.state.mdShow} onHide={this.closeMd} />
-        <LargeModal show={this.state.lgShow} onHide={this.closeLg} />
+        <SmallModal show={this.state.smShow} onHide={this.toggleSm} />
+        <DefaultModal show={this.state.mdShow} onHide={this.toggleMd} />
+        <LargeModal show={this.state.lgShow} onHide={this.toggleLg} />
       </div>
     );
   }

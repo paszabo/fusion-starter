@@ -7,7 +7,7 @@
 Fusion Starter is a comprehensive starter kit for rapid application development using React. 
 
 ## Demo
-[http://fusion-starter.surge.sh](http://fusion-starter.surge.sh)
+[https://fusion-starter.firebaseapp.com](https://fusion-starter.firebaseapp.com)
 
 ##Why Use this?
 

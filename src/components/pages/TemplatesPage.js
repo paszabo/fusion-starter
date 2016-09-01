@@ -20,7 +20,7 @@ const TemplatesPage = () => {
           of content (like large bodies of text) can become hard to read due to excessively long line lengths if nothing is
           done to mitigate this.
         </p>
-        <LinkContainer to={{ pathname: '/template-fluid' }} target='_blank'>
+        <LinkContainer to={{ pathname: '/template-fluid' }}>
           <Button bsStyle='link' style={{padding: 0}}>
             Example of Fluid Layout
           </Button>
@@ -37,7 +37,7 @@ const TemplatesPage = () => {
         read line lengths are needed. Conversely, it constrains the amount of space available to content and takes away
         control over presentation from the user.
         </p>
-        <LinkContainer to={{ pathname: '/template-fixed' }} target='_blank'>
+        <LinkContainer to={{ pathname: '/template-fixed' }}>
           <Button bsStyle='link' style={{padding: 0}}>
             Example of Fixed Layout
           </Button>
@@ -54,7 +54,7 @@ const TemplatesPage = () => {
         header might contain a large number of items. Different structures can be applied to the main content area of a page to
         suit different purposes.
         </p>
-        <LinkContainer to={{ pathname: '/template-hybrid' }} target='_blank'>
+        <LinkContainer to={{ pathname: '/template-hybrid' }}>
           <Button bsStyle='link' style={{padding: 0}} href='/template-hybrid'>
             Example of Hybrid Layout
           </Button>
@@ -74,7 +74,7 @@ const TemplatesPage = () => {
         layouts, and is therefore ideal for displaying wide tables and other large user interface elements. Conversely, it does
         not provide any structure for grouping and separating elements.
         </p>
-        <LinkContainer to={{ pathname: '/template-content-only' }} target='_blank'>
+        <LinkContainer to={{ pathname: '/template-content-only' }}>
           <Button bsStyle='link' style={{padding: 0}}>
             Example of Content Only Layout
           </Button>
@@ -89,7 +89,7 @@ const TemplatesPage = () => {
         The sidebar and content layout has a column for vertical navigation to the left of the content area, which is useful
         for when a long list of navigation links is necessary.
         </p>
-        <LinkContainer to={{ pathname: '/template-sidebar-content' }} target='_blank'>
+        <LinkContainer to={{ pathname: '/template-sidebar-content' }}>
           <Button bsStyle='link' style={{padding: 0}}>
             Example of Sidebar/Content Layout
           </Button>
@@ -104,7 +104,7 @@ const TemplatesPage = () => {
         The content and aside layout has a column to the right of the content area. The sidebar is used for supplementary
         content, which would otherwise interrupt the flow of content in the main content area.
         </p>
-        <LinkContainer to={{ pathname: '/template-content-aside' }} target='_blank'>
+        <LinkContainer to={{ pathname: '/template-content-aside' }}>
           <Button bsStyle='link' style={{padding: 0}}>
             Example of Content/Aside Layout
           </Button>
@@ -119,7 +119,7 @@ const TemplatesPage = () => {
         The sidebar, content and aside layout is a combination of the three layouts mentioned above. This layout can be used
         when a vertical navigation is required as well as a two column structure in the content area.
         </p>
-        <LinkContainer to={{ pathname: '/template-sidebar-content-aside' }} target='_blank'>
+        <LinkContainer to={{ pathname: '/template-sidebar-content-aside' }}>
           <Button bsStyle='link' style={{padding: 0}} >
             Example of Sidebar/Content/Aside Layout
           </Button>
@@ -134,7 +134,7 @@ const TemplatesPage = () => {
         The focused task layout has a smaller, fixed width content area that is horizontally centered on the page regardless
         of which page alignment is applied.
         </p>
-        <LinkContainer to={{ pathname: '/template-focused' }} target='_blank'>
+        <LinkContainer to={{ pathname: '/template-focused' }}>
           <Button bsStyle='link' style={{padding: 0}}>
             Example of Focused Task Layout
           </Button>

@@ -7,22 +7,21 @@ import EntypoChevronThinRight from 'react-entypo/lib/entypo/ChevronThinRight';
 class GriddleCustomPager extends React.Component{
   constructor(props){
     super(props);
-    this.handleSelect = this.handleSelect.bind(this);
     this.state = {
       activePage: 1
     };
   }
 
-  handleSelect(eventKey) {
+  handleSelect = (eventKey) => {
     const maxPage = this.props.maxPage;
     const page = eventKey;
 
     if(page > maxPage || !page)
       return;
     this.props.setPage(page-1);
-  }
+  };
 
-  getStyles(){
+  getStyles() {
     const styles = {
       containerStyle:{
         textAlign: 'center',
@@ -35,7 +34,7 @@ class GriddleCustomPager extends React.Component{
     return styles;
   }
 
-  render(){
+  render() {
     const styles = this.getStyles();
     const maxPage = this.props.maxPage;
 

@@ -2,7 +2,7 @@
 import React, {PropTypes} from 'react';
 import { Media, Label, Col, Image } from 'react-bootstrap';
 
-let sampledetails = [
+const sampledetails = [
   {'Ext Color': 'Scarlet Red Pearl'},
   {'Int Color': 'Beige'},
   {'Odometer': '6'},
