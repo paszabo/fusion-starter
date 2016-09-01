@@ -6,7 +6,8 @@
     "plugin:import/warnings"
   ],
   "plugins": [
-    "react"
+    "react",
+    "jsx-a11y"
   ],
   "parserOptions": {
     "ecmaVersion": 6,
@@ -79,6 +80,9 @@
     "react/require-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
-    "react/wrap-multilines": 1
+    "react/wrap-multilines": 1,
+    "jsx-a11y/img-has-alt": [ 1, ["Image", "Thumbnail"]],
+    "jsx-a11y/label-has-for": 1,
+    "jsx-a11y/no-onchange": 1
   }
 }

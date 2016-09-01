@@ -99,6 +99,8 @@ Assuming your project isn't using Git itself, you can clone this repo to get sta
 |enzyme|Simplified JavaScript Testing utilities for React|
 |eslint|Lints JavaScript |
 |eslint-loader|Adds ESLint support to Webpack |
+|eslint-plugin-a11y|Adds accessibility related rules to eslint|
+|eslint-plugin-import|Validates ES6 imports|
 |eslint-plugin-react|Adds additional React-related rules to ESLint|
 |extract-text-webpack-plugin| Extracts CSS into separate file for production build |
 |file-loader| Adds file loading support to Webpack |

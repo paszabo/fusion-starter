@@ -12,7 +12,7 @@ const TemplatesPage = () => {
 
       {/* Fluid */}
       <Panel header='Fluid'>
-        <img style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
+        <img alt="Fluid Layout" style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
           src={require('../../../assets/images/layouts/layout-fluid.png')} />
         <p>
           The fluid page layout provides maximum space for content in all sizes, and leaves control over the size of the UI
@@ -29,7 +29,7 @@ const TemplatesPage = () => {
 
       {/* Fixed width */}
       <Panel header='Fixed width'>
-        <img style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
+        <img alt="Fixed Layout" style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
           src={require('../../../assets/images/layouts/layout-fixed.png')} />
         <p>
         The fixed width page layout deliberately constrains the overall width of the content and horizontally centers it
@@ -46,7 +46,7 @@ const TemplatesPage = () => {
 
       {/* Hybrid */}
       <Panel header='Hybrid'>
-        <img style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
+        <img alt="Hybrid Layout" style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
           src={require('../../../assets/images/layouts/layout-hybrid.png')} />
         <p>
         The hybrid page layout combines the fluid design for the application header with a fixed width design for the rest of
@@ -67,7 +67,7 @@ const TemplatesPage = () => {
 
       {/* Content Only */}
       <Panel header='Content Only'>
-        <img style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
+        <img alt="Content Only Layout" style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
           src={require('../../../assets/images/layouts/content-content.png')} />
         <p>
         The content only layout maximizes the space available for content. It provides more horizontal space than the other
@@ -83,7 +83,7 @@ const TemplatesPage = () => {
 
       {/* Sidebar and Content */}
       <Panel header='Sidebar and Content'>
-        <img style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
+        <img alt="Content and Sidebar Layout" style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
           src={require('../../../assets/images/layouts/content-content-sidebar.png')} />
         <p>
         The sidebar and content layout has a column for vertical navigation to the left of the content area, which is useful
@@ -98,7 +98,7 @@ const TemplatesPage = () => {
 
       {/* Content and Aside */}
       <Panel header='Content and Aside'>
-        <img style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
+        <img alt="Content and Aside Layout" style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
           src={require('../../../assets/images/layouts/content-content-aside.png')} />
         <p>
         The content and aside layout has a column to the right of the content area. The sidebar is used for supplementary
@@ -113,7 +113,7 @@ const TemplatesPage = () => {
 
       {/* Sidebar, Content and Aside */}
       <Panel header='Sidebar, Content and Aside'>
-        <img style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
+        <img alt="Sidebar, Content, and Aside" style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
           src={require('../../../assets/images/layouts/content-content-sidebar-aside.png')} />
         <p>
         The sidebar, content and aside layout is a combination of the three layouts mentioned above. This layout can be used
@@ -128,7 +128,7 @@ const TemplatesPage = () => {
 
       {/* Focused Task */}
       <Panel header='Focused Task'>
-        <img style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
+        <img alt="Focused Task" style={{float: 'left', margin: '0px 15px 15px 0px', border: '1px solid #c2c1c1', width: 'auto', height: 200}}
           src={require('../../../assets/images/layouts/content-focused.png')} />
         <p>
         The focused task layout has a smaller, fixed width content area that is horizontally centered on the page regardless
