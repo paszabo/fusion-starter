@@ -5,7 +5,7 @@
   "homepage": "https://github.com/cox-auto-kc/fusion-starter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cox-auto-kc/fusion"
+    "url": "https://github.com/cox-auto-kc/fusion-starter"
   },
   "engines": {
     "npm": ">=3"
