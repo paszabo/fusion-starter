@@ -49,7 +49,7 @@ class AutoSuggestSelectField extends React.Component {
   };
 
   render() {
-    let options = states[this.state.country];
+    const options = states[this.state.country];
     return (
       <div className='react-select__section'>
         <p className='react-select__heading'>{this.props.label}</p>
