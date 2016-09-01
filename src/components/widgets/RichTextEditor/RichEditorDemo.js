@@ -1,28 +1,22 @@
 import React from 'react';
 import RichTextEditor,{createEmptyValue, EditorValue} from 'react-richtext/lib/RichTextEditor';
-import {convertToRaw} from 'draft-js';
 
 class RichEditorDemo extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
       value: createEmptyValue(),
-      format: 'html'
-    };
+      format: 'html'};
+    this.onChange = this.onChange.bind(this);
+    this.onChangeFormat = this.onChangeFormat.bind(this);
+    this.onChangeSource = this.onChangeSource.bind(this);
+    this.logState = this.logState.bind(this);
   }
 
   logState() {
-    console.log(this.state.value); // eslint-disable-line
     const editorState = this.state.value.getEditorState();
     const contentState = window.contentState = editorState.getCurrentContent().toJS();
     console.log(contentState); // eslint-disable-line
-  }
-
-  logStateRaw() {
-    const editorState = this.state.value.getEditorState();
-    const contentState = editorState.getCurrentContent();
-    const rawContentState = window.rawContentState = convertToRaw(contentState);
-    console.log(JSON.stringify(rawContentState)); // eslint-disable-line
   }
 
   onChange = (value= EditorValue) => {
@@ -42,7 +36,7 @@ class RichEditorDemo extends React.Component {
   };
 
   render(){
-    const {value} = this.state;
+    let {value} = this.state;
     return (
       <div className="editor-demo">
         <div className="row">
@@ -53,8 +47,9 @@ class RichEditorDemo extends React.Component {
           />
         </div>
 
-        <label className="radio-item" >
+        <label htmlFor="change-format-html" className="radio-item" >
           <input
+            id="change-format-html"
             className="display"
             type="radio"
             name="format"
@@ -64,8 +59,9 @@ class RichEditorDemo extends React.Component {
           />
           <span className="label">HTML</span>
         </label>
-        <label className="radio-item">
+        <label htmlFor="change-format-markdown" className="radio-item">
           <input
+            id="change-format-markdown"
             className="display"
             type="radio"
             name="format"
