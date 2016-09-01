@@ -15,7 +15,7 @@ Unfortunately, scripts in package.json can't be commented inline because the JSO
 | remove-dist | Deletes the dist folder. |
 | create-dist | Creates the dist folder and the necessary subfolders. |
 | prebuild | Runs automatically before build script (due to naming convention). Cleans dist folder, builds html, and builds sass. |
-| build | Bundles all JavaScript using webpack and writes it to /dist. |
+| build | Bundles all JavaScript using webpack and writes it to /dist. These are the files you'll deploy to production.|
 | test | Runs tests (files ending in .spec.js) using Mocha and outputs results to the command line. Watches all files so tests are re-run upon save. |
 | test:cover | Display test coverage |
 | open:cover | Open test coverage report in default browser |
