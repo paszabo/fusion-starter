@@ -79,8 +79,8 @@
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
     "react/wrap-multilines": 1,
-    "jsx-a11y/img-has-alt": [ 2, "Image" ],
-    "jsx-a11y/label-has-for": [ 2, "Label" ],
-    "jsx-a11y/no-onchange": 2
+    "jsx-a11y/img-has-alt": [ 1, ["Image", "Thumbnail"]],
+    "jsx-a11y/label-has-for": 1,
+    "jsx-a11y/no-onchange": 1
   }
 }

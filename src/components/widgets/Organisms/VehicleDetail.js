@@ -30,8 +30,8 @@ const VehicleDetail = () => {
       </Media>
 
       <div className="vo__labels">
-        <Label htmlFor="price-drop" bsStyle="danger" className="vo__label">Price Drop</Label>{' '}
-        <Label htmlFor="high-demand" bsStyle="success" className="vo__label">High Demand</Label>
+        <Label bsStyle="danger" className="vo__label">Price Drop</Label>{' '}
+        <Label bsStyle="success" className="vo__label">High Demand</Label>
       </div>
 
       <div className="vo__vd">
