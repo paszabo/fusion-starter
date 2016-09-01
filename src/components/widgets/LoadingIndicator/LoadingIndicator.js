@@ -33,7 +33,7 @@ class LoadingIndicator extends React.Component {
   }
 
   render() {
-    let progressBar = this.renderProgressBar();
+    const progressBar = this.renderProgressBar();
 
     return (
       <div>

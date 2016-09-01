@@ -942,7 +942,7 @@ class IconBlock extends React.Component {
 
     // inline component to return the appropriate icon
     const ReturnIcon = (props) => {
-      let style = {fill: 'currentColor', verticalAlign: 'middle'};
+      const style = {fill: 'currentColor', verticalAlign: 'middle'};
       switch (props.icon) {
         case '500px':
           return <Entypo500px className="iconblock__sample" style={style}/>;
