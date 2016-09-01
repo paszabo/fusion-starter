@@ -9,6 +9,20 @@ Fusion Starter is a comprehensive starter kit for rapid application development 
 ## Demo
 [https://fusion-starter.firebaseapp.com](https://fusion-starter.firebaseapp.com)
 
+## Quick Start
+First time? [Do the initial machine setup](https://github.com/cox-auto-kc/fusion-starter#initial-machine-setup).
+```
+git clone https://github.com/cox-auto-kc/fusion-starter.git my-project
+cd my-project
+npm install
+npm start -s
+```
+This will run the automated build process, run tests, lint, start up a webserver, and open the application in your default browser. 
+After running the start command, your code is rebuilt and tests run automatically every time you hit save. [See the full list of commands](https://github.com/cox-auto-kc/fusion-starter/blob/master/faq/FAQ.md#what-do-the-scripts-in-packagejson-do).
+
+Once you're comfortable with how the example app works, remove the example app: `npm run remove-demo`.
+Be sure to [enable CORS on the APIs](https://github.com/cox-auto-kc/fusion-starter/blob/master/faq/FAQ.md#how-do-i-call-our-existing-web-apis) you need to call. 
+
 ##Why Use this?
 
 1. **One command to get started** - Type `npm start` to start development in your default browser.
@@ -55,31 +69,20 @@ Fusion comes prepackaged with a variety of components to solve for the general n
 |  [React Font Awesome](https://github.com/danawoodman/react-fontawesome) | A React component for the font-awesome icon library.  Note: This component does not include any of the Font Awesome CSS or fonts, so you'll need to make sure to include those on your end somehow, either by adding them to your build process or linking to CDN versions.|
 |  [Tracksuit](http://get-tracksuit.github.io/tracksuit-theme-bootstrap3/docs/) | A Bootstrap 3 theme with enhancements for touch-based devices.|
 
-## Get Started
- 1. **Initial Machine Setup**
-First time running the starter kit? Then complete the [Initial Machine Setup](#initial-machine-setup).
- 2. **Clone the project**
-Open the command line of your choice and change to the directory where you'd like to start your project. Then clone the project: `git clone https://github.com/cox-auto-kc/fusion-starter.git your-project-name`.  
- 3. **Change directory**
-`cd your-project-name`. - Change directories into your project's root directory (the project name you chose in step 2):
- 4. **Install Node packages** 
-`npm install`
- 5. **Run the app**
-`npm start`
-This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development with this kit, you'll want to keep the command line open at all times so that your code is rebuilt and tests run automatically every time you hit save. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
- 6. **Review the example app.** This starter kit includes a working example app that calculates fuel savings. Note how all source code is placed under /src. Tests are placed alongside the file under test. The final built app is placed under /dist. These are the files you run in production.
- 7. **Delete the example app files.** Once you're comfortable with how the example app works, you can delete those files and begin creating your own app: `npm run remove-demo`.
- 8. **Plop these files inside your solution.** - However, important note: **DO NOT** add node_modules to your solution or source control.
- 9. **[Enable CORS on the APIs](https://github.com/cox-auto-kc/fusion-starter/blob/master/faq/FAQ.md#how-do-i-call-our-existing-web-apis) you need to call** 
-
 ##Initial Machine Setup
- 1. **Install [the newest version of Node.js](https://nodejs.org)**
- 2. **Install the newest version of [Git](https://git-scm.com/downloads)**.  The recommended defaults are fine.
- 3. **Install [Python 2.7](https://www.python.org/downloads/)**. Browser-sync (and various other Node modules) rely on node-gyp, which requires Python on Windows.  
- 4. **Install C++ Compiler**. Open Visual Studio and go to File -> New -> Project -> Visual C++ -> Install Visual C++ Tools for Windows Desktop. The C++ compiler is used to compile browser-sync (and perhaps other Node modules).
- 5. **Install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** in Chrome. (Optional, but helpful)
- 6. **Configure your Editor for React**. [Install the appropriate plugin](https://github.com/facebook/react/wiki/Complementary-Tools#jsx-integrations) and [configure your editor](https://github.com/kriasoft/react-starter-kit/blob/master/docs/how-to-configure-text-editors.md).
- 7. **Add two lines to your [Windows hosts file](https://www.rackspace.com/knowledge_center/article/modify-your-hosts-file)** for vinconnect.com: 
+
+**Mac:**
+ 1. **Install [Node.js](https://nodejs.org) and [Git](https://git-scm.com/downloads)**. The recommended defaults are fine.
+ 2. **Configure your Editor for React**. [Install the appropriate plugin](https://github.com/facebook/react/wiki/Complementary-Tools#jsx-integrations) and [configure your editor](https://github.com/kriasoft/react-starter-kit/blob/master/docs/how-to-configure-text-editors.md).
+ 3. **Install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** in Chrome. (Optional, but helpful)
+
+**Windows:**
+ 1. **Install [Node.js](https://nodejs.org) and [Git](https://git-scm.com/downloads)**. The recommended defaults are fine.
+ 2. **Install [Python 2.7](https://www.python.org/downloads/)**. Browser-sync (and various other Node modules) rely on node-gyp, which requires Python on Windows.  
+ 3. **Install C++ Compiler**. Open Visual Studio and go to File -> New -> Project -> Visual C++ -> Install Visual C++ Tools for Windows Desktop. The C++ compiler is used to compile browser-sync (and perhaps other Node modules).
+ 4. **Install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** in Chrome. (Optional, but helpful)
+ 5. **Configure your Editor for React**. [Install the appropriate plugin](https://github.com/facebook/react/wiki/Complementary-Tools#jsx-integrations) and [configure your editor](https://github.com/kriasoft/react-starter-kit/blob/master/docs/how-to-configure-text-editors.md).
+ 6. **Add two lines to your [Windows hosts file](https://www.rackspace.com/knowledge_center/article/modify-your-hosts-file)** for vinconnect.com: 
 ```
 127.0.0.1 vinconnect.com
 127.0.0.1 www.vinconnect.com
