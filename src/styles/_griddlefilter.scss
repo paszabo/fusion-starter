@@ -1,0 +1,30 @@
+
+.griddlefilter {
+   .griddle{
+     &--button {
+       border: none;
+       float: right;
+     }
+   }
+
+  &__dropdown {
+    display: inline-block;
+    position: relative;
+    line-height: 22px;
+    padding: 10px;
+    border: none;
+  }
+
+  &__linkbutton {
+     float: right;
+     border: none;
+
+  }
+
+  &__sortdropdown {
+    display: inline-block;
+    position: relative;
+    line-height: 22px;
+    padding: 5px;
+  }
+}
