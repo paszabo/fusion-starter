@@ -6,14 +6,18 @@ class GriddleDropdown extends Component {
   constructor(props, context) {
     super(props, context);
   }
+
+  textOnClick(e) {
+  e.stopPropagation();
+}
   render(){
     return(
-      <DropdownButton className="griddlefilter__dropdown" title={this.props.columnName} id="bg-nested-dropdown">
-        <Button className="griddlefilter griddle--button"> Clear All </Button>
+      <DropdownButton className="griddlefilter__dropdown" title={this.props.columnName} id="bg-nested-dropdown"  onClick={this.textOnClick}>
+        <Button className="griddlefilter griddle button"> Clear All </Button>
         <MenuItem eventKey={1.1} disabled> Sort By </MenuItem>
 
       <ul style={{paddingLeft:30,paddingTop:0, paddingRight:10}}>
-        <DropdownButton title="Descending" id="dropdown-size-medium" className={"griddlefilter__sortdropdown"}>
+        <DropdownButton title="Descending" id="dropdown-size-medium" className={"griddlefilter__sortdropdown"} >
           <MenuItem eventKey="1">Descending</MenuItem>
           <MenuItem eventKey="2">Ascending</MenuItem>
         </DropdownButton>

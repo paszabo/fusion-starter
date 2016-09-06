@@ -40,7 +40,9 @@ const DataTablesPage = () => {
           columnMetadata ={columnData}
           showFilter={false}
           showSettings={true}
-
+          settingsIconComponent ={null}
+          sortAscendingComponent = {""}
+          sortDescendingComponent = {""}
           useCustomPagerComponent={true}
           customPagerComponent={GriddleCustomPager}
         />

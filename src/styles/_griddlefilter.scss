@@ -1,11 +1,9 @@
-
+@import '~fusion-theme/dist/fusion-variables.scss';
 .griddlefilter {
-   .griddle{
-     &--button {
+   .griddlefilter{
        border: none;
        float: right;
      }
-   }
 
   &__dropdown {
     display: inline-block;
@@ -18,7 +16,6 @@
   &__linkbutton {
      float: right;
      border: none;
-
   }
 
   &__sortdropdown {
