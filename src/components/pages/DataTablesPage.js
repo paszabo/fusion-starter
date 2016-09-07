@@ -16,11 +16,12 @@ const columnData = [
   },
   {
     "columnName":"Year",
-    "customHeaderComponent": GriddleDropdown ,
+    "customHeaderComponent": GriddleDropdown,
+    "customHeaderComponentProps": { data: vehicleData, filterType: "select" }
   },
   {
     "columnName":"Price",
-    "customHeaderComponent": GriddleDropdown ,
+    "customHeaderComponent": GriddleDropdown,
   },
 ];
 
