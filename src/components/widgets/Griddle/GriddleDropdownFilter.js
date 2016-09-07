@@ -45,7 +45,7 @@ class GriddleDropdown extends Component {
     }
 
     return(
-      <DropdownButton className="griddlefilter__dropdown" title={this.props.columnName} id={'griddle__header-'+this.props.displayName} onClick={this.textOnClick}>
+      <DropdownButton bsStyle="link" className="griddlefilter__dropdown" title={this.props.columnName} id={'griddle__header-'+this.props.displayName} onClick={this.textOnClick}>
 
         <Button className="griddlefilter griddle--button" bsStyle="link"> Clear All </Button>
 
