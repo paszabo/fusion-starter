@@ -6,22 +6,25 @@ import GriddleDropdown from '../widgets/Griddle/GriddleDropdownFilter';
 const vehicleData = require('../../data/vehicles');
 const columnData = [
   {
+    "sortable":false,
     "columnName":"Make",
     "customHeaderComponent": GriddleDropdown,
+    "customHeaderComponentProps": { info: vehicleData, filterType: "select" }
   },
   {
     "columnName":"Model",
     "customHeaderComponent": GriddleDropdown,
-
+    "customHeaderComponentProps": { info: vehicleData, filterType: "select" }
   },
   {
     "columnName":"Year",
     "customHeaderComponent": GriddleDropdown,
-    "customHeaderComponentProps": { data: vehicleData, filterType: "select" }
+    "customHeaderComponentProps": { info: vehicleData, filterType: "select" }
   },
   {
     "columnName":"Price",
     "customHeaderComponent": GriddleDropdown,
+    "customHeaderComponentProps": { info: vehicleData, filterType: "select" }
   },
 ];
 
@@ -35,15 +38,14 @@ const DataTablesPage = () => {
         <Griddle
           tableClassName='table'
           useGriddleStyles={false}
-          sortable ={false}
           results={vehicleData}
           columns={['Make', 'Model', 'Year', 'Price']}
-          columnMetadata ={columnData}
+          columnMetadata={columnData}
           showFilter={false}
           showSettings={true}
-          settingsIconComponent ={null}
-          sortAscendingComponent = {""}
-          sortDescendingComponent = {""}
+          settingsIconComponent={null}
+          sortAscendingComponent={""}
+          sortDescendingComponent={""}
           useCustomPagerComponent={true}
           customPagerComponent={GriddleCustomPager}
         />
