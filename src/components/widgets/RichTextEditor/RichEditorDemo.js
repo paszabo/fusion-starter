@@ -36,7 +36,7 @@ class RichEditorDemo extends React.Component {
   };
 
   render(){
-    let {value} = this.state;
+    const {value} = this.state;
     return (
       <div className="editor-demo">
         <div className="row">
