@@ -3,7 +3,7 @@ import React,{ Component } from 'react';
 import {MenuItem,Button,DropdownButton,Checkbox} from 'react-bootstrap';
 
 
-class GriddleFilterList extends Component {
+class GriddleDropdown extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -11,30 +11,41 @@ class GriddleFilterList extends Component {
     };
   }
 
-  filterThisColumn = (e) => {
+  textOnClick = (e) => {
     e.stopPropagation();
-    const sortvalue = e.target.dataset.sortvalue;
-    const temparray = this.state.filteringBy;
+  };
 
-    if(temparray.indexOf(sortvalue) === -1) {
+  clearFilter = (e) => {
+    this.textOnClick(e);
+    this.props.filterByColumn('',this.props.columnName);
+  };
+
+  sortColumn = (eventKey) => {
+    if(eventKey === 'asc') console.log('sort the '+this.props.columnName+' column Ascending');
+    if(eventKey === 'des') console.log('sort the '+this.props.columnName+' column Descending');
+  };
+
+  filterThisColumn = (e) => {
+    e.stopPropagation();                              // keep event from bubbling
+    const filtervalue = e.target.dataset.filtervalue; // get value to sort by.
+    const temparray = this.state.filteringBy;         // will need to alter the array, but should not edit state directly.
+
+    if(temparray.indexOf(filtervalue) === -1) {
       // add to state and then filter column
-      temparray.push(sortvalue);
-      console.log(temparray);
+      temparray.push(filtervalue);
       this.setState({ filteringBy: temparray});
-      this.props.filterByColumn(sortvalue, this.props.columnName); // this only filters by one parameter, will need to be reconfigured for multiple parameters
+      this.props.filterByColumn(filtervalue, this.props.columnName); // !!!!! this only filters by one parameter, will need to be reconfigured for multiple parameters
     } else {
-      console.log('remove');
-      console.log(temparray);
-      // remove from state
-      for(let i = temparray-1; i--;){
-        if (temparray[i] === sortvalue) temparray.splice(i, 1);
+      // remove from state then re-filter
+      for(let i = temparray.length; i--;){
+        if (temparray[i] === filtervalue) temparray.splice(i, 1);
       }
       this.setState({ filteringBy: temparray});
-      this.props.filterByColumn('', this.props.columnName); // this only filters by one parameter, will need to be reconfigured for multiple parameters, temporarily clears filter for this column
+      this.props.filterByColumn('', this.props.columnName); // !!!!! this only filters by one parameter, will need to be reconfigured for multiple parameters, temporarily clears filter for this column
     }
   };
 
-  render() {
+  render(){
     const info = this.props.info || [];
     let filterlist = [];
 
@@ -64,58 +75,17 @@ class GriddleFilterList extends Component {
       // output checkboxes for each unique item to filter by.
       filterlist = colArray.map((obj) => {
         return (
-            <li className="griddlefilter__filter-item" key={obj.toString()}>
-              <Checkbox
-                className="griddlefilter__checkbox"
-                onClick={this.filterThisColumn}
-                checked={(this.state.filteringBy.indexOf(obj) > -1) ? true : null}
-                data-sortvalue={obj}
-              >{obj}</Checkbox>
-            </li>
+          <li className="griddlefilter__filter-item" key={obj.toString()}>
+            <Checkbox
+              className="griddlefilter__checkbox"
+              onClick={this.filterThisColumn}
+              defaultChecked={(this.state.filteringBy.indexOf(obj) > -1) ? true : null}
+              data-filtervalue={obj}
+            >{obj}</Checkbox>
+          </li>
         );
       });
     }
-
-    return (
-      <li className="griddlefilter__dropdownitem">
-        <ul className="griddlefilter__filter-container">
-          {filterlist}
-        </ul>
-      </li>
-    );
-  }
-}
-GriddleFilterList.propTypes = {
-  info: React.PropTypes.array,
-  columnName: React.PropTypes.string,
-  filterType: React.PropTypes.oneOf(['select','range']),
-  filterByColumn: React.PropTypes.func
-};
-
-
-
-class GriddleDropdown extends Component {
-  constructor(props, context) {
-    super(props, context);
-  }
-
-  textOnClick = (e) => {
-    e.stopPropagation();
-  };
-
-  clearFilter = (e) => {
-    this.textOnClick(e);
-    this.props.filterByColumn('',this.props.columnName);
-  };
-
-  sortColumn = (eventKey) => {
-    if(eventKey === 'asc') console.log('sort the '+this.props.columnName+' column Ascending');
-    if(eventKey === 'des') console.log('sort the '+this.props.columnName+' column Descending');
-  }
-
-  render(){
-    // let { info, filterType, columnName, ...other} = this.props;
-    const props = this.props;
 
     return(
       <DropdownButton bsStyle="link" className="griddlefilter__dropdown" title={this.props.columnName} id={'griddle__header-'+this.props.displayName} onClick={this.textOnClick}>
@@ -124,12 +94,12 @@ class GriddleDropdown extends Component {
 
         <MenuItem header> Sort By </MenuItem>
 
-        <ul style={{paddingLeft:30,paddingTop:0, paddingRight:10}}>
+        <li style={{paddingLeft:30,paddingTop:0, paddingRight:10}}>
           <DropdownButton title="Descending" id={'sort-for-'+this.props.columnName+'-column'} className="griddlefilter__sortdropdown">
             <MenuItem eventKey={'des'} onSelect={this.sortColumn}>Descending</MenuItem>
             <MenuItem eventKey={'asc'} onSelect={this.sortColumn}>Ascending</MenuItem>
           </DropdownButton>
-        </ul>
+        </li>
 
         { this.props.filterType === 'select' ?
           <MenuItem header>Filter By</MenuItem>
@@ -137,7 +107,11 @@ class GriddleDropdown extends Component {
           null
         }
         { this.props.filterType === 'select' ?
-          <GriddleFilterList {...props}/>
+          <li className="griddlefilter__dropdownitem">
+            <ul className="griddlefilter__filter-container" style={{'listStyle':'none outside none'}}>
+              {filterlist}
+            </ul>
+          </li>
           :
           null
         }
