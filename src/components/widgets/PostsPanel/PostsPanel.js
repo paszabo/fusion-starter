@@ -1,35 +1,33 @@
 import React, {PropTypes} from 'react';
 import FontAwesome from 'react-fontawesome';
 import {Row, Col, Clearfix} from 'react-bootstrap';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as recentPostsActions from '../../../actions/recentPostsActions';
-
-const recentPostData = require('../../../data/recentPosts').recentPosts;
 
 class PostsPanel extends React.Component {
-  setRecentPosts = () => {
-    this.props.actions.setRecentPosts(this.props.recentPosts, recentPostData[this.props.panelType]);
+  onViewClick = (e) => {
+    e.preventDefault();
+    this.props.selectPostCategory(this.props.panelLabel);
   };
 
-  render () {
+  render() {
+    const {iconName, panelColor, postCount, panelLabel} = this.props;
+
     return (
-      <div className={`posts-panel posts-panel--${this.props.panelColor} panel`}>
-        <div className={`posts-panel__heading posts-panel__heading--${this.props.panelColor} panel-heading`}>
+      <div className={`posts-panel posts-panel--${panelColor} panel`}>
+        <div className={`posts-panel__heading posts-panel__heading--${panelColor} panel-heading`}>
           <Row>
             <Col xs={3}>
-              <FontAwesome name={this.props.iconName} size='5x' />
+              <FontAwesome name={iconName} size='5x'/>
             </Col>
             <Col xs={9} className='text-right'>
-              <div className='posts-panel__count'>{this.props.postCount}</div>
+              <div className='posts-panel__count'>{postCount}</div>
               <div>New Posts!</div>
             </Col>
           </Row>
         </div>
-        <a href='#' className={`posts-panel__link posts-panel__link--${this.props.panelColor}`}>
+        <a href='#' className={`posts-panel__link posts-panel__link--${panelColor}`}>
           <div className='posts-panel__footer panel-footer'>
-            <span className='pull-left' onClick={this.setRecentPosts}>View{' '}{this.props.panelLabel}</span>
-            <span className='pull-right'><FontAwesome name='arrow-circle-right' /></span>
+            <span className='pull-left' onClick={this.onViewClick}>View{' '}{panelLabel}</span>
+            <span className='pull-right'><FontAwesome name='arrow-circle-right'/></span>
             <Clearfix />
           </div>
         </a>
@@ -44,20 +42,7 @@ PostsPanel.propTypes = {
   panelLabel: PropTypes.string.isRequired,
   panelType: PropTypes.string.isRequired,
   panelColor: PropTypes.string.isRequired,
-  actions: PropTypes.object.isRequired,
-  recentPosts: PropTypes.array.isRequired
+  selectPostCategory: PropTypes.func.isRequired
 };
 
-function mapStateToProps(state) {
-  return {
-    recentPosts: state.recentPosts
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(recentPostsActions, dispatch)
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(PostsPanel);
+export default PostsPanel;

@@ -10,6 +10,8 @@ import './styles/index.scss';
 
 const store = configureStore();
 
+// Make necessary calls to retrieve initial data here...
+
 // Don't need React Router?
 // Reference your top level component instead of <Router> below
 render(

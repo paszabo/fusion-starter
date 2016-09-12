@@ -4,6 +4,9 @@ import customers from './customerReducer';
 import ajaxCallsInProgress from './loadingStatusReducer';
 import loadingIndicatorStatus from './loadingIndicatorReducer';
 import recentPosts from './recentPostsReducer';
+import vehicles from './vehicleReducer';
+import chartData from './chartDataReducer';
+import states from './stateReducer';
 
 // Note that I chose a shorter name above when importing reducers.
 // This keeps the calls to these reducers in our container components
@@ -15,7 +18,10 @@ const rootReducer = combineReducers({
   customers,
   ajaxCallsInProgress,
   loadingIndicatorStatus,
-  recentPosts
+  recentPosts,
+  vehicles,
+  chartData,
+  states
 });
 
 export default rootReducer;

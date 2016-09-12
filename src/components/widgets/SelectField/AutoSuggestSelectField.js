@@ -1,8 +1,7 @@
 import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
 import {Button, Col} from 'react-bootstrap';
 import Select from 'react-select';
-
-const states = require('../../../data/states');
 
 class AutoSuggestSelectField extends React.Component {
   constructor(props) {
@@ -49,7 +48,7 @@ class AutoSuggestSelectField extends React.Component {
   };
 
   render() {
-    const options = states[this.state.country];
+    const options = this.props.states[this.state.country];
     return (
       <div className='react-select__section'>
         <p className='react-select__heading'>{this.props.label}</p>
@@ -102,7 +101,8 @@ class AutoSuggestSelectField extends React.Component {
 
 AutoSuggestSelectField.propTypes = {
   label: PropTypes.string,
-  searchable: PropTypes.bool
+  searchable: PropTypes.bool,
+  states: PropTypes.array.isRequired
 };
 
 AutoSuggestSelectField.defaultProps = {
@@ -110,4 +110,10 @@ AutoSuggestSelectField.defaultProps = {
   searchable: true
 };
 
-export default AutoSuggestSelectField;
+function mapStateToProps(state) {
+  return {
+    states: state.states
+  };
+}
+
+export default connect(mapStateToProps)(AutoSuggestSelectField);

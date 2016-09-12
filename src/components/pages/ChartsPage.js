@@ -1,11 +1,10 @@
 /* eslint-disable react/no-multi-comp */
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {PageHeader, Panel, Well, Button, Row, Col} from 'react-bootstrap';
 import {AreaGraph, BarGraph, LineGraph, PieChart, ScatterPlot} from 'react-d3-responsive';
+import {connect} from 'react-redux';
 
-import chartData from '../../data/chartData';
-
-const ChartsPage = () => {
+const ChartsPage = ({chartData}) => {
   return (
     <div>
       <PageHeader>Charts <small>D3.js</small></PageHeader>
@@ -109,5 +108,16 @@ const ChartsPage = () => {
   );
 };
 
-export default ChartsPage;
+ChartsPage.propTypes = {
+  chartData: PropTypes.object.isRequired
+};
+
+function mapStateToProps(state) {
+  return {
+    chartData: state.chartData
+  };
+}
+
+export default connect(mapStateToProps)(ChartsPage);
+
 /* eslint-enable react/no-multi-comp */

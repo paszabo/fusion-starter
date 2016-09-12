@@ -27,7 +27,8 @@ const post = function(url, data) { // eslint-disable-line no-unused-vars
   return getInitializedApi().post(url, data);
 };
 
-// The API calls your app uses go down here. Export each function so they can be imported for use elsewhere...
+// The API calls your app uses go down here.
+// Export each public function so they can be imported for use elsewhere...
 export function getCustomers() {
   return get('API/CRMServiceBase/v1/users/search/');
 }

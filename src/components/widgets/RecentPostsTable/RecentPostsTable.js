@@ -1,10 +1,9 @@
 import React, {PropTypes} from 'react';
 import RecentPostsRow from './RecentPostsRow';
 import {Table} from 'react-bootstrap';
-import {connect} from 'react-redux';
 
 const RecentPostsTable = ({recentPosts}) => {
-  const rows = recentPosts.map(function (post) {
+  const rows = recentPosts.map( post => {
     return <RecentPostsRow post={post} key={post.postid}/>;
   });
 
@@ -29,10 +28,4 @@ RecentPostsTable.propTypes = {
   recentPosts: PropTypes.array.isRequired
 };
 
-function mapStateToProps(state) {
-  return {
-    recentPosts: state.recentPosts
-  };
-}
-
-export default connect(mapStateToProps)(RecentPostsTable);
+export default RecentPostsTable;
