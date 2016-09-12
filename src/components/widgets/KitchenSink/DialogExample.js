@@ -8,7 +8,8 @@ class DialogExample extends React.Component {
     this.state = {
       smShow: false,
       mdShow: false,
-      lgShow: false
+      lgShow: false,
+      flShow: false
     };
   }
 
@@ -22,6 +23,10 @@ class DialogExample extends React.Component {
 
   toggleLg = () => {
     this.setState({ lgShow: !this.state.lgShow });
+  };
+
+  toggleFl = () => {
+    this.setState({ flShow: !this.state.flShow });
   };
 
   render(){
@@ -43,11 +48,13 @@ class DialogExample extends React.Component {
           <Button onClick={this.toggleSm}>Small Modal</Button>
           <Button onClick={this.toggleMd}>Default Modal</Button>
           <Button onClick={this.toggleLg}>Large Modal</Button>
+          <Button onClick={this.toggleFl}>Full Page Modal</Button>
         </ButtonToolbar>
 
         <SmallModal show={this.state.smShow} onHide={this.toggleSm} />
         <DefaultModal show={this.state.mdShow} onHide={this.toggleMd} />
         <LargeModal show={this.state.lgShow} onHide={this.toggleLg} />
+        <FullModal show={this.state.flShow} onHide={this.toggleFl} dialogClassName="modal-full"/>
       </div>
     );
   }
@@ -104,6 +111,24 @@ const LargeModal = (props) =>
   </Modal>;
 
 LargeModal.propTypes = {
+  onHide: PropTypes.func.isRequired
+};
+
+const FullModal = (props) =>
+  <Modal {...props}>
+    <Modal.Header closeButton>
+      <Modal.Title>Full Page Modal Example</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>
+      <p>Modal content goes here.</p>
+    </Modal.Body>
+    <Modal.Footer>
+      <Button onClick={props.onHide}>Cancel</Button>
+      <Button onClick={props.onHide} bsStyle="primary">Confirm</Button>
+    </Modal.Footer>
+  </Modal>;
+
+FullModal.propTypes = {
   onHide: PropTypes.func.isRequired
 };
 
