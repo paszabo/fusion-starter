@@ -1,16 +1,23 @@
-@import '~fusion-theme/dist/fusion-variables.scss';
-.griddlefilter {
-   .griddlefilter{
-       border: none;
-       float: right;
-     }
+$griddlefilter : '.griddlefilter';
 
-  &__dropdown {
-    display: inline-block;
-    position: relative;
-    line-height: 22px;
-    padding: 10px;
-    border: none;
+.griddlefilter {
+
+  &__popover {
+    width: 200px;
+    margin-top: 0;
+    margin-left: 50px;
+    .arrow {
+      display: none;
+    }
+  }
+
+  &__sort {
+     padding: 0;
+    display: block;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #999;
+    white-space: nowrap;
   }
 
   &__linkbutton {
@@ -18,10 +25,24 @@
      border: none;
   }
 
-  &__sortdropdown {
-    display: inline-block;
-    position: relative;
-    line-height: 22px;
-    padding: 5px;
+  &__sortstyle {
+     padding-bottom: 15px;
+  }
+
+  &__dropdownbutton {
+    padding-left: 20px;
+  }
+
+  &__button {
+    border: none;
+    padding-right: 3px;
+  }
+
+  &__icon {
+    float: right;
+  }
+
+  &__overlay {
+    margin-top: 0;
   }
 }

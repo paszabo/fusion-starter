@@ -1,18 +1,23 @@
 /* eslint-disable react/no-multi-comp */
 import React,{ Component } from 'react';
-import {MenuItem,Button,DropdownButton,Checkbox} from 'react-bootstrap';
+import {MenuItem,Button,DropdownButton,Checkbox,Popover,OverlayTrigger} from 'react-bootstrap';
 
 
 class GriddleDropdown extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      filteringBy: []
+      filteringBy: [],
+      showImage: false,
     };
   }
 
   textOnClick = (e) => {
     e.stopPropagation();
+    if(this.state.showImage === false){
+      this.setState({showImage: true});
+    } else
+    {this.setState({showImage: false});}
   };
 
   clearFilter = (e) => {
@@ -46,6 +51,8 @@ class GriddleDropdown extends Component {
   };
 
   render(){
+    const {columnName} = this.props;
+    const DropdownImage = this.state.showImage? "fa fa-sort-amount-desc" : "fa fa-sort-amount-asc";
     const info = this.props.info || [];
     let filterlist = [];
 
@@ -75,48 +82,51 @@ class GriddleDropdown extends Component {
       // output checkboxes for each unique item to filter by.
       filterlist = colArray.map((obj) => {
         return (
-          <li className="griddlefilter__filter-item" key={obj.toString()}>
+          <span className="griddlefilter__filter-item" key={obj.toString()}>
             <Checkbox
               className="griddlefilter__checkbox"
               onClick={this.filterThisColumn}
               defaultChecked={(this.state.filteringBy.indexOf(obj) > -1) ? true : null}
               data-filtervalue={obj}
             >{obj}</Checkbox>
-          </li>
+          </span>
         );
       });
     }
+    const popoverBottom = (
+      <Popover data-toggle="popover" className="griddlefilter__popover arrow" id={"overload-bottom"+columnName}>
 
-    return(
-      <DropdownButton bsStyle="link" className="griddlefilter__dropdown" title={this.props.columnName} id={'griddle__header-'+this.props.displayName} onClick={this.textOnClick}>
+        <ul className="griddlefilter__sortstyle"><Button className="griddlefilter__linkbutton" bsStyle="link" onClick={this.clearFilter}>Clear All </Button></ul>
 
-        <Button className="griddlefilter griddle--button" bsStyle="link" onClick={this.clearFilter}> Clear All </Button>
+        <ul className="griddlefilter__sort" > Sort By </ul>
 
-        <MenuItem header> Sort By </MenuItem>
-
-        <li style={{paddingLeft:30,paddingTop:0, paddingRight:10}}>
-          <DropdownButton title="Descending" id={'sort-for-'+this.props.columnName+'-column'} className="griddlefilter__sortdropdown">
-            <MenuItem eventKey={'des'} onSelect={this.sortColumn}>Descending</MenuItem>
-            <MenuItem eventKey={'asc'} onSelect={this.sortColumn}>Ascending</MenuItem>
-          </DropdownButton>
-        </li>
+        <ul className="griddlefilter__dropdownbutton"> <DropdownButton title="Descending" id={'sort-for-'+this.props.columnName+'-column'} className="griddlefilter__sortdropdown">
+          <MenuItem eventKey={'des'} onSelect={this.sortColumn}>Descending</MenuItem>
+          <MenuItem eventKey={'asc'} onSelect={this.sortColumn}>Ascending</MenuItem>
+        </DropdownButton>
+        </ul>
 
         { this.props.filterType === 'select' ?
-          <MenuItem header>Filter By</MenuItem>
+          <ul className="griddlefilter__sort">Filter By</ul>
           :
           null
         }
         { this.props.filterType === 'select' ?
-          <li className="griddlefilter__dropdownitem">
+          <span className="griddlefilter__dropdownitem">
             <ul className="griddlefilter__filter-container" style={{'listStyle':'none outside none'}}>
               {filterlist}
             </ul>
-          </li>
+          </span>
           :
           null
         }
+      </Popover>
+    );
 
-      </DropdownButton>
+    return(
+      <OverlayTrigger className="griddlefilter__overlay" trigger="click" rootClose={true} placement="bottom" overlay={popoverBottom}>
+        <Button bsStyle="link" id={'griddle__header-'+ this.props.displayName} className="griddlefilter__button" onClick={this.textOnClick}> {columnName} <i className={DropdownImage} /></Button>
+      </OverlayTrigger>
     );
   }
 }
