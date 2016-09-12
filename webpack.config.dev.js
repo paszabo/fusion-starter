@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import NpmInstallPlugin from 'npm-install-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
+import path from 'path';
 
 export default {
   debug: true,
@@ -11,11 +12,11 @@ export default {
   entry: [
     'eventsource-polyfill', // Necessary for hot reloading with IE
     'webpack-hot-middleware/client?reload=true', // Note that it reloads the page if hot module reloading fails.
-    './src/index'
+    path.resolve(__dirname, 'src/index') // Defining path seems necessary for this to work consistently on Windows machines.
   ],
   target: 'web',
   output: { // Note: Only prod environment actually outputs files.
-    path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
+    path: path.resolve(__dirname, 'dist'), // Note: Physical files are only output by the production build task `npm run build`.
     publicPath: '',
     filename: 'bundle.js'
   },
