@@ -2,10 +2,14 @@ $griddlefilter : '.griddlefilter';
 
 .griddlefilter {
 
-  &__popover {
+  &__popover.popover {
     width: 200px;
     margin-top: 0;
-    margin-left: 50px;
+    margin-left: 57px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 0 none;
+
     .arrow {
       display: none;
     }
@@ -20,10 +24,10 @@ $griddlefilter : '.griddlefilter';
     white-space: nowrap;
   }
 
-  &__linkbutton {
-     float: right;
-     border: none;
-  }
+  //&__linkbutton {
+  //   float: right;
+  //   border: none;
+  //}
 
   &__sortstyle {
      padding-bottom: 15px;
@@ -33,10 +37,10 @@ $griddlefilter : '.griddlefilter';
     padding-left: 20px;
   }
 
-  &__button {
-    border: none;
-    padding-right: 3px;
-  }
+  //&__button {
+  //  border: none;
+  //  padding-right: 3px;
+  //}
 
   &__icon {
     float: right;
@@ -44,5 +48,25 @@ $griddlefilter : '.griddlefilter';
 
   &__overlay {
     margin-top: 0;
+  }
+
+  &__header-button {
+    padding-top: 14px; padding-bottom: 14px;
+    margin: 0;
+    border: 0 none;
+    outline: 0 none;
+    text-align: left;
+
+    &:hover,
+    &:active,
+    &:hover:active {
+      background-color: white;
+    }
+  }
+
+  &s > thead > tr > th {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
   }
 }

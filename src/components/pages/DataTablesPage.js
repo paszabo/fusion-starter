@@ -36,7 +36,7 @@ const DataTablesPage = () => {
       <Panel header='Advanced Data Tables'>
 
         <Griddle
-          tableClassName='table'
+          tableClassName='table griddlefilters'
           useGriddleStyles={false}
           results={vehicleData}
           columns={['Make', 'Model', 'Year', 'Price']}

@@ -8,7 +8,7 @@ class GriddleDropdown extends Component {
     super(props, context);
     this.state = {
       filteringBy: [],
-      showImage: false,
+      showImage: false
     };
   }
 
@@ -22,6 +22,7 @@ class GriddleDropdown extends Component {
 
   clearFilter = (e) => {
     this.textOnClick(e);
+    this.setState({ filteringBy: [] });
     this.props.filterByColumn('',this.props.columnName);
   };
 
@@ -94,7 +95,7 @@ class GriddleDropdown extends Component {
       });
     }
     const popoverBottom = (
-      <Popover data-toggle="popover" className="griddlefilter__popover arrow" id={"overload-bottom"+columnName}>
+      <Popover data-toggle="popover" className="griddlefilter__popover arrow" id={"overload-bottom"+columnName} positionLeft="100" >
 
         <ul className="griddlefilter__sortstyle"><Button className="griddlefilter__linkbutton" bsStyle="link" onClick={this.clearFilter}>Clear All </Button></ul>
 
@@ -125,7 +126,7 @@ class GriddleDropdown extends Component {
 
     return(
       <OverlayTrigger className="griddlefilter__overlay" trigger="click" rootClose={true} placement="bottom" overlay={popoverBottom}>
-        <Button bsStyle="link" id={'griddle__header-'+ this.props.displayName} className="griddlefilter__button" onClick={this.textOnClick}> {columnName} <i className={DropdownImage} /></Button>
+        <Button bsStyle="link" id={'griddle__header-'+ this.props.displayName} className="griddlefilter__header-button" onClick={this.textOnClick}> {columnName} <i className={DropdownImage} /></Button>
       </OverlayTrigger>
     );
   }
