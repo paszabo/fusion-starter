@@ -31,7 +31,7 @@ class GriddleDropdown extends Component {
   };
 
   filterThisColumn = (e) => {
-    e.stopPropagation();                              // keep event from bubbling
+     e.persist(); // keep event from bubbling
     const filtervalue = e.target.dataset.filtervalue; // get value to sort by.
     const temparray = this.state.filteringBy;         // will need to alter the array, but should not edit state directly.
 
@@ -124,7 +124,7 @@ class GriddleDropdown extends Component {
     );
 
     return(
-      <OverlayTrigger className="griddlefilter__overlay" trigger="click" placement="bottom" overlay={popoverBottom}>
+      <OverlayTrigger className="griddlefilter__overlay" trigger="click" rootClose={true} placement="bottom" overlay={popoverBottom}>
         <Button bsStyle="link" id={'griddle__header-'+ this.props.displayName} className="griddlefilter__button" onClick={this.textOnClick}> {columnName} <i className={DropdownImage} /></Button>
       </OverlayTrigger>
     );
