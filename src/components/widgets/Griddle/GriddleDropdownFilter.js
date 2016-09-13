@@ -32,7 +32,7 @@ class GriddleDropdown extends Component {
   };
 
   filterThisColumn = (e) => {
-    e.stopPropagation();                              // keep event from bubbling
+     e.persist(); // keep event from bubbling
     const filtervalue = e.target.dataset.filtervalue; // get value to sort by.
     const temparray = this.state.filteringBy;         // will need to alter the array, but should not edit state directly.
 
