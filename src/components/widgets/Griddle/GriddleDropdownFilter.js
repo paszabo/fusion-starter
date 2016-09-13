@@ -124,7 +124,7 @@ class GriddleDropdown extends Component {
     );
 
     return(
-      <OverlayTrigger className="griddlefilter__overlay" trigger="click" rootClose={true} placement="bottom" overlay={popoverBottom}>
+      <OverlayTrigger className="griddlefilter__overlay" trigger="click" placement="bottom" overlay={popoverBottom}>
         <Button bsStyle="link" id={'griddle__header-'+ this.props.displayName} className="griddlefilter__button" onClick={this.textOnClick}> {columnName} <i className={DropdownImage} /></Button>
       </OverlayTrigger>
     );
