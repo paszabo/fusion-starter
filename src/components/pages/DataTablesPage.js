@@ -2,11 +2,11 @@ import React from 'react';
 import Griddle from 'griddle-react';
 import {PageHeader, Panel, Well, Button} from 'react-bootstrap';
 import GriddleCustomPager from '../widgets/Griddle/GriddleCustomPager';
-import GriddleDropdown from '../widgets/Griddle/GriddleDropdownFilterV2';
+import GriddleDropdown from '../widgets/Griddle/GriddleDropdownFilter';
 const vehicleData = require('../../data/vehicles');
 const columnData = [
   {
-    "sortable":false,
+    "sortable": false,
     "columnName":"Make",
     "customHeaderComponent": GriddleDropdown,
     "customHeaderComponentProps": { info: vehicleData, filterType: "select" }
@@ -36,6 +36,7 @@ const DataTablesPage = () => {
       <Panel header='Advanced Data Tables'>
 
         <Griddle
+          initialSort="Make"
           tableClassName='table griddlefilters'
           useGriddleStyles={false}
           results={vehicleData}

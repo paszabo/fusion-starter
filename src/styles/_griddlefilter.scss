@@ -102,4 +102,17 @@ $griddlefilter : '.griddlefilter';
     position: absolute;
     z-index: 1060;
   }
+
+  &__sorticon-asc,
+  &__sorticon-des {
+    display: none;
+  }
+
+  .sort-ascending &__header-button &__sorticon-asc {
+    display: inline-block;
+  }
+
+  .sort-descending &__header-button &__sorticon-des {
+    display: inline-block;
+  }
 }

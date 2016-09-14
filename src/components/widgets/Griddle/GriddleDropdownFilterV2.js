@@ -25,11 +25,11 @@ class GriddleDropdown extends Component {
 
   textOnClick = (e) => {
     e.stopPropagation();
-    if(this.state.showImage === false){
-      this.setState({showImage: true});
-    } else {
-      this.setState({showImage: false});
-    }
+    // if(this.state.showImage === false){
+    //   this.setState({showImage: true});
+    // } else {
+    //   this.setState({showImage: false});
+    // }
   };
 
   clearFilter = (e) => {
@@ -66,7 +66,7 @@ class GriddleDropdown extends Component {
 
   render(){
     const {columnName} = this.props;
-    const DropdownImage = this.state.showImage? "fa fa-sort-amount-desc" : "fa fa-sort-amount-asc";
+    //const DropdownImage = this.state.showImage? "fa fa-sort-amount-desc" : "fa fa-sort-amount-asc";
     const info = this.props.info || [];
     let filterlist = [];
 
@@ -150,7 +150,7 @@ class GriddleDropdown extends Component {
           className={'griddlefilter__header-button' + ((this.state.popover)? ' griddlefilter__header-button--active' : '')}
           onClick={this.popoverToggle}
         >
-          {columnName} <i className={DropdownImage}/>
+          {columnName} {/* <i className={DropdownImage}/> */}<i className="fa fa-sort-amount-desc griddlefilter__sorticon-des"/><i className="fa fa-sort-amount-asc griddlefilter__sorticon-asc"/>
         </Button>
 
         <div className="griddlefilter__overlay" style={{position:'relative'}}>

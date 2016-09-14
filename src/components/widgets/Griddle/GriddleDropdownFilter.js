@@ -1,6 +1,7 @@
 /* eslint-disable react/no-multi-comp */
 import React,{ Component } from 'react';
-import {MenuItem,Button,ButtonToolbar,DropdownButton,Checkbox,Popover,OverlayTrigger} from 'react-bootstrap';
+import ReactDOM from 'react-dom';
+import {MenuItem,Button,DropdownButton,Checkbox,Overlay} from 'react-bootstrap';
 
 
 class GriddleDropdown extends Component {
@@ -8,13 +9,14 @@ class GriddleDropdown extends Component {
     super(props, context);
     this.state = {
       filteringBy: [],
+      sortColumn: false,
       showImage: false,
       popover: false
     };
   }
 
-  popoverOpen = () => {
-    this.setState({ popover: true});
+  popoverToggle = () => {
+    this.setState({ popover: !this.state.popover});
   };
 
   popoverClose = () => {
@@ -23,21 +25,23 @@ class GriddleDropdown extends Component {
 
   textOnClick = (e) => {
     e.stopPropagation();
-    if(this.state.showImage === false){
-      this.setState({showImage: true});
-    } else
-    {this.setState({showImage: false});}
+    // if(this.state.showImage === false){
+    //   this.setState({showImage: true});
+    // } else {
+    //   this.setState({showImage: false});
+    // }
   };
 
   clearFilter = (e) => {
     this.textOnClick(e);
-    this.setState({ filteringBy: [] });
+    this.setState({ filteringBy: [], sortColumn: false });
     this.props.filterByColumn('',this.props.columnName);
   };
 
   sortColumn = (eventKey) => {
-    if(eventKey === 'asc') console.log('sort the '+this.props.columnName+' column Ascending');
-    if(eventKey === 'des') console.log('sort the '+this.props.columnName+' column Descending');
+    if(eventKey === 'Ascending') console.log('sort the '+this.props.columnName+' column Ascending');
+    if(eventKey === 'Descending') console.log('sort the '+this.props.columnName+' column Descending');
+    this.setState({ sortColumn: eventKey });
   };
 
   filterThisColumn = (e) => {
@@ -62,7 +66,7 @@ class GriddleDropdown extends Component {
 
   render(){
     const {columnName} = this.props;
-    const DropdownImage = this.state.showImage? "fa fa-sort-amount-desc" : "fa fa-sort-amount-asc";
+    //const DropdownImage = this.state.showImage? "fa fa-sort-amount-desc" : "fa fa-sort-amount-asc";
     const info = this.props.info || [];
     let filterlist = [];
 
@@ -103,8 +107,9 @@ class GriddleDropdown extends Component {
         );
       });
     }
+
     const popoverBottom = (
-      <Popover data-toggle="popover" className="griddlefilter__popover arrow" id={"overload-bottom"+columnName} positionLeft="100" >
+      <div className="griddlefilter__popover arrow" id={"overload-bottom"+columnName}>
 
         <div className="griddlefilter__sortstyle">
           <Button className="griddlefilter__linkbutton" bsStyle="link" onClick={this.clearFilter}>Clear All</Button>
@@ -113,9 +118,9 @@ class GriddleDropdown extends Component {
         <div className="griddlefilter__sort text-muted" >Sort By</div>
 
         <div className="griddlefilter__dropdownbutton">
-          <DropdownButton title="Descending" id={'sort-for-'+this.props.columnName+'-column'} className="griddlefilter__sortdropdown" block>
-            <MenuItem eventKey={'des'} onSelect={this.sortColumn}>Descending</MenuItem>
-            <MenuItem eventKey={'asc'} onSelect={this.sortColumn}>Ascending</MenuItem>
+          <DropdownButton title={(this.state.sortColumn) ? this.state.sortColumn : 'Descending'} id={'sort-for-'+this.props.columnName+'-column'} className="griddlefilter__sortdropdown" block>
+            <MenuItem eventKey={'Descending'} onSelect={this.sortColumn}>Descending</MenuItem>
+            <MenuItem eventKey={'Ascending'} onSelect={this.sortColumn}>Ascending</MenuItem>
           </DropdownButton>
         </div>
 
@@ -133,13 +138,34 @@ class GriddleDropdown extends Component {
           :
           null
         }
-      </Popover>
+      </div>
     );
 
     return(
-      <OverlayTrigger className="griddlefilter__overlay" trigger="click" rootClose={true} placement="bottom" overlay={popoverBottom} onEntered={this.popoverOpen} onExited={this.popoverClose}>
-        <Button bsStyle="link" id={'griddle__header-'+ this.props.displayName} className={'griddlefilter__header-button' + ((this.state.popover)? ' griddlefilter__header-button--active' : '')} onClick={this.textOnClick}> {columnName} <i className={DropdownImage} /></Button>
-      </OverlayTrigger>
+      <div>
+        <Button
+          ref="target"
+          bsStyle="link"
+          id={'griddle__header-'+ this.props.displayName}
+          className={'griddlefilter__header-button' + ((this.state.popover)? ' griddlefilter__header-button--active' : '')}
+          onClick={this.popoverToggle}
+        >
+          {columnName} {/* <i className={DropdownImage}/> */}<i className="fa fa-sort-amount-desc griddlefilter__sorticon-des"/><i className="fa fa-sort-amount-asc griddlefilter__sorticon-asc"/>
+        </Button>
+
+        <div className="griddlefilter__overlay" style={{position:'relative'}}>
+          <Overlay
+            show={this.state.popover}
+            onHide={this.popoverClose}
+            placement="bottom"
+            container={this}
+            target={() => ReactDOM.findDOMNode(this.refs.target)}
+            rootClose={true}
+          >
+            {popoverBottom}
+          </Overlay>
+        </div>
+      </div>
     );
   }
 }
