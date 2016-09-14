@@ -2,7 +2,7 @@ import React from 'react';
 import Griddle from 'griddle-react';
 import {PageHeader, Panel, Well, Button} from 'react-bootstrap';
 import GriddleCustomPager from '../widgets/Griddle/GriddleCustomPager';
-import GriddleDropdown from '../widgets/Griddle/GriddleDropdownFilter';
+import GriddleDropdown from '../widgets/Griddle/GriddleDropdownFilterV2';
 const vehicleData = require('../../data/vehicles');
 const columnData = [
   {

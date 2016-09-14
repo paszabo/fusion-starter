@@ -1,14 +1,13 @@
 $griddlefilter : '.griddlefilter';
 
 .griddlefilter {
-
   &__popover.popover {
     width: 200px;
     margin-top: 0;
     margin-left: 57px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    border-top: 0 none;
+    border: 0 none;
 
     .arrow {
       display: none;
@@ -16,7 +15,7 @@ $griddlefilter : '.griddlefilter';
   }
 
   &__sort {
-     padding: 0;
+    padding: 0;
     display: block;
     font-size: 13px;
     line-height: 1.5;
@@ -24,23 +23,28 @@ $griddlefilter : '.griddlefilter';
     white-space: nowrap;
   }
 
-  //&__linkbutton {
-  //   float: right;
-  //   border: none;
-  //}
-
   &__sortstyle {
-     padding-bottom: 15px;
+    text-align: right;
   }
 
   &__dropdownbutton {
-    padding-left: 20px;
+    .btn-group {
+      display: block;
+      float: none;
+    }
   }
 
-  //&__button {
-  //  border: none;
-  //  padding-right: 3px;
-  //}
+  &__sortdropdown {
+    margin-bottom: 15px;
+    text-align: left;
+    float: none !important;
+  }
+
+  &__filter-container {
+    list-style: none outside none;
+    margin-left: 0;
+    padding-left: 0.5em;
+  }
 
   &__icon {
     float: right;
@@ -51,16 +55,31 @@ $griddlefilter : '.griddlefilter';
   }
 
   &__header-button {
-    padding-top: 14px; padding-bottom: 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
     margin: 0;
-    border: 0 none;
+    border: solid 1px transparent;
     outline: 0 none;
     text-align: left;
+    position: relative;
 
     &:hover,
     &:active,
-    &:hover:active {
+    &:hover:active,
+    &:focus,
+    &--active {
       background-color: white;
+      outline: 0 none;
+      border: solid 1px #808080;
+    }
+
+    &--active,
+    &--active:hover,
+    &--active:active,
+    &--active:hover:active,
+    &--active:focus {
+      border-bottom-color: white;
+      z-index: 1061;
     }
   }
 
@@ -68,5 +87,19 @@ $griddlefilter : '.griddlefilter';
     margin: 0;
     padding: 0;
     border: 0 none;
+    position: relative;
+  }
+
+  &__popover {
+    min-width: 180px;
+    margin: -1px 0 0;
+    padding: 6px 12px;
+    background: none white;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: solid 1px #808080;
+    position: absolute;
+    z-index: 1060;
   }
 }
