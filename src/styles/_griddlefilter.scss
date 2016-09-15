@@ -103,9 +103,21 @@ $griddlefilter : '.griddlefilter';
     z-index: 1060;
   }
 
+  &__sorticon {
+    display: inline-block;
+  }
+
   &__sorticon-asc,
   &__sorticon-des {
     display: none;
+  }
+
+  &__header-button &__sorticon &__svg {
+    display: inline-block;
+    height: 1em;
+    width: auto;
+    fill: currentColor;
+    vertical-align: text-top;
   }
 
   .sort-ascending &__header-button &__sorticon-asc {
