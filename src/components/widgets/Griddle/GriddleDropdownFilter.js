@@ -34,8 +34,12 @@ class GriddleDropdown extends Component {
   };
 
   sortColumn = (eventKey) => {
-    if(eventKey === 'Ascending') console.log('sort the '+this.props.columnName+' column Ascending');
-    if(eventKey === 'Descending') console.log('sort the '+this.props.columnName+' column Descending');
+    if(eventKey === 'Ascending'){
+      /* set sort state to ascending */
+    }
+    if(eventKey === 'Descending'){
+      /* set sort state to ascending */
+    }
     this.setState({ sortColumn: eventKey });
   };
 
@@ -59,15 +63,17 @@ class GriddleDropdown extends Component {
     }
   };
 
+  buttonRef = () => ReactDOM.findDOMNode(this.refs.target);
+
   render(){
     const {columnName} = this.props;
-    //const DropdownImage = this.state.showImage? "fa fa-sort-amount-desc" : "fa fa-sort-amount-asc";
+    // const DropdownImage = this.state.showImage? "fa fa-sort-amount-desc" : "fa fa-sort-amount-asc";
     const info = this.props.info || [];
     let filterlist = [];
     const headericons = {
-      "filter": <svg className="griddlefilter__svg filter" viewBox="0 0 8 12"><g stroke="none" strokeWidth="1" fillRule="evenodd" transform="translate(3.000000, 6.000000) scale(-1, 1) translate(-3.000000, -6.000000) "><g transform="translate(3.000000, 5.900000) rotate(270.000000) translate(-3.000000, -5.900000) translate(-2.500000, 2.900000)"><path d="M9,0.333214762 L9,5.9952 L10.8,5.9952 L10.8,0.333214762 L9,0.333214762 L9,0.333214762 Z M6,1.59986658 L6,5.9952 L7.8,5.9952 L7.8,1.59986658 L6,1.59986658 L6,1.59986658 Z M3,2.99800053 L3,5.9952 L4.8,5.9952 L4.8,2.99800053 L3,2.99800053 L3,2.99800053 Z M0,3.99773351 L0,5.9952 L1.8,5.9952 L1.8,3.99773351 L0,3.99773351 L0,3.99773351 Z"></path></g></g></svg>,
-      "sortAsc": <svg className="griddlefilter__svg sortAsc" viewBox="0 0 6 12"><polygon fill-rule="evenodd" points="2.70137 0 5.4027399 3.33698641 3.6836863 3.33698641 3.6836863 11.6000004 1.7190536 11.6000004 1.7190536 3.33698641 0 3.33698641"></polygon></svg>,
-      "sortDes":<svg className="griddlefilter__svg sortDes" viewBox="0 0 6 12"><polygon fill-rule="evenodd" transform="translate(2.701370, 5.800000) scale(1, -1) translate(-2.701370, -5.800000) " points="2.70137 0 5.4027399 3.33698641 3.6836863 3.33698641 3.6836863 11.6000004 1.7190536 11.6000004 1.7190536 3.33698641 0 3.33698641"></polygon></svg>
+      "filter": <svg className="griddlefilter__svg filter" viewBox="0 0 8 12"><g stroke="none" strokeWidth="1" fillRule="evenodd" transform="translate(3.000000, 6.000000) scale(-1, 1) translate(-3.000000, -6.000000) "><g transform="translate(3.000000, 5.900000) rotate(270.000000) translate(-3.000000, -5.900000) translate(-2.500000, 2.900000)"><path d="M9,0.333214762 L9,5.9952 L10.8,5.9952 L10.8,0.333214762 L9,0.333214762 L9,0.333214762 Z M6,1.59986658 L6,5.9952 L7.8,5.9952 L7.8,1.59986658 L6,1.59986658 L6,1.59986658 Z M3,2.99800053 L3,5.9952 L4.8,5.9952 L4.8,2.99800053 L3,2.99800053 L3,2.99800053 Z M0,3.99773351 L0,5.9952 L1.8,5.9952 L1.8,3.99773351 L0,3.99773351 L0,3.99773351 Z"/></g></g></svg>,
+      "sortAsc": <svg className="griddlefilter__svg sortAsc" viewBox="0 0 6 12"><polygon fillRule="evenodd" points="2.70137 0 5.4027399 3.33698641 3.6836863 3.33698641 3.6836863 11.6000004 1.7190536 11.6000004 1.7190536 3.33698641 0 3.33698641"/></svg>,
+      "sortDes":<svg className="griddlefilter__svg sortDes" viewBox="0 0 6 12"><polygon fillRule="evenodd" transform="translate(2.701370, 5.800000) scale(1, -1) translate(-2.701370, -5.800000) " points="2.70137 0 5.4027399 3.33698641 3.6836863 3.33698641 3.6836863 11.6000004 1.7190536 11.6000004 1.7190536 3.33698641 0 3.33698641"/></svg>
     };
 
     /* When filterType is "select", output Checkboxes */
@@ -165,7 +171,7 @@ class GriddleDropdown extends Component {
             onHide={this.popoverClose}
             placement="bottom"
             container={this}
-            target={() => ReactDOM.findDOMNode(this.refs.target)}
+            target={this.buttonRef}
             rootClose={true}
           >
             {popoverBottom}

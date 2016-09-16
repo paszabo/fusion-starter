@@ -12,21 +12,31 @@ const columnData = [
     "customHeaderComponentProps": { info: vehicleData, filterType: "select" }
   },
   {
+    "sortable": false,
     "columnName":"Model",
     "customHeaderComponent": GriddleDropdown,
     "customHeaderComponentProps": { info: vehicleData, filterType: "select" }
   },
   {
+    "sortable": false,
     "columnName":"Year",
     "customHeaderComponent": GriddleDropdown,
     "customHeaderComponentProps": { info: vehicleData, filterType: "select" }
   },
   {
+    "sortable": false,
     "columnName":"Price",
     "customHeaderComponent": GriddleDropdown,
     "customHeaderComponentProps": { info: vehicleData, filterType: "select" }
   },
 ];
+/*
+ Column filters can only filter on one value at a time.  Any more than that involves using the externalData feature of Griddle to sort/filter the data before it gets to the table, and then update the React state after the data gets updated.
+
+ Most likely, columns will have to have {"sortable":false} set in their ColumnMetaData (above) so that clicking on the table headers doesn't sort the column.  Column sorting would, again, be handled by Griddle's state updates.
+
+ -jh 9/16/16
+ */
 
 const DataTablesPage = () => {
   return (
