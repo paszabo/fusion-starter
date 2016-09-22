@@ -43,7 +43,7 @@
     "react": "15.3.1",
     "react-bootstrap": "0.30.3",
     "react-bootstrap-datetimepicker": "0.0.22",
-    "react-d3-responsive": "0.0.20",
+    "react-d3-responsive": "0.1.0",
     "react-dom": "15.3.1",
     "react-fontawesome": "1.1.0",
     "react-lazyload": "2.1.4",
