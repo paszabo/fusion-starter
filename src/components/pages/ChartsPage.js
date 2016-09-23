@@ -74,13 +74,15 @@ const ChartsPage = () => {
             data={chartData.barGraphTestData} />
         </div>
       </Panel>
-      <Panel header='Scatter Plot'>
+      <Panel header='Scatter Plot with Trend Line'>
         <div id='d3-scatter-plot'>
           <ScatterPlot
             chartId="scatter-plot-custom-ID"
             chartClassName="scatter-plot-custom-CLASS"
             xData="x"
             yData="y"
+            trendLine={true}
+            lineNumbers="multi"
             dataType="data"
             data={chartData.scatterPlotData2} />
         </div>
