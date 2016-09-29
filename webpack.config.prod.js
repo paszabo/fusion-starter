@@ -4,6 +4,7 @@ import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
@@ -29,6 +30,9 @@ export default {
     filename: '[name].[chunkhash].js'
   },
   plugins: [
+     // Enforce the path of all required modules to match the case of the actual path on disk.
+    new CaseSensitivePathsPlugin(),
+
     // Use CommonsChunkPlugin to create a separate bundle of vendor libraries so that they're cached separately.
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',

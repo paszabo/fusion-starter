@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import NpmInstallPlugin from 'npm-install-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
+import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 
 export default {
   debug: true,
@@ -20,6 +21,8 @@ export default {
     filename: 'bundle.js'
   },
   plugins: [
+    // Enforce the path of all required modules to match the case of the actual path on disk.
+    new CaseSensitivePathsPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new StyleLintPlugin({
