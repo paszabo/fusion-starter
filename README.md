@@ -73,7 +73,7 @@ Fusion comes prepackaged with a variety of components to solve for the general n
 
 **Mac:**
  1. **Install [Node.js](https://nodejs.org) and [Git](https://git-scm.com/downloads)**. The recommended defaults are fine.
- 2. **Configure your Editor**. [Install editorconfig plugin](http://editorconfig.org), [Install React plugin](https://github.com/facebook/react/wiki/Complementary-Tools#jsx-integrations) and [configure your editor](https://github.com/kriasoft/react-starter-kit/blob/master/docs/how-to-configure-text-editors.md).
+ 2. **Configure your Editor**. [Install editorconfig plugin](http://editorconfig.org), [Disable safe write](http://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write), [Install React plugin](https://github.com/facebook/react/wiki/Complementary-Tools#jsx-integrations) and [configure your editor](https://github.com/kriasoft/react-starter-kit/blob/master/docs/how-to-configure-text-editors.md).
  3. **Install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** in Chrome. (Optional, but helpful)
 
 **Windows:**
