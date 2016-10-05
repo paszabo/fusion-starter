@@ -1,5 +1,14 @@
 import React, {PropTypes} from 'react';
-import {PageHeader, Breadcrumb, Alert, Row, Col, Clearfix, Panel, Button, ListGroup, ListGroupItem} from 'react-bootstrap';
+import PageHeader from 'react-bootstrap/lib/PageHeader';
+import Breadcrumb from 'react-bootstrap/lib/Breadcrumb';
+import Alert from 'react-bootstrap/lib/Alert';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import Clearfix from 'react-bootstrap/lib/Clearfix';
+import Panel from 'react-bootstrap/lib/Panel';
+import Button from 'react-bootstrap/lib/Button';
+import ListGroup from 'react-bootstrap/lib/ListGroup';
+import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
 import FontAwesome from 'react-fontawesome';
 import PostsPanel from '../widgets/PostsPanel/PostsPanel';
 import RecentPostsTable from '../widgets/RecentPostsTable/RecentPostsTable';

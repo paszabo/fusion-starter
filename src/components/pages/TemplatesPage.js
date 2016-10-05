@@ -1,6 +1,8 @@
 import React from 'react';
 import {LinkContainer} from 'react-router-bootstrap';
-import {PageHeader, Panel, Button} from 'react-bootstrap';
+import PageHeader from 'react-bootstrap/lib/PageHeader';
+import Panel from 'react-bootstrap/lib/Panel';
+import Button from 'react-bootstrap/lib/Button';
 
 const TemplatesPage = () => {
   return (

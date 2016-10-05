@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import { Col } from 'react-bootstrap';
+import Col from 'react-bootstrap/lib/Col';
 import Select from 'react-select';
 
 const types = [

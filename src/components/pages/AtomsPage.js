@@ -1,5 +1,9 @@
 import React from 'react';
-import {PageHeader, Panel, Row, Col, Button} from 'react-bootstrap';
+import PageHeader from 'react-bootstrap/lib/PageHeader';
+import Panel from 'react-bootstrap/lib/Panel';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import Button from 'react-bootstrap/lib/Button';
 
 // Example components for the Kitchen Sink
 import HeaderExample from '../widgets/KitchenSink/HeaderExample';
@@ -29,17 +33,17 @@ const AtomsPage = () => {
       <PageHeader>Atoms <small>UI Elements</small></PageHeader>
 
       <Panel header='Tracksuit Style Guide'>
-        <p><strong>Tracksuit</strong> is a style guide that defines modifications to <strong>Bootstrap 3</strong> that are 
-        intended to give Bootstrap a more modern look for business applications.  It includes larger touch targets for 
+        <p><strong>Tracksuit</strong> is a style guide that defines modifications to <strong>Bootstrap 3</strong> that are
+        intended to give Bootstrap a more modern look for business applications.  It includes larger touch targets for
         elements that need to be accessible on mobile devices. This style guide is incorporated into the <strong>Fusion</strong>{' '}
         architecture. Check out the <strong>Tracksuit Kitchen Sink and source code</strong> for more information {' '}
-        <Button bsStyle='link' style={{padding: 0}} target='_blank' 
+        <Button bsStyle='link' style={{padding: 0}} target='_blank'
         href='https://github.com/releaf/tracksuit-theme-bootstrap3'>{'https://github.com/releaf/tracksuit-theme-bootstrap3'}</Button>.</p>
       </Panel>
 
       <Panel header='React-Bootstrap'>
         <p><strong>React-Bootstrap</strong>{' '} is responsible for implementing the components on this page. The documentation for their components can be found at {' '}
-        <Button bsStyle='link' style={{padding: 0}} target='_blank' 
+        <Button bsStyle='link' style={{padding: 0}} target='_blank'
         href='https://react-bootstrap.github.io/'>{'https://react-bootstrap.github.io/'}</Button>.{' '}
         You can also view the source for these example components in the <strong>KitchenSink</strong>{' '} folder.</p>
       </Panel>
@@ -71,7 +75,7 @@ const AtomsPage = () => {
           </Panel>
         </Col>
       </Row>
-      
+
       <Row>
         <Col lg={12}>
           <Panel header="Images">

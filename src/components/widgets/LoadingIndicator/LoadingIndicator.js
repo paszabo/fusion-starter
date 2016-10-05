@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react';
-import {Panel, ButtonToolbar, Button} from 'react-bootstrap';
+import Panel from 'react-bootstrap/lib/Panel';
+import ButtonToolbar from 'react-bootstrap/lib/ButtonToolbar';
+import Button from 'react-bootstrap/lib/Button';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import ProgressBar from 'react-progress-bar-plus';

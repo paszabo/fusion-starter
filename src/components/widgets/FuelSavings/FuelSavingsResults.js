@@ -1,6 +1,9 @@
 import React, {PropTypes} from 'react';
 import NumberFormatter from '../../../utils/numberFormatter';
-import {Panel, Row, Col, Alert} from 'react-bootstrap';
+import Panel from 'react-bootstrap/lib/Panel';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import Alert from 'react-bootstrap/lib/Alert';
 
 const FuelSavingsResults = (props) => {
   const savingsExist = NumberFormatter.scrubFormatting(props.savings.monthly) > 0;

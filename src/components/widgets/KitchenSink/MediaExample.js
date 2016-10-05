@@ -1,5 +1,5 @@
 import React from 'react';
-import {Media} from 'react-bootstrap';
+import Media from 'react-bootstrap/lib/Media';
 
 const MediaExample = () => {
   return (

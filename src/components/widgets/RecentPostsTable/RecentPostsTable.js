@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import RecentPostsRow from './RecentPostsRow';
-import {Table} from 'react-bootstrap';
+import Table from 'react-bootstrap/lib/Table';
 import {connect} from 'react-redux';
 
 const RecentPostsTable = ({recentPosts}) => {

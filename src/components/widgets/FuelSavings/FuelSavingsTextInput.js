@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {FormControl} from 'react-bootstrap';
+import FormControl from 'react-bootstrap/lib/FormControl';
 
 class FuelSavingsTextInput extends Component {
   handleChange = e => {

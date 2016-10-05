@@ -1,6 +1,9 @@
 /* eslint-disable react/no-multi-comp */
 import React from 'react';
-import {Nav, NavItem, Navbar, Button} from 'react-bootstrap';
+import Nav from 'react-bootstrap/lib/Nav';
+import NavItem from 'react-bootstrap/lib/NavItem';
+import Navbar from 'react-bootstrap/lib/Navbar';
+import Button from 'react-bootstrap/lib/Button';
 
 const NavExample = () => {
   return (

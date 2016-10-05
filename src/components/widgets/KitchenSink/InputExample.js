@@ -1,5 +1,8 @@
 import React from 'react';
-import {FormGroup, InputGroup, Button, FormControl} from 'react-bootstrap';
+import FormGroup from 'react-bootstrap/lib/FormGroup';
+import InputGroup from 'react-bootstrap/lib/InputGroup';
+import Button from 'react-bootstrap/lib/Button';
+import FormControl from 'react-bootstrap/lib/FormControl';
 
 const ImageExample = () => {
   return (

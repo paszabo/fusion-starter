@@ -1,5 +1,10 @@
 import React from 'react';
-import {Row, Col, Panel, ListGroup, ListGroupItem, Well} from 'react-bootstrap';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import Panel from 'react-bootstrap/lib/Panel';
+import ListGroup from 'react-bootstrap/lib/ListGroup';
+import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
+import Well from 'react-bootstrap/lib/Well';
 
 const PanelExample = () => {
   return (

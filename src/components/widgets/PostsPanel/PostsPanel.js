@@ -1,6 +1,8 @@
 import React, {PropTypes} from 'react';
 import FontAwesome from 'react-fontawesome';
-import {Row, Col, Clearfix} from 'react-bootstrap';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import Clearfix from 'react-bootstrap/lib/Clearfix';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as recentPostsActions from '../../../actions/recentPostsActions';

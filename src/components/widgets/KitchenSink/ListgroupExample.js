@@ -1,5 +1,8 @@
 import React from 'react';
-import {Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import ListGroup from 'react-bootstrap/lib/ListGroup';
+import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
 
 const ListgroupExample = () => {
   return (

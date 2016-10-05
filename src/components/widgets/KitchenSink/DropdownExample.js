@@ -1,5 +1,5 @@
 import React from 'react';
-import {MenuItem} from 'react-bootstrap';
+import MenuItem from 'react-bootstrap/lib/MenuItem';
 
 const DropdownExample = () => {
   return (

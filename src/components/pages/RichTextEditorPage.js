@@ -1,6 +1,9 @@
 import React from 'react';
 import RichEditorDemo from '../widgets/RichTextEditor/RichEditorDemo';
-import {PageHeader, Panel, Well, Button} from 'react-bootstrap';
+import PageHeader from 'react-bootstrap/lib/PageHeader';
+import Panel from 'react-bootstrap/lib/Panel';
+import Well from 'react-bootstrap/lib/Well';
+import Button from 'react-bootstrap/lib/Button';
 
 const RichTextEditorPage = () => {
   return (

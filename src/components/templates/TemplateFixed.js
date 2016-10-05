@@ -1,5 +1,9 @@
 import React from 'react';
-import { Grid, Row, Navbar, Nav, NavItem } from 'react-bootstrap';
+import Grid from 'react-bootstrap/lib/Grid';
+import Row from 'react-bootstrap/lib/Row';
+import Navbar from 'react-bootstrap/lib/Navbar';
+import Nav from 'react-bootstrap/lib/Nav';
+import NavItem from 'react-bootstrap/lib/NavItem';
 
 const TemplateFixed = () => {
   const Navigation = (

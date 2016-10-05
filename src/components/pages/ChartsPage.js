@@ -1,6 +1,11 @@
 /* eslint-disable react/no-multi-comp */
 import React from 'react';
-import {PageHeader, Panel, Well, Button, Row, Col} from 'react-bootstrap';
+import PageHeader from 'react-bootstrap/lib/PageHeader';
+import Panel from 'react-bootstrap/lib/Panel';
+import Well from 'react-bootstrap/lib/Well';
+import Button from 'react-bootstrap/lib/Button';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
 import {AreaGraph, BarGraph, LineGraph, PieChart, ScatterPlot} from 'react-d3-responsive';
 
 import chartData from '../../data/chartData';

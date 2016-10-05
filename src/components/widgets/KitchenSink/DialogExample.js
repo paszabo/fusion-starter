@@ -1,6 +1,11 @@
 /* eslint-disable react/no-multi-comp */
 import React, {PropTypes} from 'react';
-import {Button, ButtonToolbar, Modal, OverlayTrigger, Popover, Tooltip} from 'react-bootstrap';
+import Button from 'react-bootstrap/lib/Button';
+import ButtonToolbar from 'react-bootstrap/lib/ButtonToolbar';
+import Modal from 'react-bootstrap/lib/Modal';
+import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
+import Popover from 'react-bootstrap/lib/Popover';
+import Tooltip from 'react-bootstrap/lib/Tooltip';
 
 class DialogExample extends React.Component {
   constructor(props){
