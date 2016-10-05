@@ -1,5 +1,12 @@
 import React from 'react';
-import {Col, Form, FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Button} from 'react-bootstrap';
+import Col from 'react-bootstrap/lib/Col';
+import Form from 'react-bootstrap/lib/Form';
+import FormGroup from 'react-bootstrap/lib/FormGroup';
+import ControlLabel from 'react-bootstrap/lib/ControlLabel';
+import FormControl from 'react-bootstrap/lib/FormControl';
+import HelpBlock from 'react-bootstrap/lib/HelpBlock';
+import Checkbox from 'react-bootstrap/lib/Checkbox';
+import Button from 'react-bootstrap/lib/Button';
 
 const FormExample = () => {
   return (
