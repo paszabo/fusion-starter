@@ -1,4 +1,3 @@
-import {SET_RECENT_POSTS} from '../actions/actionTypes';
 import initialState from './initialState';
 
 // IMPORTANT: Note that with Redux, state should NEVER be changed.
@@ -8,9 +7,6 @@ import initialState from './initialState';
 // and update values on the copy.
 export default function recentPostsReducer(recentPosts = initialState.recentPosts, action) {
   switch (action.type) {
-    case SET_RECENT_POSTS:
-      return action.posts;
-
     default:
       return recentPosts;
   }

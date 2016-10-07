@@ -1,11 +1,10 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import Griddle from 'griddle-react';
 import {PageHeader, Panel, Well, Button} from 'react-bootstrap';
 import GriddleCustomPager from '../widgets/Griddle/GriddleCustomPager';
+import {connect} from 'react-redux';
 
-const vehicleData = require('../../data/vehicles');
-
-const DataTablesPage = () => {
+const DataTablesPage = ({vehicles}) => {
   return (
     <div>
       <PageHeader>Data Tables <small>Griddle</small></PageHeader>
@@ -19,7 +18,7 @@ const DataTablesPage = () => {
           initialSortAscending={true}
 
 
-          results={vehicleData}
+          results={vehicles}
           columns={['Make', 'Model', 'Year', 'Price']}
 
           showFilter={true}
@@ -46,4 +45,14 @@ const DataTablesPage = () => {
   );
 };
 
-export default DataTablesPage;
+DataTablesPage.propTypes = {
+  vehicles: PropTypes.array.isRequired
+};
+
+function mapStateToProps(state) {
+  return {
+    vehicles: state.vehicles
+  };
+}
+
+export default connect(mapStateToProps)(DataTablesPage);
