@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
-import {Button, Col} from 'react-bootstrap';
+import Button from 'react-bootstrap/lib/Button';
+import Col from 'react-bootstrap/lib/Col';
 import Select from 'react-select';
 
 const states = require('../../../data/states');

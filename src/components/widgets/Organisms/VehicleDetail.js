@@ -1,6 +1,9 @@
 /* eslint-disable react/no-multi-comp */
 import React, {PropTypes} from 'react';
-import { Media, Label, Col, Image } from 'react-bootstrap';
+import Media from 'react-bootstrap/lib/Media';
+import Label from 'react-bootstrap/lib/Label';
+import Col from 'react-bootstrap/lib/Col';
+import Image from 'react-bootstrap/lib/Image';
 
 const sampledetails = [
   {'Ext Color': 'Scarlet Red Pearl'},

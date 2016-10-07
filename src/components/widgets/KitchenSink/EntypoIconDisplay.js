@@ -1,6 +1,10 @@
 /* eslint-disable react/no-multi-comp, react/no-danger */
 import React from 'react';
-import {Col, Form, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
+import Col from 'react-bootstrap/lib/Col';
+import Form from 'react-bootstrap/lib/Form';
+import FormGroup from 'react-bootstrap/lib/FormGroup';
+import FormControl from 'react-bootstrap/lib/FormControl';
+import ControlLabel from 'react-bootstrap/lib/ControlLabel';
 import {
   Entypo500px,
   Entypo500pxWithCircle,

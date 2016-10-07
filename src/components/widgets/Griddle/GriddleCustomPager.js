@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Pagination } from 'react-bootstrap';
+import Pagination from 'react-bootstrap/lib/Pagination';
 import EntypoChevronThinLeft from 'react-entypo/lib/entypo/ChevronThinLeft';
 import EntypoChevronThinRight from 'react-entypo/lib/entypo/ChevronThinRight';
 

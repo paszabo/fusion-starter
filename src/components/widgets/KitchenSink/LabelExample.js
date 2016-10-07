@@ -1,5 +1,6 @@
 import React from 'react';
-import {Label, Badge} from 'react-bootstrap';
+import Label from 'react-bootstrap/lib/Label';
+import Badge from 'react-bootstrap/lib/Badge';
 
 const LabelExample = () => {
   return (

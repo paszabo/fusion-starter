@@ -1,5 +1,7 @@
 import React from 'react';
-import { Grid, Col, Panel } from 'react-bootstrap';
+import Grid from 'react-bootstrap/lib/Grid';
+import Col from 'react-bootstrap/lib/Col';
+import Panel from 'react-bootstrap/lib/Panel';
 
 const TemplateContentAside = () => {
   return(
